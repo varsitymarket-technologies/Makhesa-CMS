@@ -1,0 +1,59 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
+    # Creating The User Account 
+
+    $username = get_input('authenticate_username') ?? __error("Missing Data Input");
+    $password = get_input('authenticate_password') ?? __error("Missing Data Input");
+    $email = get_input('authenticate_email') ?? __error("Missing Data Input");
+    $password_confirmation = get_input('authenticate_confirm_password') ?? __error("Missing Data Input");
+
+    @include_once (dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "systemctrl.php";
+    @include_once dirname(__DIR__) . DIRECTORY_SEPARATOR . "scripts.php";
+
+
+    #Verify Email Address; 
+    @$e = verify_email($email) ?? false;
+    if ($e) {
+        #Proceed With Account Creation; 
+        if ($password_confirmation === $password){
+
+            #Verify Email and Username Combination 
+            if (credentials_exists('username',$username)){
+                __error("Username Already Taken"); 
+            }
+
+            if (credentials_exists('email',$email)){
+                __error("Email Already Taken"); 
+            }
+
+            $otp = create_account_otp(); 
+            $auth = create_account_auth(); 
+
+            $module = new scripts_packages(); 
+            $username = base64_encode( $username); 
+            $email = base64_encode($email); 
+            
+            $password = simple_encryption_procedure("encrypt",$password,$auth); 
+            $password_hash = hash("sha256",$password); 
+
+            $sql = "INSERT INTO tblusers (`username`,`email`,`password_hash`,`password`,`auth`,`otp`) VALUES ('{$username}','{$email}','{$password_hash}','{$password}','{$auth}','{$otp}');"; 
+            #Create The User Account 
+            $e = execute_sql_query($sql);
+            if ($e){
+                @register_user_code($auth);
+                echo json_encode(['success' => true, 'message' => 'Account Created']);
+                die(0); 
+            }
+            print_r($e);  
+        }else{
+            __error("Passwords Do Not Match"); 
+        }
+        __error("Could Not Create Account "); 
+        die(0); 
+    }
+    __error("Invalid Credentials");
+
+}
+?>
