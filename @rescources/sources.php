@@ -12,6 +12,7 @@ $curr_path = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR."control-panel".DI
 $Path = $curr_path. $media_folder. DIRECTORY_SEPARATOR;
 
 $files = scandir($Path);
+
 $imagePath = null;
 $currentImage = null;
 $mimeType = null;
@@ -44,7 +45,7 @@ foreach ($files as $file) {
 }
 
 // Check if the file actually exists and is readable
-if (file_exists($imagePath) && is_readable($imagePath)) {
+if (file_exists($imagePath)) {
     // Determine the MIME type based on the file extension
     $extension = pathinfo($currentImage, PATHINFO_EXTENSION);
     #$mimeType = 'application/octet-stream'; // Default generic type

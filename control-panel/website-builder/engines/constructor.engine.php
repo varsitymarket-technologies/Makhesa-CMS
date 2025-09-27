@@ -797,7 +797,7 @@
                     <input class="nav-input" name="nav" type="radio" id="add">
 
                     <div class="icon" style="display: flex; align-items: center;">
-                        <img style="max-width:2rem;" src="http://localhost/online-store.varsitymarket.package/control-panel/34cdc5ddd600874f7ac6a5b00361640a4e6bb31ab57ec28ef19ba759b07d6d7ddU1zYnhnMVNxOWpnNVNsWk9hYkt6Zk92YW02ai9ldmtpZFNGczFnd2VqcDBSejFkeWNrMmduUzlUdnAyMFU3SU5mdkpyY2I5MlBFY0RIenNVRW4wWmZ6OXdRNXJVUzBCcWd3SE5JVnhuN2s9/favicon.png">
+                        <img style="max-width:2rem;" src="http://localhost:3000/@rescources/site/varsitymarket-technologies/">
                         <span style="font-size: 10px;">Website Builder</span>
                     </div>
                 </div>

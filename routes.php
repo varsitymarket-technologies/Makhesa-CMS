@@ -34,9 +34,23 @@ if ($traffic_request == $public_request){
         die(0); 
     }
 
+    # Control Panel Section 
+    if ($traffic_request == "vm-editor") {
+        @include_once PWD . "/control-panel/website-builder/index.php";
+        die(0);
+    }
+
+    # Control Panel Section 
+    if ($traffic_request == "vm-database") {
+        @include_once PWD . "/control-panel/database-manager/index.php";
+        die(0);
+    }
+
+
     #Webstore Section 
     @include_once PWD.DIRECTORY_SEPARATOR."website".DIRECTORY_SEPARATOR."web".DIRECTORY_SEPARATOR."index.php" ;
     die(0); 
+
 
     #Redirect To The Public Request
     $link = __PROTOCOL__.__DOMAIN_NAME__.'/'.$public_request."/"; 

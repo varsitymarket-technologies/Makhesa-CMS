@@ -1,0 +1,18 @@
+[27-Sep-2025 10:45:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function title() in C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\hub\production\blocks\shop.page.blade:14
+Stack trace:
+#0 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\interface.php(24): include_once()
+#1 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\routes.php(34): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\index.php(2): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\tj-tennyson.co.za\routes.php(38): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\tj-tennyson.co.za\index.php(6): include_once('C:\\Users\\Hastin...')
+#5 {main}
+  thrown in C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\hub\production\blocks\shop.page.blade on line 14
+[27-Sep-2025 10:50:23 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function title() in C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\scripts.php:8
+Stack trace:
+#0 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\scripts.php(2): build_commerce_service()
+#1 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\routes.php(2): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\index.php(2): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\tj-tennyson.co.za\routes.php(38): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\tj-tennyson.co.za\index.php(6): include_once('C:\\Users\\Hastin...')
+#5 {main}
+  thrown in C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\scripts.php on line 8

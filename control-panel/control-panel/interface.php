@@ -26,6 +26,8 @@ function get_page_map()
     "quit" => "pages" . DIRECTORY_SEPARATOR . "cp.quit-session.page.php",
     "reset-password" => "pages" . DIRECTORY_SEPARATOR . "cp.security.reset.account.page.php",
 
+    "website-builder" => "pages" . DIRECTORY_SEPARATOR . "cp.website-builder.page.php",
+
     "profile" => "pages" . DIRECTORY_SEPARATOR . "cp.profile.account.page.php",
   ];
 }

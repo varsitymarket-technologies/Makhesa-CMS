@@ -1,4 +1,33 @@
 <?php
+define("__ECOMMERCE_SERVICE__",build_commerce_service()) ;
+
+function build_commerce_service(){
+    $module_file = dirname( dirname( dirname(__FILE__))).DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."module.commerce.php";
+    @include_once $module_file;
+    #$t = new commerce_services(); 
+    #echo $t->title() ;
+    #die(0);
+    $module = "commerce_services";
+    if (class_exists($module)){
+        $e = new $module();
+        return $e;
+    }
+}
+
+function e($data){
+    echo $data ; 
+    return true ; 
+}
+
+function use_template($template,$search,$replace){
+    $template_file = dirname(__FILE__).DIRECTORY_SEPARATOR."hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."templates".DIRECTORY_SEPARATOR.$template.".guide"; 
+    if (file_exists($template_file)){
+        $template_data = file_get_contents($template_file); 
+        $data = str_ireplace($search, $replace, $template_data); 
+        return $data; 
+    }
+    return null; 
+}
 
 function use_style($style){
     $style_file = dirname(__FILE__).DIRECTORY_SEPARATOR."theme".DIRECTORY_SEPARATOR.$style;

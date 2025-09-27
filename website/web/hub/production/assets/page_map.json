@@ -10,6 +10,7 @@
     "category": "pages\\cp.category.page.php",
     "404": "hub\\production\\blocks\\404.page.blade",
     "about": "hub\\production\\blocks\\about.page.blade",
+    "shop": "hub\\production\\blocks\\shop.page.blade",
     "media": "pages\\cp.media-library.page.php",
     "inventory": "pages\\cp.inventory.page.php",
     "settings": "pages\\cp.settings.page.php",

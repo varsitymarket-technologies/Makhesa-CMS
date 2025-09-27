@@ -14,6 +14,7 @@ $M = [
     
     '404' => "hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."blocks".DIRECTORY_SEPARATOR."404.page.blade",
     'about' => "hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."blocks".DIRECTORY_SEPARATOR."about.page.blade",
+    'shop' => "hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."blocks".DIRECTORY_SEPARATOR."shop.page.blade",
 
 
     'media' => "pages" . DIRECTORY_SEPARATOR . "cp.media-library.page.php",

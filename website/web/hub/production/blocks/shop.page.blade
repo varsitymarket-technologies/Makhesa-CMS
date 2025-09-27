@@ -1,0 +1,27 @@
+<main class="main">
+
+<section id="best-sellers" class="best-sellers section">
+
+      <!-- Section Title -->
+      <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+        <h2>Our Store</h2>
+        <p>Providing Your Exclusive Merchandise And Clothing</p>
+      </div><!-- End Section Title -->
+
+      <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-5">
+            <?php
+            foreach (__ECOMMERCE_SERVICE__->products() as $_products => $value){
+                e(use_template('shop.template',
+                ['{PRODUCT_TITLE}','{PRODUCT_PRICE}','{PRODUCT_IMAGE}','{PRODUCT_CATEGORY}'],
+                [$value['name'],$value['price'],$value['image'],$value['category']]));
+            }
+            ?>
+        </div>
+
+      </div>
+
+    </section>
+
+</main>
