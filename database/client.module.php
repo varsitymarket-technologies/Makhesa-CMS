@@ -24,14 +24,33 @@ class database_manager
     private string $dbPath; // Path to the SQLite database file
 
     /**
+     * Override Connection for SQLiteManager.
+     *
+     * @param string $dbFileName The name of the SQLite database file (e.g., 'mydatabase.sqlite').
+     */
+    public function override_connection(string $dbFileName = null)
+    {   
+        $this->dbPath = $dbFileName; 
+        $this->connect(); // Establish database connection
+    }
+
+    /**
      * Constructor for SQLiteManager.
      *
      * @param string $dbFileName The name of the SQLite database file (e.g., 'mydatabase.sqlite').
      */
-    public function __construct(string $dbFileName = __DATABASE_SOURCE__)
-    {
+    public function __construct(string $dbFileName = null)
+    {   
+        if ($dbFileName == null){
+            $dbFileName = __DATABASE_SOURCE__ ; 
+        }
+
         // Define the database path relative to the script's execution directory
-        $this->dbPath = __DIR__ . DIRECTORY_SEPARATOR . $dbFileName;
+        if (file_exists($dbFileName)){
+            $this->dbPath = $dbFileName;
+        }else{
+            $this->dbPath = __DIR__ . DIRECTORY_SEPARATOR . $dbFileName;   
+        }
         $this->connect(); // Establish database connection
     }
 

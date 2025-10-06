@@ -1,16 +1,3 @@
-<?php 
-@include_once (dirname(dirname(dirname(__FILE__)))). DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."systemctrl.php";
-$page_request = map_page()[1] ;
-$map_file = dirname(__FILE__).DIRECTORY_SEPARATOR."hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."assets".DIRECTORY_SEPARATOR."page_map.json";
-$map = json_decode(file_get_contents($map_file),JSON_PRETTY_PRINT) ;
-
-$page_construct = $map[$page_request] ; 
-if (isset($map[$page_request])){
-  $page_construct = dirname(__FILE__).DIRECTORY_SEPARATOR.$map[$page_request] ;
-}else{
-  $page_construct = dirname(__FILE__).DIRECTORY_SEPARATOR.$map["404"] ;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 

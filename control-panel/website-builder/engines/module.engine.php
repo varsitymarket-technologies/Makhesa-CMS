@@ -1,6 +1,28 @@
 <?php 
 include_once "classes.php";
  
+function format_to_editor($html_content){
+  $search = ["<",">","&",'"',"'"];
+  $replace = ["&#60;","&#62;","&#38;","&#34;","&#39;"];
+  $replace = ["&lt;","&gt;","&amp;","&quot;","&apas;"];
+
+  $search = ["<"] ;
+  $replace = ["&#60"];
+  $e = str_ireplace($search,$replace,$html_content);
+  return $e ;
+}
+
+function e($data){
+  echo $data ;
+  return;
+}
+
+function construct_editor_code(){
+  $path = "C:\Users\Hastings\Documents\\tj-tennyson.co.za\website\web\hub\production\blocks\\404.page.blade";
+  $contents = file_get_contents($path) ;
+  $contents = format_to_editor($contents); 
+  return $contents;
+}
 function engine_encrypt($data, $key="the_skynet_way") {
     $iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length('aes-256-cbc'));
     $encrypted = openssl_encrypt($data, 'aes-256-cbc', $key, 0, $iv);

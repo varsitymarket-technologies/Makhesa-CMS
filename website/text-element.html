@@ -1,0 +1,47 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <style>
+            .text-element{
+                padding: 10px;
+                border: 1px solid trasperent;
+            }
+
+            .text-element[contenteditable="true"]{
+                border: 1px solid #ccc;
+                background-color: #f9f9f9;
+                padding: 10px;
+                outline: none;
+
+            }
+
+            .text-element:focus {
+                border-color: #aaa;
+                box-shadow: 0;
+            }
+        </style>
+
+        <div class="text-element" contenteditable="false">
+            TEXT SAMPLE
+        </div>
+
+        <button id="edit-button">
+            EDIT MODE
+        </button>
+
+        <script>
+            document.getElementById('edit-button').addEventListener("click", function () {
+                const textElement = document.querySelector('.text-element') ;
+
+                if (textElement.getAttribute('contenteditable') === 'false'){
+                    textElement.setAttribute('contenteditable','true') ;
+                    textElement.focus() ;
+                }else{
+                    textElement.setAttribute('contenteditable','false');
+                }
+
+            }) ;
+    </body>
+</html>

@@ -16,3 +16,4 @@ Stack trace:
 #4 C:\Users\Hastings\Documents\tj-tennyson.co.za\index.php(6): include_once('C:\\Users\\Hastin...')
 #5 {main}
   thrown in C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\scripts.php on line 8
+[03-Oct-2025 11:15:15 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "}" in C:\Users\Hastings\Documents\tj-tennyson.co.za\control-panel\website-builder\engines\interface.navbar.blade.php on line 40

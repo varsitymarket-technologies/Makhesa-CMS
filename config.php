@@ -8,4 +8,4 @@ $system_config = [
         'vendor_wallpaper'=>'',
     ],
 ]
-?>
+?>   
