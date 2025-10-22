@@ -111,7 +111,7 @@ if (empty($internal_page)) {
                 <div class="responsive anim" style="--delay: .4s;">
                     <div class="gallery">
                         <a>
-                            <img style="aspect-ratio:7/6; object-fit: cover; " src="'.__PROTOCOL__.__DOMAIN_NAME__.'/@media/[IMAGE]">
+                            <img style="aspect-ratio:7/6; object-fit: cover; " src="[IMAGE]">
                         </a>
                         <div class="video-name">
                             <div class="small-header anim" style="--delay: .3s; font-size:20px; margin: 0px 0px 10px 0px;">
@@ -138,7 +138,7 @@ if (empty($internal_page)) {
                 foreach ($faq_data as $_data) {
                     $html .= str_replace(
                         ['[ID]', '[TITLE]', '[IMAGE]'],
-                        [$_data['id'], $_data['title'], $_data['image']],
+                        [$_data['id'], $_data['title'], _media_(__PROTOCOL__.__DOMAIN_NAME__.'/@media/'.$_data['image'])],
                         $html_template
                     );
                 }

@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(['success' => true, 'message' => 'Category '.$title.' was created!']);
         die(0); 
         #}
-        echo "Failed to Create Category.";
+        echo "Failed to Create Product.";
         die(0); 
     }   
 }

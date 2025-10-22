@@ -10,7 +10,6 @@
 
 
 #Text Elements 
-
 $elements_db = [
     'p' => [
         "element" => '<{element.tag} {element.event} style="{element.style}" class="{element.class}">{element.innerTEXT}</{element.tag}>',

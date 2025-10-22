@@ -1,19 +1,322 @@
-[27-Sep-2025 10:45:22 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function title() in C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\hub\production\blocks\shop.page.blade:14
+[22-Oct-2025 00:46:47 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:46:48 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
 Stack trace:
-#0 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\interface.php(24): include_once()
-#1 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\routes.php(34): include_once('C:\\Users\\Hastin...')
-#2 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\index.php(2): include_once('C:\\Users\\Hastin...')
-#3 C:\Users\Hastings\Documents\tj-tennyson.co.za\routes.php(38): include_once('C:\\Users\\Hastin...')
-#4 C:\Users\Hastings\Documents\tj-tennyson.co.za\index.php(6): include_once('C:\\Users\\Hastin...')
-#5 {main}
-  thrown in C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\hub\production\blocks\shop.page.blade on line 14
-[27-Sep-2025 10:50:23 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function title() in C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\scripts.php:8
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:46:49 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:46:49 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
 Stack trace:
-#0 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\scripts.php(2): build_commerce_service()
-#1 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\routes.php(2): include_once('C:\\Users\\Hastin...')
-#2 C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\index.php(2): include_once('C:\\Users\\Hastin...')
-#3 C:\Users\Hastings\Documents\tj-tennyson.co.za\routes.php(38): include_once('C:\\Users\\Hastin...')
-#4 C:\Users\Hastings\Documents\tj-tennyson.co.za\index.php(6): include_once('C:\\Users\\Hastin...')
-#5 {main}
-  thrown in C:\Users\Hastings\Documents\tj-tennyson.co.za\website\web\scripts.php on line 8
-[03-Oct-2025 11:15:15 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "}" in C:\Users\Hastings\Documents\tj-tennyson.co.za\control-panel\website-builder\engines\interface.navbar.blade.php on line 40
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:48:33 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:48:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:48:33 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:48:33 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:54:16 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:54:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:54:17 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:54:18 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:56:22 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:56:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:56:23 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:56:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:57:59 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:57:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:58:00 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:58:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:58:36 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:58:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:58:36 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:58:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:58:58 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:58:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:58:58 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:58:58 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:59:15 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:59:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:59:15 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:59:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:59:54 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:59:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 00:59:54 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 00:59:54 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function use_style() in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block:20
+Stack trace:
+#0 /var/www/html/public/website/web/header.blade.php(7): include_once()
+#1 /var/www/html/public/website/web/web.interface.php(5): include_once('...')
+#2 /var/www/html/public/website/web/web.routes.php(48): include_once('...')
+#3 /var/www/html/public/website/web/index.php(2): include_once('...')
+#4 /var/www/html/public/routes.php(57): include_once('...')
+#5 /var/www/html/public/index.php(4): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/website/web/hub/production/blocks/header-signature-blade.block on line 20
+[22-Oct-2025 01:00:26 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:00:30 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:00:53 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:00:57 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:00:57 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:00:57 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:00:57 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:00:58 UTC] PHP Warning:  Undefined array key "fonts" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:00 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:00 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:00 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:02 UTC] PHP Warning:  Undefined array key "fonts" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:06 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:33 UTC] PHP Warning:  Trying to access array offset on null in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:33 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:33 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:33 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:33 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:33 UTC] PHP Warning:  Trying to access array offset on null in /var/www/html/public/website/web/web.routes.php on line 45
+[22-Oct-2025 01:01:34 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:34 UTC] PHP Warning:  Undefined array key "fonts" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:35 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:35 UTC] PHP Warning:  Undefined array key "fonts" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:01:36 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:04:59 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:05:07 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:09:58 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:10:02 UTC] PHP Parse error:  syntax error, unexpected identifier "_media_" in /var/www/html/public/control-panel/control-panel/pages/cp.brands.page.php on line 40
+[22-Oct-2025 01:10:03 UTC] PHP Parse error:  syntax error, unexpected identifier "_media_" in /var/www/html/public/control-panel/control-panel/pages/cp.brands.page.php on line 40
+[22-Oct-2025 01:10:03 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:11:18 UTC] PHP Parse error:  syntax error, unexpected identifier "_media_" in /var/www/html/public/control-panel/control-panel/pages/cp.brands.page.php on line 40
+[22-Oct-2025 01:11:18 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:11:18 UTC] PHP Parse error:  syntax error, unexpected identifier "_media_" in /var/www/html/public/control-panel/control-panel/pages/cp.brands.page.php on line 40
+[22-Oct-2025 01:11:28 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:15:10 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:15:43 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:15:43 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:15:56 UTC] PHP Warning:  Undefined array key "rescources" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:16:27 UTC] PHP Warning:  Undefined array key "rescources" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:16:52 UTC] PHP Warning:  Undefined array key "rescources" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 01:17:13 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:19:13 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:19:45 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:19:46 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:19:49 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:21:56 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:22:08 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:22:10 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:22:14 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:22:18 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:24:33 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 01:24:43 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 08:05:34 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 08:07:09 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:07:25 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:07:25 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:07:26 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:07:26 UTC] PHP Warning:  Trying to access array offset on null in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:07:26 UTC] PHP Warning:  Trying to access array offset on null in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:07:26 UTC] PHP Warning:  Trying to access array offset on null in /var/www/html/public/website/web/web.routes.php on line 45
+[22-Oct-2025 08:07:26 UTC] PHP Warning:  Trying to access array offset on null in /var/www/html/public/website/web/web.routes.php on line 45
+[22-Oct-2025 08:07:27 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:07:28 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:07:28 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:07:33 UTC] PHP Warning:  Undefined array key "favicon.ico" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:08:40 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 08:08:55 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 08:32:15 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 08:32:35 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 08:39:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function e() in /var/www/html/public/control-panel/control-panel/blade.navbar.php:58
+Stack trace:
+#0 /var/www/html/public/control-panel/control-panel/interface.php(86): include_once()
+#1 /var/www/html/public/control-panel/control-panel/index.php(15): include('...')
+#2 /var/www/html/public/routes.php(45): include_once('...')
+#3 /var/www/html/public/index.php(4): include_once('...')
+#4 {main}
+  thrown in /var/www/html/public/control-panel/control-panel/blade.navbar.php on line 58
+[22-Oct-2025 08:39:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function e() in /var/www/html/public/control-panel/control-panel/blade.navbar.php:58
+Stack trace:
+#0 /var/www/html/public/control-panel/control-panel/interface.php(86): include_once()
+#1 /var/www/html/public/control-panel/control-panel/index.php(15): include('...')
+#2 /var/www/html/public/routes.php(45): include_once('...')
+#3 /var/www/html/public/index.php(4): include_once('...')
+#4 {main}
+  thrown in /var/www/html/public/control-panel/control-panel/blade.navbar.php on line 58
+[22-Oct-2025 08:39:20 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 08:47:51 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 08:48:19 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 08:50:35 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 19
+[22-Oct-2025 08:51:13 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:13 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:13 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:13 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:13 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:13 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:16 UTC] PHP Warning:  Undefined array key "payment-gateway" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:53 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:53 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:53 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:53 UTC] PHP Warning:  Trying to access array offset on null in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:53 UTC] PHP Warning:  Trying to access array offset on null in /var/www/html/public/website/web/web.routes.php on line 45
+[22-Oct-2025 08:51:53 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:53 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:54 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:51:54 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:02 UTC] PHP Warning:  Undefined array key "" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:03 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:03 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:03 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:03 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:03 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:03 UTC] PHP Warning:  Undefined array key "fonts" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:03 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:03 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:04 UTC] PHP Warning:  Undefined array key "fonts" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:05 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:28 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:28 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:28 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:28 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:28 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:28 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:29 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41
+[22-Oct-2025 08:52:32 UTC] PHP Warning:  Undefined array key "assets" in /var/www/html/public/website/web/web.routes.php on line 41

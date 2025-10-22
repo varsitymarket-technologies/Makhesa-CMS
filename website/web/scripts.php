@@ -1,5 +1,13 @@
 <?php
+
+@include_once (dirname(dirname(dirname(__FILE__)))). DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."systemctrl.php";
+
 define("__ECOMMERCE_SERVICE__",build_commerce_service()) ;
+define("__HEADER_QUERY__", map_page()); 
+#Builder Access 
+define('__import_scripts__',construct_scripts());
+define('__import_styles__',construct_styles());
+
 
 function build_commerce_service(){
     $module_file = dirname( dirname( dirname(__FILE__))).DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."module.commerce.php";
@@ -29,6 +37,20 @@ function use_template($template,$search,$replace){
     return null; 
 }
 
+function construct_styles(){
+    $styles_data = null ; 
+    foreach ($styles_data as $key => $value) {
+        $style = $value; 
+        @use_style($style); 
+    }
+    return null; 
+}
+
+function construct_scripts() {
+    $scripts_data = null ;
+
+    return null ;
+}
 function use_style($style){
     $style_file = dirname(__FILE__).DIRECTORY_SEPARATOR."theme".DIRECTORY_SEPARATOR.$style;
     $e = file_get_contents($style_file); 

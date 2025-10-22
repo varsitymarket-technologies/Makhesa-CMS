@@ -3,7 +3,7 @@ $internal_page = map_page()[3] ?? false;
 if (empty($internal_page)) {
     $internal_page = "dashboard";
 }
-?>
+?> 
 
 <div class="wrapper" style="overflow: auto">
     <?php include_once "blade.navbar.sidebar.php"; ?>
@@ -11,7 +11,7 @@ if (empty($internal_page)) {
 
         <div class="main-header anim" style="--delay: 0s; text-align: center; padding: 1rem 3rem; position: inherit;">
             Category Section
-        </div>
+        </div> 
         <?php
         if ($internal_page == "add-category") {
             $html = '
@@ -53,7 +53,7 @@ if (empty($internal_page)) {
                 <div class="responsive anim" style="--delay: .4s;">
                     <div class="gallery">
                         <a>
-                            <img style="aspect-ratio:7/6; object-fit: cover; " src="'.__PROTOCOL__.__DOMAIN_NAME__.'/@media/[IMAGE]">
+                            <img style="aspect-ratio:7/6; object-fit: cover; " src="[IMAGE]">
                         </a>
                         <div class="video-name">
                             <div class="small-header anim" style="--delay: .3s; font-size:20px; margin: 0px 0px 10px 0px;">
@@ -80,7 +80,7 @@ if (empty($internal_page)) {
                 foreach ($faq_data as $_data) {
                     $html .= str_replace(
                         ['[ID]', '[TITLE]', '[IMAGE]'],
-                        [$_data['id'], $_data['name'], $_data['image']],
+                        [$_data['id'], $_data['name'], _media_(__PROTOCOL__.__DOMAIN_NAME__.'/@media/'.$_data['image'])],
                         $html_template
                     );
                 }
@@ -114,12 +114,15 @@ $page_id = hash("sha256", "new-website-page");
         data.append('title', title);
         data.append('image', image);
         let registration_confirmation = await sendAndReceiveData(data, "<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . '/@scripts/scripts.php'; ?>");
-        alert(registration_confirmation); 
+
         try {
             registration_confirmation = JSON.parse(registration_confirmation);
             operate_loader('stop'); 
             if (registration_confirmation.success) {
-                window.location = "<?php echo __PAGE__ . map_page()[2]; ?>/";
+                success_feedback(registration_confirmation.message);
+                setTimeout(() => {
+                    window.location = "<?php echo __PAGE__ . map_page()[2]; ?>/";
+                }, 1500);
             } else {
                 error_feedback(registration_confirmation.message);
             }

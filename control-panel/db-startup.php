@@ -52,4 +52,59 @@ $db->createTable('tblwebservices', [
     'user_code' => 'TEXT NOT NULL',
     'date' => 'DATE DEFAULT CURRENT_DATE',
 ]); 
+
+
+# Database Startup for the E-Commerce Secton 
+
+$db->createTable('categories',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'name' => 'TEXT',
+    'image' => 'TEXT',
+]); 
+
+$db->createTable('brands',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'name' => 'TEXT',
+    'image' => 'TEXT',
+]); 
+
+$db->createTable('products', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'title' => 'TEXT',
+    'image' => 'TEXT',
+    'description' => 'TEXT',
+    'price' => 'TEXT',
+    'sku' => 'TEXT',
+    'stock' => 'TEXT',
+    'category' => 'TEXT',
+    'brand' => 'TEXT NOT NULL',
+    'sale_price' => 'TEXT NOT NULL',
+    'source' => 'TEXT NOT NULL',
+    'date' => 'DATE DEFAULT CURRENT_DATE',
+]); 
+
+
+$db->createTable('gallery', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'title' => 'TEXT',
+    'image_path' => 'TEXT',
+    'description' => 'TEXT',
+    'hash' => 'TEXT',
+    'date' => 'DATE DEFAULT CURRENT_DATE',
+]); 
+
+$db->createTable('menu',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT', 
+    'title' => 'TEXT', 
+    'data_node' => 'TEXT', 
+]); 
+
+
+$db->createTable('faq',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT', 
+    'question' => 'TEXT', 
+    'response' => 'TEXT', 
+    'category' => 'TEXT', 
+]); 
+ 
 ?>

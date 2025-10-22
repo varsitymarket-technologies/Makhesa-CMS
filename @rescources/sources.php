@@ -1,4 +1,11 @@
 <?php
+#   TITLE   : Rescource Library Scripts  
+#   DESC    : The Requested assets that the site uses is called from the rescources library. For security reasons the actual files will be stored in the control panel
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/10/20
+
 @include_once dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . "scripts.php";
 
 $media_folder = site_path(2) ?? false; 
@@ -12,7 +19,6 @@ $curr_path = dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR."control-panel".DI
 $Path = $curr_path. $media_folder. DIRECTORY_SEPARATOR;
 
 $files = scandir($Path);
-
 $imagePath = null;
 $currentImage = null;
 $mimeType = null;

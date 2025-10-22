@@ -108,6 +108,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         "register-website" => "script.register-site.php",
 
+        "create-menu"=>"script.create-menu.php",
+
     ];
     
     if (array_key_exists($page, $executable_map)) {
@@ -121,4 +123,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Invalid request.";
     }
 }
+
+if (function_exists('slugify') == false){
+    function slugify($string)
+    {
+        // Convert to lowercase
+        $string = strtolower($string);
+
+        // Replace non-letter or digits by hyphen
+        $string = preg_replace('~[^\pL\d]+~u', '-', $string);
+
+        // Transliterate characters to ASCII
+        $string = iconv('utf-8', 'us-ascii//TRANSLIT', $string);
+
+        // Remove unwanted characters
+        $string = preg_replace('~[^-\w]+~', '', $string);
+
+        // Trim hyphens from the start and end
+        $string = trim($string, '-');
+
+        // Return the slug
+        return $string;
+    }
+}
+
+
 ?>

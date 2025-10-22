@@ -7,11 +7,15 @@ function get_page_map()
     "create-website" => "pages" . DIRECTORY_SEPARATOR . "cp.sites.create.page.php",
     "website-manager" => "pages" . DIRECTORY_SEPARATOR . "cp.sites.manager.page.php",
     "websites" => "pages" . DIRECTORY_SEPARATOR . "cp.sites.home.page.php",
+    
     "login" => "pages" . DIRECTORY_SEPARATOR . "cp.security.signin.page.php",
     "authentication" => "pages" . DIRECTORY_SEPARATOR . "cp.authentication.page.php",
-
+ 
     "faq" => "pages" . DIRECTORY_SEPARATOR . "cp.faq.page.php",
+    "menu" => "pages" . DIRECTORY_SEPARATOR . "cp.menu.page.php",
+
     "contact-form" => "pages" . DIRECTORY_SEPARATOR . "cp.contact-form.page.php",
+    "brands" => "pages" . DIRECTORY_SEPARATOR . "cp.brands.page.php", 
     "category" => "pages" . DIRECTORY_SEPARATOR . "cp.category.page.php",
     '404' => "pages" . DIRECTORY_SEPARATOR . "cp.error.404.page.php",
     'media' => "pages" . DIRECTORY_SEPARATOR . "cp.media-library.page.php",
@@ -26,10 +30,19 @@ function get_page_map()
     "quit" => "pages" . DIRECTORY_SEPARATOR . "cp.quit-session.page.php",
     "reset-password" => "pages" . DIRECTORY_SEPARATOR . "cp.security.reset.account.page.php",
 
+    "products" => "pages" . DIRECTORY_SEPARATOR . "store.dashboard.page.php",
+    "online-store" => "pages".DIRECTORY_SEPARATOR."cp.online-store.page.php",
+    "analytics" => "pages".DIRECTORY_SEPARATOR."cp.analytics.page.php",
     "website-builder" => "pages" . DIRECTORY_SEPARATOR . "cp.website-builder.page.php",
 
+    
+    "website" => "pages" . DIRECTORY_SEPARATOR . "cp.websites.page.php",
+
     "profile" => "pages" . DIRECTORY_SEPARATOR . "cp.profile.account.page.php",
+    "database" => "pages" . DIRECTORY_SEPARATOR . "cp.database.manager.page.php",
+    
   ];
+
 }
 
 function get_internal_page()

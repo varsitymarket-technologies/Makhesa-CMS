@@ -1,9 +1,14 @@
 <?php
+#   TITLE   : Scripts Library File
+#   DESC    : This is used by the system to handle ajax async functions and task. This will ensure the smooth site operations when runing javascript operations
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/10/20
+
 @define("SCRIPT_FILE", dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . "control-panel" . DIRECTORY_SEPARATOR . "control-panel" . DIRECTORY_SEPARATOR . "executables" . DIRECTORY_SEPARATOR . "script.php");
 if (isset($_GET['request'])) {
     $request = $_GET['request'];
-    file_put_contents(__DIR__ . "/Debug.log", "FOUND THREAD: " . $request);
-
     if ($request == "media-upload") {
         include_once dirname(SCRIPT_FILE) . DIRECTORY_SEPARATOR . "script.media-add.php";
     }

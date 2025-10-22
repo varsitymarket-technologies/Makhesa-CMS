@@ -815,7 +815,7 @@
         <?php @include_once dirname(__FILE__) . "/interface.tool-bar.php"; ?>
         <div class="app-content">
             <?php @include_once dirname(__FILE__) . "/interface.navbar.blade.php"; ?>
-            <?php @include_once dirname(__FILE__) . "/interface.editor.blade.php"; ?>
+            <?php @include_once __PAGE_FILE__; ?>
             <?php #@include_once dirname(__FILE__)."/interface.inspector.blade.php"; 
             ?>
         </div>

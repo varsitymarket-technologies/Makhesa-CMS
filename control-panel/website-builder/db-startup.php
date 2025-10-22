@@ -7,9 +7,14 @@ $wb_builder->override_connection($file);
 
 $wb_builder->createTable("tbltheme", [
     'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
-    "interface" => "TEXT NOT NULL",
+    "interface" => "TEXT NOT NULL", 
     "style"=>"TEXT NOT NULL",
     "script"=>"TEXT NOT NULL",
+    "title" => "TEXT NOT NULL",
+    "description"=> "TEXT NOT NULL",
+    "tags" => "TEXT NOT NULL",
+    "modules" => "TEXT NOT NULL",
+    "distrubutor" => "TEXT NOT NULL", 
 ]); 
 
 $wb_builder->createTable("tbltemplates", [
@@ -53,6 +58,7 @@ $wb_builder->createTable('tblelements_structure', [
     # Foreign Key To tblemenets_cell.element_id
     'element_skeleton' => 'TEXT NOT NULL',
     # Structure Of Element To Always Guide System To Refer
+    'title' => 'TEXT NOT NULL',
 ]); 
 
 ?>

@@ -144,3 +144,101 @@ function construct_header($genetic, $seo, $twiter_seo)
     echo $construct;
     return false; 
 }
+
+
+function construct_navbar($data,$template){
+    /*
+    $menu_title = "Primary Menu";
+    $items = [];
+    $items[] = [
+        'node'=> 'text',
+        'caption'=>'Back', 
+        'link' => 'go_to_page(`home`)',
+    ];
+    $items[] = [
+        'node'=> 'text',
+        'caption'=>'Home', 
+        'link' => 'go_to_page(`Something`)',
+    ];
+    $subitems[] = [
+        'node'=>'text',
+        'caption'=>'Sub Menu', 
+        'link' => 'Sub Link',
+    ];
+
+    $subitems[] = [
+        'node'=>'text',
+        'caption'=>'Sub Menu 2', 
+        'link' => 'Link To Site',
+    ];
+
+    $items[] = [
+        'node'=> 'set',
+        'caption'=>'Home', 
+        'link' => '#',
+        'subitems'=>$subitems, 
+    ];
+
+    $menu_data = [$menu_title => $items];
+    $template = [
+        'text' => '
+        <li><a href="{MENU.LINK}">{MENU.CAPTION}</a></li>',
+        'set' => '
+        <li class="dropdown"><a href="{MENU.LINK}"><span>{MENU.CAPTION}</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                    {MENU.SUBITEMS}
+                    <li><a href="#">Dropdown 1</a></li>
+                </ul>
+            </li>
+        ',
+
+    ];
+
+    */
+
+    $menu_ = "";
+    foreach ($data as $k => $v) {
+        foreach ($v as $key => $value) {
+            if ($value['node'] == 'text'){
+                $search = [];
+                $replace = [];
+                foreach ($value as $key2 => $value2) {
+                    $search[] = "{MENU.".strtoupper($key2)."}";
+                    $replace[] = $value2;
+                    # code...
+                }
+                $build = str_ireplace($search,$replace,$template['text'])."\n";
+                $menu_ .= $build;
+            }else if ($value['node'] == 'set'){
+                $search = [];
+                $replace = [];
+                foreach ($value as $key2 => $value2) {
+                    if ($key2 == strtolower("subitems")){
+                        $subbuild = "";
+                        foreach ($value2 as $set_k => $set_v) {
+                            $inner_search = [];
+                            $inner_replace = [];
+                            foreach ($set_v as $key2 => $value2) {
+                                $inner_search[] = "{MENU.".strtoupper($key2)."}";
+                                $inner_replace[] = $value2;
+                                # code...
+                            }
+
+                            $subbuild .= str_ireplace($inner_search,$inner_replace,$template['text'])."\n";
+                        }
+                            $search[] = "{MENU.SUBITEMS}";
+                            $replace[] = $subbuild;
+                    }else{           
+                        $search[] = "{MENU.".strtoupper($key2)."}";
+                        $replace[] = $value2;
+                        # code...
+                    }
+                }
+                $build = str_ireplace($search,$replace,$template['set'])."\n";
+                $menu_ .= $build;
+            }
+        }
+    }
+
+    return $menu_;
+}

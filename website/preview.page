@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <?php @import_module("header.blade.php"); ?>
+</head>
+<body>
+  <?php  @import_module(__DIR__.DIRECTORY_SEPARATOR."hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."blocks".DIRECTORY_SEPARATOR."header-blade.block"); ?>
+
+  <!-- Page Contents -->
+  <?php @import_module($page_construct); ?>
+
+  
+  <?php @import_module($page); ?>
+
+  <!-- Footer Blade --> 
+  <?php @import_module("footer.blade.php")?>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Preloader -->
+  <div id="preloader"></div>
+  <?php __import_scripts__ ?>
+
+</body>
+
+</html>

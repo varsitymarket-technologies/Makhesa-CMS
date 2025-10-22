@@ -12,10 +12,10 @@
 
         <div class="row g-5">
             <?php
-            foreach (__ECOMMERCE_SERVICE__->products() as $_products => $value){
+            foreach (__ECOMMERCE_SERVICE__->shop() as $_products => $value){
                 e(use_template('shop.template',
-                ['{PRODUCT_TITLE}','{PRODUCT_PRICE}','{PRODUCT_IMAGE}','{PRODUCT_CATEGORY}'],
-                [$value['name'],$value['price'],$value['image'],$value['category']]));
+                ['{PRODUCT_TITLE}','{PRODUCT_PRICE}','{PRODUCT_IMAGE}','{PRODUCT_CATEGORY}','{PRODUCT_LINK}'],
+                [$value['title'],$value['price'],"/@media/".$value['image'],$value['category'],"/product/".$value['id']."/"]));
             }
             ?>
         </div>

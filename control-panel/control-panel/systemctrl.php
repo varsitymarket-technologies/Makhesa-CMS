@@ -10,6 +10,100 @@ if (!function_exists('map_page')){
 
 }
 
+
+function _media_($url){
+     $media_hash = explode('/@media/',$url)[1];
+     $db = __DATABASE__;
+     $sql = "SELECT * FROM gallery WHERE (`hash` = '{$media_hash}') LIMIT 1";
+     $image_data = $db->query($sql)[0];
+    $currentImage = $image_data['image_path'] ?? '404.jpg';
+    $curr_path = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR."@media".DIRECTORY_SEPARATOR;
+    $imagePath = $curr_path . $currentImage;
+
+// Check if the file actually exists and is readable
+    if (file_exists($imagePath) && is_readable($imagePath)) {
+
+        // Determine the MIME type based on the file extension
+        $extension = pathinfo($currentImage, PATHINFO_EXTENSION);
+        #$mimeType = 'application/octet-stream'; // Default generic type
+
+        $mimeType = 'image/jpg';
+        
+        switch (strtolower($extension)) {
+            case 'jpg':
+                $mimeType = 'image/jpg';
+                break;
+            case 'jpeg':
+                $mimeType = 'image/jpeg';
+                break;
+            case 'png':
+                $mimeType = 'image/png';
+                break;
+            case 'gif':
+                $mimeType = 'image/gif';
+                break;
+            case 'webp':
+                $mimeType = 'image/webp';
+                break;
+                // Add more image types if needed
+        }
+
+        // Read the file content
+        $imageData = file_get_contents($imagePath);
+        // Encode the binary data to Base64
+        $base64Image = base64_encode($imageData);
+        $dataUri = "data:$mimeType;base64,$base64Image";
+        return $dataUri;
+    } 
+}
+
+function seal_signature($data=null,$action="Read"){
+    #Action Is Based On File Commands
+    #Action = Read, Insert
+    $file = dirname(__FILE__).DIRECTORY_SEPARATOR."seal.signature";
+    if ($action == "Insert"){ 
+        $e = file_put_contents($file,$data);
+        return true;
+    }else {
+        $e = file_get_contents($file);
+        return $e;
+    }
+
+}
+
+function fetchUrlContent($url) {
+    // 1. Initialize cURL session
+    $ch = curl_init();
+
+    // 2. Set cURL options
+    curl_setopt($ch, CURLOPT_URL, $url);
+
+    // CRITICAL: Tells cURL to return the response data as a string 
+    // instead of printing it directly to the browser/terminal.
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+
+    // Highly recommended: Follow any redirects (HTTP 301, 302, etc.)
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); 
+
+    // Optional: Set a timeout (in seconds)
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+
+    // 3. Execute the cURL request
+    $content = curl_exec($ch);
+
+    // 4. Check for errors
+    if (curl_errno($ch)) {
+        // Log the error (optional)
+        error_log("cURL Error: " . curl_error($ch));
+        $content = false;
+    }
+
+    // 5. Close the cURL session
+    curl_close($ch);
+
+    return $content;
+}
+
 if (!defined("MEDIA_PATH")) {
     define("MEDIA_PATH", dirname(__FILE__).DIRECTORY_SEPARATOR."@media".DIRECTORY_SEPARATOR);
 }

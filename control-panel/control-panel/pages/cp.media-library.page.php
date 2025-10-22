@@ -45,16 +45,17 @@ if (empty($internal_page)) {
                             <a target="_blank">
                                 <img style="aspect-ratio:7/7; object-fit:cover; " src="PATH" alt="TITLE" width="600" height="400">
                                 <div style="margin:-3rem 5px 0px 5px; ">
-                                    <div style="width:40px; height:40px;"><img src="' . __PROTOCOL__ . __DOMAIN_NAME__ . '/@rescources/icons/delete-icon/"></div>
+                                    <div style="width:40px; height:40px;"><img src="' .__PROTOCOL__ . __DOMAIN_NAME__ . '/@rescources/icons/delete-icon/"></div>
                                 </div>
                             </a>
                         </div>
                     </div>';
             $output = "";
+            function e($data){return file_get_contents($data);}
             foreach ($data_sets as $media_e) {
                 $output .= str_ireplace(
                     ['TITLE', 'DESCRIPTION', 'PATH', 'HASH'],
-                    [$media_e['title'], $media_e['description'], __PROTOCOL__ . __DOMAIN_NAME__ . "/@media/" . $media_e['hash'], $media_e['hash']],
+                    [$media_e['title'], $media_e['description'], _media_(__PROTOCOL__ . __DOMAIN_NAME__ . "/@media/" . $media_e['hash']), $media_e['hash']],
                     $template_row
                 );
             }

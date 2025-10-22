@@ -1,5 +1,5 @@
 <?php
-@include_once "scripts.php";
+@include_once dir(__FILE__).DIRECTORY_SEPARATOR."scripts.php";
 
 $M = [
     "create-website" => "pages" . DIRECTORY_SEPARATOR . "cp.sites.create.page.php",
@@ -10,11 +10,12 @@ $M = [
     "authentication" => "pages" . DIRECTORY_SEPARATOR . "cp.authentication.page.php",
     "faq" => "pages" . DIRECTORY_SEPARATOR . "cp.faq.page.php",
     "contact-form" => "pages" . DIRECTORY_SEPARATOR . "cp.contact-form.page.php",
-    "category" => "pages" . DIRECTORY_SEPARATOR . "cp.category.page.php",
-    
+
     '404' => "hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."blocks".DIRECTORY_SEPARATOR."404.page.blade",
+    'categories' => "hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."blocks".DIRECTORY_SEPARATOR."category.page.blade",
     'about' => "hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."blocks".DIRECTORY_SEPARATOR."about.page.blade",
     'shop' => "hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."blocks".DIRECTORY_SEPARATOR."shop.page.blade",
+    'product' => "hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."blocks".DIRECTORY_SEPARATOR."product.page.blade",
 
 
     'media' => "pages" . DIRECTORY_SEPARATOR . "cp.media-library.page.php",
@@ -44,5 +45,5 @@ if (isset($map[$page_request])){
   $page_construct = dirname(__FILE__).DIRECTORY_SEPARATOR.$map["404"] ;
 }
 
-@include_once "interface.php";
+include_once "web.interface.php";
 ?>

@@ -1,13 +1,13 @@
 <?php
-include_once dirname(__FILE__) . "/systemctrl.php";
+include_once "systemctrl.php";
 ?>
 <html>
 
 <head>
   <title>Control Panel</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/favicon/" ?>">
-  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/favicon/" ?>">
-  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/favicon/" ?>">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/varsitymarket-technologies/" ?>">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/varsitymarket-technologies/" ?>">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/varsitymarket-technologies/" ?>">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -1651,6 +1651,14 @@ include_once dirname(__FILE__) . "/systemctrl.php";
 
     /* End System Loader */
 
+    #notification_container {
+        z-index: 1000000000000000000000000001;
+        top: 3vh;
+        left: calc(100% - 335px);
+        position: absolute;
+        display: none;
+    }
+
     #error_container {
       z-index: 1000000000000000000000000000;
       top: 3vh;
@@ -1691,6 +1699,12 @@ include_once dirname(__FILE__) . "/systemctrl.php";
       color: #fff;
     }
 
+    #notification__title {
+      font-weight: 500;
+      font-size: 14px;
+      color: #fff;
+    }
+    
     .error__close {
       width: 20px;
       height: 20px;
@@ -1841,6 +1855,11 @@ include_once dirname(__FILE__) . "/systemctrl.php";
         display: none;
       }
 
+    }
+
+    div.gallery {
+        border: 1px solid #6130a85c;
+        padding: 5px;
     }
   </style>
 </head>

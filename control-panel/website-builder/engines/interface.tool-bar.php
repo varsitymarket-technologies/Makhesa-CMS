@@ -132,7 +132,7 @@
                             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
                                 <use xlink:href="#image0" transform="scale(0.003125)"></use>
                             </pattern>
-                            <radialGradient id="paint0_angular" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(15 15) rotate(-67.8906) scale(15.1112)">
+                            <radialGradient id="paint0_angular" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(15 15) rotate(-70.8906) scale(15.1112)">
                                 <stop stop-color="#24FFFF"></stop>
                                 <stop offset="1" stop-color="#7720FF"></stop>
                             </radialGradient>
@@ -140,12 +140,6 @@
 
                    
                         </defs>
-                    </svg>
-                </button>
-                <button class="icon-button">
-                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="14" cy="14" r="14" fill="#1ABDFF"></circle>
-                        <path d="M14.8 15.875C11.16 15.875 8.08333 17.9583 7 19C7.65 13.375 12.4167 12.125 14.8 11.5V9L20 14L14.8 18.375V15.875Z" fill="white"></path>
                     </svg>
                 </button>
                 <svg class="line right" width="1" height="26" viewBox="0 0 1 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -157,20 +151,13 @@
                         <path d="M19 14L11.5 18.3301V9.66987L19 14Z" fill="white"></path>
                     </svg>
                 </button>
-                <button class="icon-button">
+                <button onclick="save_session()" class="icon-button">
                     <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="22" cy="22" r="14" fill="#33354A"></circle>
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M22 27C26.5714 27 30 23.25 30 22C30 20.75 26.5714 17 22 17C17.4286 17 14 20.75 14 22C14 23.25 17.4286 27 22 27ZM22 25C23.6569 25 25 23.6569 25 22C25 20.3431 23.6569 19 22 19C20.3431 19 19 20.3431 19 22C19 23.6569 20.3431 25 22 25Z" fill="white"></path>
                     </svg>
 
                 </button>
-                <div class="zoom-input">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="7" cy="7" r="4" stroke="#8D8EA1" stroke-width="2"></circle>
-                        <line x1="12.2929" y1="12.7071" x2="10.2929" y2="10.7071" stroke="#8D8EA1" stroke-width="2"></line>
-                    </svg>
-                    <input type="text" placeholder="100%">
-                </div>
 
             </div>
         </div>
