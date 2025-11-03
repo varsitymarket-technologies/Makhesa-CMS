@@ -2,6 +2,16 @@
 
 Cloud-Manager is a powerful, flexible, and user-friendly Content Management System (CMS) designed to help you create, manage, and publish content on the web with ease. Inspired by popular platforms like WordPress, Cloud-Manager offers modern features, robust security, and a seamless user experience.
 
+
+# Installation 
+
+## Docker 
+Navigate to the root of your project, where the docker-compose.yml file is located. Change the Runing Port if you dont prefer runing on 8080. But for the default it will be port 8080. 
+
+Run The Following Command 
+docker compose up --build
+ 
+
 ## Features
 
 - **Easy Installation:** Quick setup process for all users.

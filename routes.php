@@ -13,6 +13,11 @@ if ($traffic_request == "@rescources") {
     die(0);
 }
 
+if ($traffic_request == "@website") {
+    include_once PWD . DIRECTORY_SEPARATOR . $traffic_request . DIRECTORY_SEPARATOR . "index.php";
+    die(0);
+}
+
 if ($traffic_request == "@scripts") {
     include_once PWD . DIRECTORY_SEPARATOR . $traffic_request . DIRECTORY_SEPARATOR . "index.php";
     die(0);

@@ -1,7 +1,6 @@
 <?php 
 include_once "error-log.php"; 
 include_once "config.php";
-@include_once "composer/composer_function.php";
 @include_once "scripts.php"; 
 
 function ex($section=1){
@@ -658,6 +657,55 @@ function merge_page($page_path){
 }
 
 function traffic_inspection(){
+
+}
+
+function load_public_themes(){
+    $data = [
+        [
+            "id"=> "vm_theme_68ff407d27e6a",
+            "title"=> "playground.something",
+            "description"=> "Testing The Theme Deployment Playground Section",
+            "image"=> "http://localhost:9000/library/vm_theme_68ff407d27e6a/assets/site/cover.png"
+        ],
+        [
+            "id"=> "vm_theme_68ff407d27e6a",
+            "title"=> "Ossmosis",
+            "description"=> "Testing The Theme Deployment Playground Section",
+            "image"=> "http://localhost:9000/library/vm_theme_68ff407d27e6a/assets/site/studio.png"
+        ]
+    ];
+    return $data;
+    $source = "http://localhost:9000/library/records.json"; 
+    $source = 'C:\Users\Hastings\Documents\vm.themes.server\library\records.json';
+
+    $url = $source; 
+    
+    // Initialize cURL session
+    $ch = curl_init($url);
+
+    // Set cURL options
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+    // Execute the cURL request
+    $response = curl_exec($ch);
+    
+    // Check for errors
+    if (curl_errno($ch)) {
+
+        #Try Getting The Data Using File Get Contents 
+        $data = file_get_contents($source) ;
+        print($data);
+        return null;
+
+        echo 'Error: ' . curl_error($ch);
+        return null;
+    }
+
+    // Close the cURL session
+    curl_close($ch);
+    print_r($response); 
+    return $response; 
 
 }
 ?>

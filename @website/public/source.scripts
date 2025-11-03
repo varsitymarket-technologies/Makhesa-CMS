@@ -1,0 +1,79 @@
+<?php 
+define("PAGE_INDEX","2");
+
+# Create Header Functions 
+function __HEADER__($input){
+    if (!defined("__DATABASE_ENGINE__")){
+        trigger_error("Database Module Missing");
+        die(0);
+    }  
+
+    $page_url = ex(PAGE_INDEX);
+    $sql = "SELECT * FROM `tblcanvas` WHERE (`url` = '{$page_url}')";
+    $result = __DATABASE_ENGINE__->query($sql);
+    if (is_array($result)){
+        if (!empty($result)){        
+            $e = $result[0][$input] ?? null;
+            echo($e);
+
+            #return $e;         
+        }
+    }
+
+}
+
+function use_style($source){
+    if (!defined('__ACTIVE_THEME__')){
+        return null;
+    }
+    $theme_folder = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."themes".DIRECTORY_SEPARATOR.__ACTIVE_THEME__.DIRECTORY_SEPARATOR;
+    $e = file_get_contents($theme_folder.$source);
+    echo PHP_EOL."<style>".PHP_EOL.$e.PHP_EOL."</style>";
+}
+
+function use_card($source){
+    if (!defined('__ACTIVE_THEME__')){
+        return null;
+    }
+    $theme_folder = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."themes".DIRECTORY_SEPARATOR.__ACTIVE_THEME__.DIRECTORY_SEPARATOR;
+    $card_data = $theme_folder.($source).".card";
+    if (file_exists($card_data)){
+        @include_once $card_data;
+    }
+}
+
+function construct_page(){
+    if (!defined('__SOURCE_PAGE__')){
+        return null;
+    }
+
+    if (!defined("__DATABASE_ENGINE__")){
+        trigger_error("Database Module Missing");
+        die(0);
+    }  
+
+    $page_url = ex(PAGE_INDEX);
+    $sql = "SELECT * FROM `tblcanvas` WHERE (`url` = '{$page_url}')";
+    $result = __DATABASE_ENGINE__->query($sql);
+    if (is_array($result)){
+        if (!empty($result)){        
+            $e = $result[0]['id'];
+            $source_page = hash("sha256",$e).".pages";
+            $pwd = dirname(__FILE__).DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR.$source_page;
+            @include_once $pwd;      
+        }
+    }
+}
+
+function use_script($source){
+    if (!defined('__ACTIVE_THEME__')){
+        return null;
+    }
+    $theme_folder = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."themes".DIRECTORY_SEPARATOR.__ACTIVE_THEME__.DIRECTORY_SEPARATOR;
+    $e = file_get_contents($theme_folder.$source);
+    echo PHP_EOL."<script>".PHP_EOL.$e.PHP_EOL."</script>";
+}
+
+
+
+?>

@@ -43,7 +43,7 @@ function create_account_auth(){
     $code = null; 
     while ($flag == false) {
         $code = substr(str_shuffle(str_shuffle($random_log)),0,$limit); 
-        $sql = "SELECT * FROM tblusers WHERE (auth = '{$code}')";
+        $sql = "SELECT * FROM users WHERE (auth = '{$code}')";
         $e = $db->query($sql);
         if (isset($e[0])){
             $flag = true; 
@@ -57,7 +57,7 @@ function credentials_exists($section,$data){
     global $db; 
     
     $code = base64_encode($data); 
-    $sql = "SELECT * FROM tblusers WHERE ({$section} = '{$code}')";
+    $sql = "SELECT * FROM users WHERE ({$section} = '{$code}')";
     $e = $db->query($sql);
     if (isset($e[0])){
         return true; 

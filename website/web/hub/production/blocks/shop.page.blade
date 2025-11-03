@@ -15,7 +15,7 @@
             foreach (__ECOMMERCE_SERVICE__->shop() as $_products => $value){
                 e(use_template('shop.template',
                 ['{PRODUCT_TITLE}','{PRODUCT_PRICE}','{PRODUCT_IMAGE}','{PRODUCT_CATEGORY}','{PRODUCT_LINK}'],
-                [$value['title'],$value['price'],"/@media/".$value['image'],$value['category'],"/product/".$value['id']."/"]));
+                [$value['title'],$value['price'], _web_media_("/@media/".$value['image']),$value['category'],"/product/".$value['id']."/"]));
             }
             ?>
         </div>

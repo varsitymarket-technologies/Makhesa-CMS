@@ -29,7 +29,7 @@ if (file_exists($imagePath) && is_readable($imagePath)) {
     #$mimeType = 'application/octet-stream'; // Default generic type
 
     $mimeType = 'image/jpg';
-    
+
     switch (strtolower($extension)) {
         case 'jpg':
             $mimeType = 'image/jpg';
@@ -43,18 +43,77 @@ if (file_exists($imagePath) && is_readable($imagePath)) {
         case 'gif':
             $mimeType = 'image/gif';
             break;
-            // Add more image types if needed
+        // Add more image types if needed
     }
 
+
+    $mimeType = mime_content_type($imagePath); // Dynamically get the MIME type
+
+    // 1. Check if the file exists and get the MIME type
+    if (!file_exists($imagePath)) {
+        http_response_code(404);
+        die('Image not found.');
+    }
+
+    // Initialize the GD image resource variable
+    $sourceImage = null;
+
+    // 2. Load the image using the appropriate GD function based on MIME type
+// This replaces the simple readfile() logic with GD loading.
+
+    if ($mimeType === 'image/jpeg' || $mimeType === 'image/jpg') {
+        $sourceImage = imagecreatefromjpeg($imagePath);
+    } elseif ($mimeType === 'image/png') {
+        $sourceImage = imagecreatefrompng($imagePath);
+    } elseif ($mimeType === 'image/gif') {
+        $sourceImage = imagecreatefromgif($imagePath);
+    } else {
+        // If it's not a supported GD type, fall back to the original readfile logic
+        // or stop execution, depending on requirements.
+        header('Content-Type: ' . $mimeType);
+        header('Content-Length: ' . filesize($imagePath));
+        readfile($imagePath);
+        exit(0);
+    }
+
+    // 3. Handle GD loading error
+    if ($sourceImage === false) {
+        http_response_code(500);
+        die("Could not load image using GD for type: $mimeType");
+    }
+
+    // 4. Set the Content-Type header
+    header('Content-Type: ' . $mimeType);
+
+    // 5. Output the image using the appropriate GD function
+// This replaces the readfile() output with GD output.
+
+    if ($mimeType === 'image/jpeg' || $mimeType === 'image/jpg') {
+        // Quality parameter (0-100) can be added here if needed: imagejpeg($sourceImage, null, 90);
+        imagejpeg($sourceImage);
+    } elseif ($mimeType === 'image/png') {
+        // Compression parameter (0-9) can be added here if needed: imagepng($sourceImage, null, 9);
+        imagepng($sourceImage);
+    } elseif ($mimeType === 'image/gif') {
+        imagegif($sourceImage);
+    }
+
+    // 6. Clean up resources
+    imagedestroy($sourceImage);
+
+    exit(0);
+
+
     // Set the Content-Type header
-    #header('Content-Type: ' . $mimeType);
-    
+    header('Content-Type: ' . $mimeType);
+
     // Set Content-Length header for better download management by browser (optional but good practice)
-    #header('Content-Length: ' . filesize($imagePath));
+    header('Content-Length: ' . filesize($imagePath));
 
     // Output the image file directly to the browser
-    #readfile($imagePath);
-    
+    readfile($imagePath);
+    exit(0);
+
     // Read the file content
     $imageData = file_get_contents($imagePath);
     // Encode the binary data to Base64

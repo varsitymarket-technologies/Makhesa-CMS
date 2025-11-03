@@ -57,6 +57,63 @@ function _media_($url){
     } 
 }
 
+function _rescource_($url){
+    $media_hash = explode('/@rescources/',$url)[1];
+    $currentImage = dirname(__FILE__).'/@rescources/'.($media_hash);
+    @include_once dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . "scripts.php";
+
+    $media_folder = explode('/',$media_hash)[0] ?? false; 
+    $media_request = explode('/',$media_hash)[1] ?? false;
+    if (empty($media_request)) {
+        http_response_code(404);
+        die(0);
+    }
+    $Path = dirname(__FILE__).DIRECTORY_SEPARATOR.'rescources'.DIRECTORY_SEPARATOR. $media_folder. DIRECTORY_SEPARATOR;
+    $files = scandir($Path);
+    $imagePath = null;
+    $currentImage = null;
+    $mimeType = null;
+
+    foreach ($files as $file) {
+        if ($file === '.' || $file === '..') continue;
+        $filename = pathinfo($file, PATHINFO_FILENAME);
+        if ($filename === $media_request) {
+            $imagePath = $Path . $file;
+            $currentImage = $file;
+            $extension = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+            switch ($extension) {
+                case 'jpg':
+                    $mimeType = 'image/jpg';
+                    break;
+                case 'jpeg':
+                    $mimeType = 'image/jpeg';
+                    break;
+                case 'png':
+                    $mimeType = 'image/png';
+                    break;
+                case 'gif':
+                    $mimeType = 'image/gif';
+                    break;
+                default:
+                    $mimeType = 'application/octet-stream';
+            }
+            break;
+        }
+    }
+
+    // Check if the file actually exists and is readable
+    if (file_exists($imagePath)) {
+        // Determine the MIME type based on the file extension
+        $extension = pathinfo($currentImage, PATHINFO_EXTENSION);
+        #$mimeType = 'application/octet-stream'; // Default generic type
+        $imageData = file_get_contents($imagePath); 
+        // Encode the binary data to Base64
+        $base64Image = base64_encode( $imageData);
+        $dataUri = "data:$mimeType;base64,$base64Image";
+        return $dataUri;
+    }
+}
+
 function seal_signature($data=null,$action="Read"){
     #Action Is Based On File Commands
     #Action = Read, Insert

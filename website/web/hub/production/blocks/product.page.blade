@@ -22,7 +22,7 @@
 
     e(use_template('product.template',
     ['{PRODUCT_TITLE}','{PRODUCT_PRICE}','{PRODUCT_IMAGE}','{PRODUCT_CATEGORY}','{PRODUCT_LINK}', '{PRODUCT_DESCRIPTION}','{PRODUCT_STOCK}','{PRODUCT_SALE}'],
-    [$value['title'],$value['price'],"/@media/".$value['image'],$value['category'],"/product/".$value['id']."/", $value['description'],'Items In Stock: '.$value['stock'],$value['sale'],                                                     4])
+    [$value['title'],$value['price'],_web_media_("/@media/".$value['image']),$value['category'],"/product/".$value['id']."/", $value['description'],'Items In Stock: '.$value['stock'],$value['sale'],                                                     4])
     
     );
             

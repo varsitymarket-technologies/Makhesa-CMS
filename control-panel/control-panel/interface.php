@@ -37,9 +37,13 @@ function get_page_map()
 
     
     "website" => "pages" . DIRECTORY_SEPARATOR . "cp.websites.page.php",
+    "help-desk" => "pages" . DIRECTORY_SEPARATOR . "cp.help-desk.page.php",
+    "users" => "pages".DIRECTORY_SEPARATOR."cp.users.page.php",
 
     "profile" => "pages" . DIRECTORY_SEPARATOR . "cp.profile.account.page.php",
     "database" => "pages" . DIRECTORY_SEPARATOR . "cp.database.manager.page.php",
+    "themes" => "pages" . DIRECTORY_SEPARATOR . "cp.themes.page.php",
+    
     
   ];
 

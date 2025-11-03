@@ -1,11 +1,25 @@
 <?php 
-$page_action = "text~editor";
+function _page_($section=1){
+    $url =  "//{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+
+    $x = $_SERVER['REQUEST_URI']; 
+    $_xm = explode("/",$x);
+    return $_xm[$section]; 
+}
+
+$page_action = _page_(2);
 
 $meta = [
-    "code~editor" => "interface.editor.blade.php",
+    "assets.editor" => "interface.editor.blade.php",
     "sculpt.editor" => "",
     "design.editor" => "",
+    "inspect.editor" => "interface.inspector.blade.php",
+    "" => "interface.dashboard.blade.php",
+    "dashboard" => "interface.inspector.blade.php",
     "text~editor" => "interface.text.blade.php",
+    "code.editor" => "vs.code.blade.php",
+    "new-page" => "interface.new-page.blade.php",
+    ""
 ];
 
 $page_file = dirname(__FILE__).DIRECTORY_SEPARATOR."engines".DIRECTORY_SEPARATOR.$meta[$page_action];

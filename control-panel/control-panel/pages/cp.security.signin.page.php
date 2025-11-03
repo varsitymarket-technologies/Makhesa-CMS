@@ -3,8 +3,8 @@
         <div class="main-blog anim"
             style="--delay: 0.1s; max-width:25rem; margin: 15vh auto;background: #42414c;/* margin: 1rem; */">
 
-            <img src="<?php echo (__PROTOCOL__ . __DOMAIN_NAME__); ?>/@rescources/site/favicon/" class="anim"
-                style="max-width: 11rem; display: block; margin: auto; padding: 1rem; filter:invert(1);">
+            <img src="<?php echo _rescource_( (__PROTOCOL__ . __DOMAIN_NAME__) .'/@rescources/site/varsitymarket-technologies/'); ?>" class="anim"
+                style="max-width: 8rem; display: block; margin: auto; padding: 1rem;">
 
             <div class="main-blog__title" style="text-align: center; width:100%; max-width: fit-content; margin: auto;">
                 Control Panel Locked

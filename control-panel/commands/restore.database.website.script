@@ -1,0 +1,136 @@
+<?php 
+#   TITLE   : Restart Website Database   
+#   DESC    : Once Database has been Destroyed or deleted, this script helps with creating a restored database structure with empty data. This does not delete existing databases. 
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/10/23
+
+$intro_text = " 
+##############################################
+
+    -- Developer Console --
+    -- Configure the varsitymarket ecosystem. With this command line tool 
+
+##############################################
+\t__     ___    ____  ____ ___ _______   __
+\t\ \   / / \  |  _ \/ ___|_ _|_   _\ \ / /
+\t \ \ / / _ \ | |_) \___ \| |  | |  \ V /
+\t  \ V / ___ \|  _ < ___) | |  | |   | |
+\t   \_/_/   \_\_| \_\____/___| |_|   |_|
+\t
+\t __  __    _    ____  _  _______ _____
+\t|  \/  |  / \  |  _ \| |/ / ____|_   _|
+\t| |\/| | / _ \ | |_) | ' /|  _|   | |
+\t| |  | |/ ___ \|  _ <| . \| |___  | |
+\t|_|  |_/_/   \_\_| \_\_|\_\_____| |_|
+\t
+\t _            _                 _             _
+\t| |_ ___  ___| |__  _ __   ___ | | ___   __ _(_) ___  ___
+\t| __/ _ \/ __| '_ \| '_ \ / _ \| |/ _ \ / _` | |/ _ \ / __|
+\t| ||  __/ (__| | | | | | | (_) | | (_) | (_| | |  __/\__ \
+\t \__\___|\___|_| |_|_| |_|\___/|_|\___/ \__, |_|\___||___/
+\t                                        |___/
+\t[RESTART-DATABASE] => Restarts The Website Database
+\tCreated By Hardy Hastings                                        
+\tRestarts The Application Website Database, This will help incase the database is accidentally deleted.  
+\n\n
+";
+
+echo($intro_text);
+sleep(5); 
+
+@include_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."module.database.php"; 
+
+$database = dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR."database".DIRECTORY_SEPARATOR."__WEBSITE_DATABASE__.DB"; 
+$db->override_connection($database); 
+
+# Database Startup for the E-Commerce Secton 
+
+$db->createTable('categories',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'name' => 'TEXT',
+    'image' => 'TEXT',
+]); 
+
+$db->createTable('brands',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'name' => 'TEXT',
+    'image' => 'TEXT',
+]); 
+
+$db->createTable('products', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'title' => 'TEXT',
+    'image' => 'TEXT',
+    'description' => 'TEXT',
+    'price' => 'TEXT',
+    'sku' => 'TEXT',
+    'stock' => 'TEXT',
+    'category' => 'TEXT',
+    'brand' => 'TEXT NOT NULL',
+    'sale_price' => 'TEXT NOT NULL',
+    'source' => 'TEXT NOT NULL',
+    'date' => 'DATE DEFAULT CURRENT_DATE',
+]); 
+
+
+$db->createTable('gallery', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'title' => 'TEXT',
+    'image_path' => 'TEXT',
+    'description' => 'TEXT',
+    'hash' => 'TEXT',
+    'date' => 'DATE DEFAULT CURRENT_DATE',
+]); 
+
+$db->createTable('menu',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT', 
+    'title' => 'TEXT', 
+    'data_node' => 'TEXT', 
+]); 
+
+
+$db->createTable('faq',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT', 
+    'question' => 'TEXT', 
+    'response' => 'TEXT', 
+    'category' => 'TEXT', 
+]); 
+
+$db->createTable('users',[
+    'user_id' =>'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'first_name' =>'TEXT NOT NULL',
+    'last_name' =>'TEXT NOT NULL',
+    'email' =>'TEXT NOT NULL UNIQUE',
+    'username' =>'TEXT UNIQUE',
+    'password_hash' =>'TEXT NOT NULL',
+    'is_active' =>'TEXT',
+    'role' =>'TEXT',
+    'created_at' =>'DATE DEFAULT CURRENT_DATE',
+    'updated_at' =>'DATE DEFAULT CURRENT_DATE',
+    'auth' => 'TEXT', 
+    'img' => 'TEXT',     
+]);
+
+$db->createTable('tblsupport', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'subject' => 'TEXT NOT NULL',
+    'description' => 'TEXT NOT NULL',
+    'user_code' => 'TEXT NOT NULL',
+    'status' => 'TEXT',
+    'created_at' => 'DATE DEFAULT CURRENT_DATE'
+]); 
+
+$db->createTable('tblsupport_chats', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'client_data' => 'TEXT',
+    'response' => 'TEXT',
+    'client_code' => 'TEXT',
+    'support_ref' => 'TEXT NOT NULL',
+    'session' => 'DATE DEFAULT CURRENT_DATE',
+    'admin_code' => 'TEXT',
+]); 
+
+echo "Database Restoration Task\n[COMPLETED RESTORATION]\n\n"; 
+?>

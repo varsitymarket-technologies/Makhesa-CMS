@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <style>
     /* Style the tab */
     .tab {
