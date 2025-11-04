@@ -17,9 +17,9 @@ $meta = [
     "" => "interface.dashboard.blade.php",
     "dashboard" => "interface.inspector.blade.php",
     "text~editor" => "interface.text.blade.php",
-    "code.editor" => "vs.code.blade.php",
+    "code-editor" => "vs.code.blade.php",
     "new-page" => "interface.new-page.blade.php",
-    ""
+    "pages" => "interface.pages-list.blade.php", 
 ];
 
 $page_file = dirname(__FILE__).DIRECTORY_SEPARATOR."engines".DIRECTORY_SEPARATOR.$meta[$page_action];

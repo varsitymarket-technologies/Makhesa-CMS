@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡️ Pixel Emporium - Retro Goods</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="retro-header">
+        <div class="logo">
+            <h1>ARCADE SHOP</h1>
+        </div>
+        <nav class="navigation">
+            <a href="#">HOME</a>
+            <a href="#">NEW ARRIVALS</a>
+            <a href="#">CONSOLES</a>
+            <a href="#">ACCESSORIES</a>
+            <a href="#">CONTACT</a>
+        </nav>
+        <div class="cart-button">
+            <a href="#">🛒 CART (3)</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero-banner">
+            <h2>🔥 8-BIT DEALS! 🔥</h2>
+            <p>Your portal to vintage gaming, synthesized sounds, and digital dreams.</p>
+            <a href="#" class="btn-primary">START BROWSING >></a>
+        </section>
+
+        <section class="product-grid">
+            <h3 class="section-title">FEATURED COMMODITIES</h3>
+
+            <div class="product-card">
+                <div class="product-image">
+                    
+                </div>
+                <h4>The Commodore 64</h4>
+                <p class="description">Classic home computer. Ready to boot.</p>
+                <div class="price-action">
+                    <span class="price">$399.99</span>
+                    <a href="#" class="btn-secondary">ADD TO CART</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    
+                </div>
+                <h4>Synthwave Mixtape</h4>
+                <p class="description">Analog soundscapes on chromium tape.</p>
+                <div class="price-action">
+                    <span class="price">$15.00</span>
+                    <a href="#" class="btn-secondary">ADD TO CART</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    
+                </div>
+                <h4>NEON Kicks '87</h4>
+                <p class="description">High-tops in fluorescent pink and cyan.</p>
+                <div class="price-action">
+                    <span class="price">$75.50</span>
+                    <a href="#" class="btn-secondary">ADD TO CART</a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="retro-footer">
+        <p>&copy; 2025 PIXEL EMPORIUM LTD. | **LOADING DATA... SUCCESS!**</p>
+    </footer>
+
+</body>
+</html>

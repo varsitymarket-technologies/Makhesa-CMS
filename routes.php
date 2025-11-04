@@ -13,7 +13,7 @@ if ($traffic_request == "@rescources") {
     die(0);
 }
 
-if ($traffic_request == "@website") {
+if ($traffic_request == "@preview") {
     include_once PWD . DIRECTORY_SEPARATOR . $traffic_request . DIRECTORY_SEPARATOR . "index.php";
     die(0);
 }
@@ -57,6 +57,9 @@ if ($traffic_request == $public_request) {
     @include_once PWD . "/control-panel/control-panel/index.php";
     die(0);
 } else {
+    include_once PWD . DIRECTORY_SEPARATOR . '@website' . DIRECTORY_SEPARATOR . "index.php";
+    die(0);
+
 
     #Webstore Section 
     include_once PWD . DIRECTORY_SEPARATOR . "website" . DIRECTORY_SEPARATOR . "web" . DIRECTORY_SEPARATOR . "index.php";

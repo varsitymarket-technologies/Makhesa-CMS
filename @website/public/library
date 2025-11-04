@@ -1,0 +1,20 @@
+<?php
+// library
+
+#   TITLE   : Website Library Compiler   
+#   DESC    : Loads The Libraries installed for using the website scripts. Think of these as using services for external functions 
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/11/03
+
+#   Configure Modules 
+$module_list = [
+    '__SHOP_MODULE__'=>'shop.module',
+]; 
+
+foreach ($module_list as $key => $value) {
+    define($key,load_module($value)); 
+}
+
+?>

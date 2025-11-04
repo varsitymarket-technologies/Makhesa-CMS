@@ -72,7 +72,7 @@ function _web_media_($url){
         #$dataUri = '/@media/'.$currentImage;
         return $dataUri;
     } 
-}
+} 
 
 function use_template($template,$search,$replace){
     $template_file = dirname(__FILE__).DIRECTORY_SEPARATOR."hub".DIRECTORY_SEPARATOR."production".DIRECTORY_SEPARATOR."templates".DIRECTORY_SEPARATOR.$template.".guide"; 

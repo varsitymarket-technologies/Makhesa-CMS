@@ -6,40 +6,6 @@
 #   AUTHOR  : HARDY HASTINGS  
 #   RELEASE : 2025/10/23
 
-$intro_text = " 
-##############################################
-
-    -- Developer Console --
-    -- Configure the varsitymarket ecosystem. With this command line tool 
-
-##############################################
-\t__     ___    ____  ____ ___ _______   __
-\t\ \   / / \  |  _ \/ ___|_ _|_   _\ \ / /
-\t \ \ / / _ \ | |_) \___ \| |  | |  \ V /
-\t  \ V / ___ \|  _ < ___) | |  | |   | |
-\t   \_/_/   \_\_| \_\____/___| |_|   |_|
-\t
-\t __  __    _    ____  _  _______ _____
-\t|  \/  |  / \  |  _ \| |/ / ____|_   _|
-\t| |\/| | / _ \ | |_) | ' /|  _|   | |
-\t| |  | |/ ___ \|  _ <| . \| |___  | |
-\t|_|  |_/_/   \_\_| \_\_|\_\_____| |_|
-\t
-\t _            _                 _             _
-\t| |_ ___  ___| |__  _ __   ___ | | ___   __ _(_) ___  ___
-\t| __/ _ \/ __| '_ \| '_ \ / _ \| |/ _ \ / _` | |/ _ \ / __|
-\t| ||  __/ (__| | | | | | | (_) | | (_) | (_| | |  __/\__ \
-\t \__\___|\___|_| |_|_| |_|\___/|_|\___/ \__, |_|\___||___/
-\t                                        |___/
-\t[RESTART-DATABASE] => Restarts The Website Database
-\tCreated By Hardy Hastings                                        
-\tRestarts The Application Website Database, This will help incase the database is accidentally deleted.  
-\n\n
-";
-
-echo($intro_text);
-sleep(5); 
-
 @include_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."module.database.php"; 
 
 $database = dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR."database".DIRECTORY_SEPARATOR."__WEBSITE_DATABASE__.DB"; 

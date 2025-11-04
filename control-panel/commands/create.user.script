@@ -1,20 +1,16 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+<?php 
+@include_once dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR."config.php"; 
+$username = get_input('authenticate_username') ?? __error("Missing Data Input");
+$password = get_input('authenticate_password') ?? __error("Missing Data Input");
+$email = get_input('authenticate_email') ?? __error("Missing Data Input");
+$password_confirmation = get_input('authenticate_confirm_password') ?? __error("Missing Data Input");
+
+@include_once (dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "systemctrl.php";
+@include_once dirname(__DIR__) . DIRECTORY_SEPARATOR . "scripts.php";
 
 
-    # Creating The User Account 
-
-    $username = get_input('authenticate_username') ?? __error("Missing Data Input");
-    $password = get_input('authenticate_password') ?? __error("Missing Data Input");
-    $email = get_input('authenticate_email') ?? __error("Missing Data Input");
-    $password_confirmation = get_input('authenticate_confirm_password') ?? __error("Missing Data Input");
-
-    @include_once (dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "systemctrl.php";
-    @include_once dirname(__DIR__) . DIRECTORY_SEPARATOR . "scripts.php";
-
-
-    #Verify Email Address; 
-    @$e = verify_email($email) ?? false;
+#Verify Email Address; 
+@$e = verify_email($email) ?? false;
     if ($e) {
         #Proceed With Account Creation; 
         if ($password_confirmation === $password){
@@ -54,5 +50,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     __error("Invalid Credentials");
 
-}
 ?>

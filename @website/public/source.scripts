@@ -1,5 +1,14 @@
 <?php 
-define("PAGE_INDEX","2");
+// source.scripts
+
+#   TITLE   : Website Source Scripts   
+#   DESC    : The Source Scipts are configured to enable community scripts functionalities.  
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/06/29
+
+define("PAGE_INDEX","1");
 
 # Create Header Functions 
 function __HEADER__($input){
@@ -43,10 +52,6 @@ function use_card($source){
 }
 
 function construct_page(){
-    if (!defined('__SOURCE_PAGE__')){
-        return null;
-    }
-
     if (!defined("__DATABASE_ENGINE__")){
         trigger_error("Database Module Missing");
         die(0);
@@ -73,6 +78,84 @@ function use_script($source){
     $e = file_get_contents($theme_folder.$source);
     echo PHP_EOL."<script>".PHP_EOL.$e.PHP_EOL."</script>";
 }
+
+
+function load_module($name)
+{
+    $library_folder = dirname( dirname(__FILE__) ).DIRECTORY_SEPARATOR."library".DIRECTORY_SEPARATOR.$name.DIRECTORY_SEPARATOR;
+
+    # Search For .json Local File 
+    $initiate_dependency = $library_folder.".json"; 
+    if (!file_exists($initiate_dependency)){
+        trigger_error("Failed To Find Initiation File: .json --".$name); 
+    }
+
+    # Initiate The Library
+    $initiate_file = $library_folder."initiate.php";
+    @include_once $initiate_file ?? trigger_error("Failed To Find Initiation File: initiate.php --".$name) ; 
+    $initiate_env = json_decode(file_get_contents($initiate_dependency),true); 
+    $module = new $initiate_env['class'];
+    return $module; 
+}
+
+function use_template($template,$search,$replace){
+    $template_file = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."themes".DIRECTORY_SEPARATOR.__ACTIVE_THEME__.DIRECTORY_SEPARATOR."templates".DIRECTORY_SEPARATOR.$template.".guide"; 
+    if (file_exists($template_file)){
+        $template_data = file_get_contents($template_file); 
+        $data = str_ireplace($search, $replace, $template_data); 
+        return $data; 
+    }
+    return null; 
+}
+
+
+function _web_media_($url){
+     $media_hash = explode('/@media/',$url)[1];
+     $db = __DATABASE__;
+     $sql = "SELECT * FROM gallery WHERE (`hash` = '{$media_hash}') LIMIT 1";
+     $image_data = $db->query($sql)[0];
+    $currentImage = $image_data['image_path'] ?? '404.jpg';
+    $curr_path = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR."@media".DIRECTORY_SEPARATOR;
+    $imagePath = $curr_path . $currentImage;
+
+    // Check if the file actually exists and is readable
+    if (file_exists($imagePath) && is_readable($imagePath)) {
+
+        // Determine the MIME type based on the file extension
+        $extension = pathinfo($currentImage, PATHINFO_EXTENSION);
+        #$mimeType = 'application/octet-stream'; // Default generic type
+
+        $mimeType = 'image/jpg';
+        
+        switch (strtolower($extension)) {
+            case 'jpg':
+                $mimeType = 'image/jpg';
+                break;
+            case 'jpeg':
+                $mimeType = 'image/jpeg';
+                break;
+            case 'png':
+                $mimeType = 'image/png';
+                break;
+            case 'gif':
+                $mimeType = 'image/gif';
+                break;
+            case 'webp':
+                $mimeType = 'image/webp';
+                break;
+                // Add more image types if needed
+        }
+
+        // Read the file content
+        $imageData = file_get_contents($imagePath);
+        // Encode the binary data to Base64
+        $base64Image = base64_encode($imageData);
+        $dataUri = "data:$mimeType;base64,$base64Image";
+        #$dataUri = '/@media/'.$currentImage;
+        return $dataUri;
+    } 
+} 
+
 
 
 

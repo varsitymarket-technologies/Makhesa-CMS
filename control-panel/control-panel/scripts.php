@@ -57,6 +57,10 @@ function create_support_ticket_id()
 
 function execute_sql_query($sql)
 {
+    $module = __DATABASE_WEBSITE__;
+    $ouput = $module->query($sql);
+    return $output;
+    
     #Filter SQL Statement 
     $module = new scripts_packages();
     $module->activate_database();

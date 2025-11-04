@@ -8,14 +8,6 @@
 #   AUTHOR  : HARDY HASTINGS  
 #   RELEASE : 2025/06/29
 
-/**
- * SQLiteManager Class
- *
- * This class provides a simple interface for managing a SQLite database
- * from a PHP CLI application. It handles database creation, table creation,
- * and general SQL query execution.
- */
-
 define('__DATABASE_SOURCE__', hash("sha256","levidoc.sqllite").".db");
 
 class database_manager

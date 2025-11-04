@@ -1,0 +1,238 @@
+/* --- Global Retro Variables --- */
+:root {
+    --color-background: #1e1e1e; /* Dark Gray/Black */
+    --color-primary-text: #00ff00; /* Neon Green */
+    --color-secondary-text: #ff00ff; /* Magenta/Fuchsia */
+    --color-accent-blue: #00ffff; /* Cyan/Aqua */
+    --color-accent-red: #ff3333; /* Bright Red */
+    --color-border: #444444; /* Medium Gray for Borders */
+    --font-heading: 'Press Start 2P', cursive;
+    --font-body: 'VT323', monospace;
+    --shadow-retro: 4px 4px 0px var(--color-secondary-text); /* Box Shadow */
+}
+
+/* --- Base Styles & Reset --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-primary-text);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-top: 80px; /* Space for fixed header */
+}
+
+a {
+    color: var(--color-accent-blue);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--color-accent-red);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--color-secondary-text);
+    text-shadow: 2px 2px 0px var(--color-accent-blue);
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* --- Header & Navigation --- */
+.retro-header {
+    background-color: #000000;
+    border-bottom: 4px solid var(--color-primary-text);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: var(--color-primary-text);
+    text-shadow: var(--shadow-retro);
+    letter-spacing: 2px;
+}
+
+.navigation a {
+    margin-left: 20px;
+    font-size: 14px;
+    color: var(--color-accent-blue);
+    padding: 5px;
+    border: 2px dashed transparent;
+}
+
+.navigation a:hover {
+    border-color: var(--color-secondary-text);
+}
+
+.cart-button a {
+    background-color: var(--color-accent-red);
+    color: var(--color-background);
+    padding: 8px 15px;
+    border: 3px solid var(--color-primary-text);
+    box-shadow: var(--shadow-retro);
+    font-family: var(--font-heading);
+    font-size: 12px;
+}
+
+/* --- Buttons --- */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: var(--font-heading);
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background-color: var(--color-primary-text);
+    color: var(--color-background);
+    border: 3px solid var(--color-secondary-text);
+    box-shadow: var(--shadow-retro);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-secondary-text);
+    color: var(--color-primary-text);
+    box-shadow: 4px 4px 0px var(--color-primary-text);
+}
+
+.btn-secondary {
+    background-color: var(--color-accent-blue);
+    color: var(--color-background);
+    border: 2px solid var(--color-background);
+    box-shadow: 2px 2px 0px var(--color-primary-text);
+    font-size: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-accent-red);
+}
+
+/* --- Hero Banner --- */
+.hero-banner {
+    background-color: #0d0d0d;
+    border: 5px double var(--color-primary-text);
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px var(--color-secondary-text);
+}
+
+.hero-banner h2 {
+    font-size: 36px;
+    animation: blink 1s step-end infinite;
+}
+
+.hero-banner p {
+    color: var(--color-accent-blue);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Animation for the title */
+@keyframes blink {
+    from, to { color: var(--color-secondary-text); text-shadow: 2px 2px 0px var(--color-accent-blue); }
+    50% { color: var(--color-primary-text); text-shadow: none; }
+}
+
+/* --- Product Grid --- */
+.section-title {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--color-border);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #0a0a0a;
+    border: 3px solid var(--color-primary-text);
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-retro);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-secondary-text);
+    box-shadow: 6px 6px 0px var(--color-accent-blue);
+}
+
+.product-image {
+    background-color: #1a1a1a;
+    border: 2px solid var(--color-border);
+    height: 150px;
+    line-height: 150px;
+    margin-bottom: 15px;
+    color: #555;
+    font-family: var(--font-body);
+}
+
+.product-card h4 {
+    font-size: 16px;
+    color: var(--color-accent-blue);
+    margin-bottom: 5px;
+    text-shadow: none;
+}
+
+.description {
+    font-size: 14px;
+    color: #cccccc;
+    min-height: 40px;
+}
+
+.price-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.price {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--color-accent-red);
+    text-shadow: 1px 1px 0px var(--color-background);
+}
+
+/* --- Footer --- */
+.retro-footer {
+    background-color: #000000;
+    border-top: 4px solid var(--color-primary-text);
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+    font-size: 14px;
+    color: #888888;
+}

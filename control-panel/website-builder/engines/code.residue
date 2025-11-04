@@ -1,188 +1,93 @@
-<?php
-// cli.module.php
+<main class="main">
 
-#   TITLE   : sqllite-database-manager    
-#   DESC    : This manages The Defined SQL Database using the command line program 
-#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
-#   VERSION : 1.0.1.1
-#   AUTHOR  : HARDY HASTINGS  
-#   RELEASE : 2025/06/29
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Faq</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Faq</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
 
-/**
- * SQLiteManager Class
- *
- * This class provides a simple interface for managing a SQLite database
- * from a PHP CLI application. It handles database creation, table creation,
- * and general SQL query execution.
- */
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
 
-define('__DATABASE_SOURCE__', hash("sha256","levidoc.sqllite").".db");
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-class database_manager
-{
-    private PDO $pdo; // PDO object for database connection
-    private string $dbPath; // Path to the SQLite database file
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-8">
 
-    /**
-     * Override Connection for SQLiteManager.
-     *
-     * @param string $dbFileName The name of the SQLite database file (e.g., 'mydatabase.sqlite').
-     */
-    public function override_connection(string $dbFileName = null)
-    {   
-        $this->dbPath = $dbFileName; 
-        $this->connect(); // Establish database connection
-    }
+            <div class="faq-list">
+              <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="100">
+                <h3>Vivamus suscipit tortor eget felis porttitor volutpat?</h3>
+                <div class="faq-content">
+                  <p>
+                    Nulla quis lorem ut libero malesuada feugiat. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Nulla porttitor accumsan tincidunt.
+                  </p>
+                </div>
+                <i class="bi bi-plus faq-toggle"></i>
+              </div><!-- End FAQ Item-->
 
-    /**
-     * Constructor for SQLiteManager.
-     *
-     * @param string $dbFileName The name of the SQLite database file (e.g., 'mydatabase.sqlite').
-     */
-    public function __construct(string $dbFileName = null)
-    {   
-        if ($dbFileName == null){
-            $dbFileName = __DATABASE_SOURCE__ ; 
-        }
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <h3>Curabitur aliquet quam id dui posuere blandit?</h3>
+                <div class="faq-content">
+                  <p>
+                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar.
+                  </p>
+                </div>
+                <i class="bi bi-plus faq-toggle"></i>
+              </div><!-- End FAQ Item-->
 
-        // Define the database path relative to the script's execution directory
-        if (file_exists($dbFileName)){
-            $this->dbPath = $dbFileName;
-        }else{
-            $this->dbPath = __DIR__ . DIRECTORY_SEPARATOR . $dbFileName;   
-        }
-        $this->connect(); // Establish database connection
-    }
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <h3>Sed porttitor lectus nibh ullamcorper sit amet?</h3>
+                <div class="faq-content">
+                  <p>
+                    Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum.
+                  </p>
+                </div>
+                <i class="bi bi-plus faq-toggle"></i>
+              </div><!-- End FAQ Item-->
 
-    /**
-     * Connects to the SQLite database.
-     * If the database file does not exist, it will be created.
-     */
-    private function connect()
-    {
-        try {
-            // Check if the database file exists, if not, it will be created by PDO
-            if (!file_exists($this->dbPath)) {
-                 #"Creating new SQLite database: " . $this->dbPath ;
-                // No need to explicitly create the file, PDO will do it on connection
-            }
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <h3>Nulla quis lorem ut libero malesuada feugiat?</h3>
+                <div class="faq-content">
+                  <p>
+                    Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel.
+                  </p>
+                </div>
+                <i class="bi bi-plus faq-toggle"></i>
+              </div><!-- End FAQ Item-->
 
-            // Establish PDO connection to the SQLite database
-            $this->pdo = new PDO("sqlite:" . $this->dbPath);
-            // Set error mode to exceptions for better error handling
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return TRUE; // Return true on successful connection
-        } catch (PDOException $e) {
-            // Catch and display any connection errors
-            trigger_error("Database connection failed: " . $e->getMessage(), E_USER_ERROR);
-            return FALSE; // Return false on connection failure
-            exit(1); // Exit the script on connection failure
-        }
-    }
+              <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                <h3>Vestibulum ac diam sit amet quam vehicula elementum?</h3>
+                <div class="faq-content">
+                  <p>
+                    Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+                  </p>
+                </div>
+                <i class="bi bi-plus faq-toggle"></i>
+              </div><!-- End FAQ Item-->
 
-    /**
-     * Executes a CREATE TABLE SQL statement.
-     *
-     * @param string $tableName The name of the table to create.
-     * @param array $columns An associative array where keys are column names and values are their types (e.g., ['id' => 'INTEGER PRIMARY KEY AUTOINCREMENT', 'name' => 'TEXT']).
-     * @return bool True on success, false on failure.
-     */
-    public function createTable(string $tableName, array $columns)
-    {
-        if (empty($columns)) {
-            trigger_error("No columns provided for table creation.", E_USER_WARNING);
-            return false;
-        }
+            </div>
 
-        // Build the column definitions string
-        $columnDefinitions = [];
-        foreach ($columns as $columnName => $columnType) {
-            $columnDefinitions[] = "$columnName $columnType";
-        }
-        $columnsSql = implode(", ", $columnDefinitions);
+          </div>
 
-        // Construct the CREATE TABLE SQL query
-        $sql = "CREATE TABLE IF NOT EXISTS $tableName ($columnsSql);";
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-card">
+              <i class="bi bi-chat-dots-fill"></i>
+              <h3>Can't find answer to your question?</h3>
+              <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur aliquet quam id dui posuere blandit. Nulla quis lorem ut libero malesuada feugiat.</p>
+              <a href="#" class="btn btn-primary">Contact Us</a>
+            </div>
+          </div>
+        </div>
 
-        try {
-            // Execute the SQL statement
-            $this->pdo->exec($sql);
-            #"Table '$tableName' created successfully (or already exists).\n";
-            return true;
-        } catch (PDOException $e) {
-            // Catch and display any errors during table creation
-            #"Error creating table '$tableName': " . $e->getMessage() . "\n";
-            trigger_error("Error creating table '$tableName': " . $e->getMessage() . "\n");
-            return false;
-        }
-    }
+      </div>
 
-    /**
-     * Executes any arbitrary SQL statement (INSERT, UPDATE, DELETE, etc.).
-     *
-     * @param string $sql The SQL statement to execute.
-     * @return int|false The number of affected rows for INSERT/UPDATE/DELETE, or false on error.
-     */
-    public function executeSql(string $sql)
-    {
-        #"Executing SQL: $sql\n";
-        try {
-            // Execute the SQL statement and return affected rows
-            $affectedRows = $this->pdo->exec($sql);
-            #"SQL executed successfully. Affected rows: $affectedRows\n";
-            return $affectedRows;
-        } catch (PDOException $e) {
-            // Catch and display any errors during SQL execution
-            trigger_error("Error executing SQL: " . $e->getMessage() . "\n"); 
-            return false;
-        }
-    }
+    </section><!-- /Faq Section -->
 
-    /**
-     * Executes a SELECT query and returns the results.
-     *
-     * @param string $sql The SELECT SQL query.
-     * @param array $params Optional array of parameters for prepared statements.
-     * @return array An array of associative arrays representing the query results.
-     */
-    public function query(string $sql, array $params = [])
-    {
-        try {
-            // Prepare the SQL statement
-            $stmt = $this->pdo->prepare($sql);
-            // Execute the statement with parameters
-            $stmt->execute($params);
-            // Fetch all results as associative arrays
-            $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            return $results;
-        } catch (PDOException $e) {
-            // Catch and display any errors during query execution
-            "Error executing query: " . $e->getMessage() . "\n";
-            trigger_error("Error executing query: " . $e->getMessage() . "\n"); 
-            return [];
-        }
-    }
-}
-
-
-
-/* 
-    * Example usage of the SQLiteManager class
-    * Uncomment the following lines to test the functionality
-    *
-$manager = new database_manager(__DATABASE_SOURCE__);
-#$manager->query(""); 
-print_r($manager->query("SELECT * FROM users")); 
-die(); 
-
-$manager->createTable('users', [
-    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
-    'name' => 'TEXT NOT NULL',
-    'email' => 'TEXT NOT NULL UNIQUE'
-]); 
-$manager->executeSql("INSERT INTO users (name, email) VALUES ('John Doe', ' example.stuck@why.com')");
-#$manager = new SQLiteManager(__DATABASE_SOURCE__);
-
-//*/
-
-?>
+  </main>

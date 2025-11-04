@@ -1,5 +1,5 @@
 <?php 
-include_once "error-log.php"; 
+include_once dirname(__FILE__).DIRECTORY_SEPARATOR."bin".DIRECTORY_SEPARATOR."error-log.php"; 
 include_once "config.php";
 @include_once "scripts.php"; 
 

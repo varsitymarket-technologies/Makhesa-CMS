@@ -2,7 +2,11 @@
 define("USER_CODE", retrieve_user_code()); 
 include_once dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "package-manager.php";
 include_once dirname(dirname(dirname(dirname(__FILE__)))) . DIRECTORY_SEPARATOR . "database".DIRECTORY_SEPARATOR."client.module.php";
-$db = new database_manager();
+include_once dirname(dirname(dirname(dirname(__FILE__)))) . DIRECTORY_SEPARATOR ."config.php";
+
+#$db = new database_manager();
+$db = __DATABASE_WEBSITE__;
+
 function retrieve_user_code() {
     if (isset($_COOKIE['user_code'])) {
         return $_COOKIE['user_code'];
@@ -44,7 +48,8 @@ function create_account_auth(){
     while ($flag == false) {
         $code = substr(str_shuffle(str_shuffle($random_log)),0,$limit); 
         $sql = "SELECT * FROM users WHERE (auth = '{$code}')";
-        $e = $db->query($sql);
+        $db_module = __DATABASE_LOGS__;
+        $e = $db_module->query($sql);
         if (isset($e[0])){
             $flag = true; 
             return $code; 
@@ -54,11 +59,10 @@ function create_account_auth(){
 }
 
 function credentials_exists($section,$data){
-    global $db; 
-    
     $code = base64_encode($data); 
     $sql = "SELECT * FROM users WHERE ({$section} = '{$code}')";
-    $e = $db->query($sql);
+    $db_module = __DATABASE_LOGS__;
+    $e = $db_module->query($sql);
     if (isset($e[0])){
         return true; 
     }
@@ -95,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "update-site" => "script.update-site.php",
         "create-faq" => "script.create-faq.php",
         "delete-faq" => "script.delete-faq.php",
-        "update-faq" => "script.update-faq.php",
+        "update-faq" => "script.update-faq.php",  
 
         "create-user" => "script.create-account.php",
         "connect-user" => "script.connect-account.php",

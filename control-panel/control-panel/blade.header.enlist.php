@@ -3,7 +3,7 @@
   <div>
     <div
       id="system_loader"
-      style="width: 100%; height: 100%; background-color: rgb(32 33 36); display:none; ">
+      style="width: 100%; height: 100%; background-color: rgb(32 33 36); display:none; z-index: 1000001; position: fixed;">
       <div
         class="modal"
         style="
