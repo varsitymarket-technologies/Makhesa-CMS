@@ -14,7 +14,7 @@ if ($traffic_request == "@rescources") {
 }
 
 if ($traffic_request == "@preview") {
-    include_once PWD . DIRECTORY_SEPARATOR . $traffic_request . DIRECTORY_SEPARATOR . "index.php";
+    include_once PWD . DIRECTORY_SEPARATOR . "@website" . DIRECTORY_SEPARATOR . "draft".DIRECTORY_SEPARATOR."constructor.php";
     die(0);
 }
 

@@ -134,7 +134,7 @@
 
 
             data.append('file_path', "page-code"); // Send the file path to the server
-            let phpURL = "http://localhost:8080/control-panel/website-builder/engines/code.editor.php";
+            let phpURL = "/control-panel/website-builder/engines/code.editor.php";
 
                 const response = await fetch(phpURL, {
                     method: "POST", // Or 'GET'

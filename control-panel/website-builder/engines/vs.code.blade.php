@@ -10,11 +10,3 @@
 
     </div>
 </div>
-
-<script>
-    function save_session(){
-        //Communicate To The Database To execute the saving session. 
-
-        alert('Saving The Session')
-    }
-</script>

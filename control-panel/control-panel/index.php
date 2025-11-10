@@ -1,5 +1,17 @@
-<?php 
+<?php  
 @include "systemctrl.php";
+if (map_page()[2] == "api"){
+    $page = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."api".DIRECTORY_SEPARATOR."script-handler.php";
+    @include $page;
+    die();
+}
+
+if (map_page()[2] == "vm-editor"){
+    $page = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."website-builder".DIRECTORY_SEPARATOR."index.php";
+    @include $page;
+    die();
+}
+
 if (map_page()[2] == "authentication"){
     $page = __DIR__.DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."cp.authentication.page.php";
     @include $page;  

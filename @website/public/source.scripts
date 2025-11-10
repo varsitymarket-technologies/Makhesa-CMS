@@ -8,7 +8,10 @@
 #   AUTHOR  : HARDY HASTINGS  
 #   RELEASE : 2025/06/29
 
-define("PAGE_INDEX","1");
+if (!defined("PAGE_INDEX")){
+    define("PAGE_INDEX","1");
+}
+
 
 # Create Header Functions 
 function __HEADER__($input){
@@ -55,10 +58,17 @@ function construct_page(){
     if (!defined("__DATABASE_ENGINE__")){
         trigger_error("Database Module Missing");
         die(0);
-    }  
+    }
 
-    $page_url = ex(PAGE_INDEX);
-    $sql = "SELECT * FROM `tblcanvas` WHERE (`url` = '{$page_url}')";
+    if (!defined('__DEBUG_PREVIEW__')){
+        $page_url = ex(PAGE_INDEX);
+        $sql = "SELECT * FROM `tblcanvas` WHERE (`url` = '{$page_url}')";
+    }else{
+        $page_url = ex(PAGE_INDEX);
+        $sql = "SELECT * FROM `tblcanvas` WHERE (`id` = '{$page_url}')";
+    }
+
+
     $result = __DATABASE_ENGINE__->query($sql);
     if (is_array($result)){
         if (!empty($result)){        

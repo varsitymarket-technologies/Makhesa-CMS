@@ -229,5 +229,5 @@ function get_page_map()
 
 function get_github_tokens()
 {
-    return "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";
+    return "";
 }

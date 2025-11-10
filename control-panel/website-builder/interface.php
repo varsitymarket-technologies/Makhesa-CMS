@@ -7,7 +7,7 @@ function _page_($section=1){
     return $_xm[$section]; 
 }
 
-$page_action = _page_(2);
+$page_action = _page_(3);
 
 $meta = [
     "assets.editor" => "interface.editor.blade.php",
@@ -20,6 +20,7 @@ $meta = [
     "code-editor" => "vs.code.blade.php",
     "new-page" => "interface.new-page.blade.php",
     "pages" => "interface.pages-list.blade.php", 
+    "page" => "interface.pages-info.blade.php", 
 ];
 
 $page_file = dirname(__FILE__).DIRECTORY_SEPARATOR."engines".DIRECTORY_SEPARATOR.$meta[$page_action];

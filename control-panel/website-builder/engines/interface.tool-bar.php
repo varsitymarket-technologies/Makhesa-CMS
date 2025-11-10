@@ -10,7 +10,7 @@
                         </svg>
                     </button>
                     <nav>
-                        <a href="#">Pages</a>
+                        <a href="/vm-editor/pages/">Pages</a>
                         <hr>
                         <a href="#">Themes</a>
                         <a href="#">Libraries</a>

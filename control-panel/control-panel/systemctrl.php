@@ -20,7 +20,7 @@ function _media_($url){
     $curr_path = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR."@media".DIRECTORY_SEPARATOR;
     $imagePath = $curr_path . $currentImage;
 
-// Check if the file actually exists and is readable
+    // Check if the file actually exists and is readable
     if (file_exists($imagePath) && is_readable($imagePath)) {
 
         // Determine the MIME type based on the file extension
