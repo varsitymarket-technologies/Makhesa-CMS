@@ -23,27 +23,13 @@ if ($traffic_request == "@scripts") {
     die(0);
 }
 
-# Control Panel Section 
-if ($traffic_request == "vm-editor") {
-    @include_once PWD . "/control-panel/website-builder/index.php";
-    die(0);
-}
-
-# Control Panel Section 
-if ($traffic_request == "vm-database") {
-    @include_once PWD . "/control-panel/database-manager/index.php";
-    die(0);
-}
-
-
-
 $error_pages = [
     "404" => dirname(__FILE__) . "/pages/error.404.page.php",
     "000" => dirname(__FILE__) . "/pages/error.000.page.php",
     "500" => dirname(__FILE__) . "/pages/error.500.page.php",
 ];
 
-#traffic_inspection();
+$e = traffic_inspection();
 
 # Control Panel Section 
 if ($traffic_request == __ADMIN_URL__) {

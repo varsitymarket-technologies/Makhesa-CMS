@@ -34,12 +34,7 @@
                     Login
                 </button>
             </div>
-
-            <div style="margin-top:-2rem">    
-                <div onclick="window.location = '<?php echo __PAGE__; ?>reset-password/'" class="video-view" style="padding: 10px 20px 0px; background:inherit; ">Forgot Password</div>
-                <div onclick="window.location = '<?php echo __PAGE__; ?>signup/'" class="video-view" style="padding: 10px 20px 20px; background:inherit; ">Create Account</div>
-            </div>
-
+  
             <div class="main-blog__time">Security Authentication</div>
         </div>
     </div>

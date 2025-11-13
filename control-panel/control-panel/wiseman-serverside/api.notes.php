@@ -4,7 +4,7 @@ include_once "encryption.php";          #System Encryption Service Files
 include_once "database.services.php";   #Database Management Services
 include_once "notes.services.php";      #Notes Adding Services; 
 include_once "services.php";            #Include The Services Manager  
-
+ 
 function add_theme($theme_data){
     $e = 'simple_decryption' ?? exit('Algorithm Corupt'); 
     try {
@@ -35,4 +35,4 @@ add_theme(['id'=>'laurencia_1xxnxxexo','title'=>'Laurencia','description'=>'Made
 
 echo json_encode(show_themes(),JSON_PRETTY_PRINT); 
 
-?>
+?> 

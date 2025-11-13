@@ -657,6 +657,23 @@ function merge_page($page_path){
 }
 
 function traffic_inspection(){
+    # Verify Licence State
+    $license_file = dirname(__FILE__).DIRECTORY_SEPARATOR."license-key"; 
+    if (file_exists($license_file) == false){
+        $file = dirname(__FILE__).DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."site.activation.page.php"; 
+        include_once $file; 
+        die(0);         
+    }
+
+    # License Renewals Program
+    if (verify_license(($license_file)) == false){
+        $l = ex(1) ?? false;
+        if ($l !== get_admin_url()){
+            $file = dirname(__FILE__).DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."site.construction.page.php"; 
+            include_once $file; 
+            die(0); 
+        }
+    }
 
 }
 

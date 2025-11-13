@@ -1,0 +1,86 @@
+<?php
+if (isset($_POST['activation-action'])) {
+    $var_username = 'acti-user';
+    $var_password = 'acti-psswd';
+    $var_cpassword = 'acti-cpsswd';
+    $var_email = 'acti-email';
+    $var_wb_description = 'acti-wb-decription';
+    $var_wb_name = 'acti-wb-name';
+
+    # Use Of The Encryption Module
+    @include_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "encryption";
+    @include_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "bin.scripts";
+    $encryption_module = new encryption_bin_module('vm.binaries');
+
+    #Verify The username
+    if (!defined("__DATABASE_LOGS__")) {
+        __error("Database Module Missing");
+    }
+
+    if (!get_input($var_cpassword)){
+        __error("Pending Data Sets");
+    }else if (!get_input($var_email)){
+        __error("Pending Data Sets");
+    }else if (!get_input($var_password)){
+        __error("Pending Data Sets");
+    }else if (!get_input($var_username)){
+        __error("Pending Data Sets");
+    }else if (!get_input($var_wb_description)){
+        __error("Pending Data Sets");
+    }else if (!get_input($var_wb_name)){
+        __error("Pending Data Sets");
+    }else{
+
+        $username = get_input($var_username);
+        $email = get_input($var_email);
+        $password = get_input($var_password);
+        $cpassword = get_input($var_cpassword); 
+
+        @$e = true;
+        if ($e) {
+            #Proceed With Account Creation; 
+            if ($cpassword === $password) {
+                @include_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."executables".DIRECTORY_SEPARATOR."script.php";
+                #Verify Email and Username Combination 
+                if (!credentials_exists('username', $username)) {
+                    __error("Username Already Taken");
+                }
+
+                if (credentials_exists('email', $email)) {
+                    __error("Email Already Taken");
+                }
+
+                $otp = create_account_otp();
+                $auth = create_account_auth();
+
+                $username = base64_encode($username);
+                $email = base64_encode($email);
+
+                $password = simple_encryption_procedure("encrypt", $password, $auth);
+                $password_hash = hash("sha256", $password);
+
+                $sql = "INSERT INTO tblusers (`username`,`email`,`password_hash`,`password`,`auth`,`otp`) VALUES ('{$username}','{$email}','{$password_hash}','{$password}','{$auth}','{$otp}');";
+                #Create The User Account 
+                $e = __DATABASE_LOGS__->query($sql);
+                if ($e) {
+                                
+                    # Import License Module 
+                    @include_once dirname(__FILE__).DIRECTORY_SEPARATOR."license.creator";
+                    $module = new license_creator($email,hash("sha256",$password),"","");
+                    $module->export();
+                    #License Created And Used For Root Users
+                    
+                    @register_user_code($auth);
+                    echo json_encode(['success' => true, 'message' => 'Account Created']);
+                    die(0);
+                }
+                print_r($e);
+            } else {
+                __error("Passwords Do Not Match");
+            }
+        }
+
+    }
+
+}
+?>

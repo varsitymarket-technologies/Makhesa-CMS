@@ -45,7 +45,10 @@ if (empty($internal_page)) {
                             <a target="_blank">
                                 <img style="aspect-ratio:7/7; object-fit:cover; " src="PATH" alt="TITLE" width="600" height="400">
                                 <div style="margin:-3rem 5px 0px 5px; ">
-                                    <div style="width:40px; height:40px;"><img src="' .__PROTOCOL__ . __DOMAIN_NAME__ . '/@rescources/icons/delete-icon/"></div>
+
+                                    <div style="margin-top: 1rem; z-index: 2; position: sticky;">
+                                        <h4 style="padding: 8px; background-color: #ffffff; border-radius: 8px; width: min-content; height: min-content; margin-top: 2rem; margin-bottom: 0rem;"><i class="fa-regular fa-trash-can"></i></h4>
+                                    </div>
                                 </div>
                             </a>
                         </div>

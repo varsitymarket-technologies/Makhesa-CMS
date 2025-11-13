@@ -12,6 +12,12 @@ if (map_page()[2] == "vm-editor"){
     die();
 }
 
+if (map_page()[2] == "vm-database"){
+    $page = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."database-manager".DIRECTORY_SEPARATOR."index.php";
+    @include $page;
+    die();
+}
+
 if (map_page()[2] == "authentication"){
     $page = __DIR__.DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."cp.authentication.page.php";
     @include $page;  

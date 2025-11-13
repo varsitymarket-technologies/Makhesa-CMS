@@ -7,10 +7,10 @@
                             <line x1="4" y1="7" x2="20" y2="7" stroke="currentcolor" stroke-width="2"></line>
                             <line x1="4" y1="12" x2="20" y2="12" stroke="currentcolor" stroke-width="2"></line>
                             <line x1="4" y1="17" x2="20" y2="17" stroke="currentcolor" stroke-width="2"></line>
-                        </svg>
+                        </svg>                    
                     </button>
                     <nav>
-                        <a href="/vm-editor/pages/">Pages</a>
+                        <a href="/<?php  echo(__ADMIN_URL__) ?>/vm-editor/pages/">Pages</a>
                         <hr>
                         <a href="#">Themes</a>
                         <a href="#">Libraries</a>

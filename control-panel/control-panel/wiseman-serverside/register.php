@@ -114,9 +114,9 @@ class blog_register{
             }
         }
         #Check If the Lock Is Enabled 
-
+ 
         #Create The Bloging Client 
-        $file = $this->register_file; 
+       $file = $this->register_file; 
 
         if ($client_hash_algorithm == "default"){
             $enc_username = hash('sha256',$username); 

@@ -126,7 +126,7 @@ function github_credentials($section = "login")
     $x = '  {
                 "login":"levidoc",
                 "id":157944600,
-                "node_id":"U_kgDOCWoLGA",
+                "node_id":"U_kgDOCWoLGA", 
                 "avatar_url":"https://avatars.githubusercontent.com/u/157944600?v=4",
                 "gravatar_id":"",
                 "url":"https://api.github.com/users/levidoc",

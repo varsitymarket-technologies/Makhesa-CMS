@@ -1,0 +1,48 @@
+<?php
+#   TITLE   : License Creator
+#   DESC    : This creates the website license, this is essential for creating licenses. 
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/11/11
+
+@include_once "license.library";
+final class license_creator extends license_library
+{   
+    private $fingerprint;
+
+    public function fingerprint_lock($lock){
+        $this->fingerprint['fingerprint_lock'] = $lock;
+    }
+    public function algorithm($algorithm){
+        $this->fingerprint['algorithm'] = $algorithm;
+    }
+
+    public function __construct($username,$password,$domain,$ip){
+    $fingerprint = [
+        'algorithm' => 'silk_encryption',
+        'fingerprint_lock' => '__ACCESS_CODE__',
+        'authentication' => [
+            'username' => $username,
+            'password' => $password,
+            'domain' => $domain,
+            'ip' => $ip,
+            'server' => $ip,
+        ]
+    ];
+    $this->fingerprint = $fingerprint;
+
+    }
+
+    public function export($file=dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."license.key"){
+        $e = $this->create_print($this->fingerprint);
+        $ei = $this->format_to_fingerprint($e,"\n");
+        $ex = file_put_contents($file,$ei);
+        return $ex;
+    }
+}
+
+#$e = new license_creator('admin','password','domain','ip');
+#$e->export(dirname(dirname(__FILE__)).'\license-key');
+#print ($e);
+?>

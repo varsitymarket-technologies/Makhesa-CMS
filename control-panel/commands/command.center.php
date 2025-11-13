@@ -107,6 +107,8 @@ function application_menu(){
     $menu_data = [
         'create.user' => "Creates New Admin Users For Your Control Panel",
         'restore.database.website' => "Restores The Broken Website Database Structure",
+        'git.version' => "Version Control For Your Control Panel",
+        'local.server' => "Run the native PHP server",
         "quit" => "Close This Application. "
     ];
     $i = 0;

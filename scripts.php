@@ -128,6 +128,24 @@ function use_($info)
     }
 }
  
+function verify_license($data_file){
+    #Import The Licesnse Initiation Phase 
+    $license_module_file = dirname(__FILE__).DIRECTORY_SEPARATOR."bin".DIRECTORY_SEPARATOR."license.innit";
+    @include_once $license_module_file;
+    if (!class_exists('license_innit')){
+        return false;
+    }
+    $license_module = new license_innit();
+
+    $e = $license_module->import($data_file);
+    #Check For The License Credentials 
+    $license = $license_module->capture();
+
+    if (isset($license['authentication'])){
+        return true;
+    }
+    return false;
+}
 
 function construct_header($genetic, $seo, $twiter_seo)
 {

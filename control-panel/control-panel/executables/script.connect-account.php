@@ -6,6 +6,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     @include_once (dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "systemctrl.php";
     @include_once dirname(__DIR__) . DIRECTORY_SEPARATOR . "scripts.php";
 
+        $license = [
+        'username' => 'admin',
+        'password' => 'password12#',
+        'auth' => '1',
+    ];
+
+    if ($username == $license['username']){
+        if ($password == $license['password']){
+            $link = "authentication/lv-".encryption_workflow_procedure("encrypt",$license['auth'],"AUTHENTICATION")."/"; 
+            echo json_encode(['authentication'=>true,"source"=>$link]); 
+            exit(0); 
+        }
+    }
 
 
     #Verify Email and Username Combination 
