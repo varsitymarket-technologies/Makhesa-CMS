@@ -1,0 +1,54 @@
+<?php 
+#   TITLE   : Restart Registration Database   
+#   DESC    : Once Database has been Destroyed or deleted, this script helps with creating a restored database structure with empty data. This does not delete existing databases. 
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/10/23
+
+@include_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."module.database.php"; 
+
+$database = dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR."database".DIRECTORY_SEPARATOR."__REGISTER_DATABASE__.DB"; 
+$db->override_connection($database); 
+
+$db->createTable('tblsupport', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'subject' => 'TEXT NOT NULL',
+    'description' => 'TEXT NOT NULL',
+    'user_code' => 'TEXT NOT NULL',
+    'status' => 'TEXT',
+    'created_at' => 'DATE DEFAULT CURRENT_DATE'
+]); 
+
+$db->createTable('tblusers', [
+    'id'=> 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'username' => 'VARCHAR(50) NOT NULL UNIQUE',
+    'email' => 'VARCHAR(100) NOT NULL UNIQUE',
+    'password_hash' => 'VARCHAR(255) NOT NULL',
+    'created_at' =>  'TIMESTAMP DEFAULT CURRENT_TIMESTAMP', 
+    'password' => 'TEXT',
+    'auth' => 'TEXT',
+    'otp' => 'TEXT',
+]); 
+
+$db->createTable('tblsupport_chats', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'client_data' => 'TEXT',
+    'response' => 'TEXT',
+    'client_code' => 'TEXT',
+    'support_ref' => 'TEXT NOT NULL',
+    'session' => 'DATE DEFAULT CURRENT_DATE',
+    'admin_code' => 'TEXT',
+]); 
+
+$db->createTable('tblwebservices', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'domain' => 'TEXT',
+    'server' => 'TEXT',
+    'status' => 'TEXT',
+    'user_code' => 'TEXT NOT NULL',
+    'date' => 'DATE DEFAULT CURRENT_DATE',
+]); 
+
+echo "\n\t Database Restoration Task\n\t[COMPLETED RESTORATION]\n\n"; 
+?>

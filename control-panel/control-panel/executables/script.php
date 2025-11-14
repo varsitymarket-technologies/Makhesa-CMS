@@ -39,16 +39,15 @@ function create_account_otp(){
     return $e; 
 }
 
-function create_account_auth(){
-    global $db; 
+function create_account_auth($db_=__DATABASE_LOGS__,$state="users"){
     $random_log = "1234567890QWERTYUIOPASDFGHJKLZXCVBNM";
     $limit = 30; 
     $flag = false; 
     $code = null; 
     while ($flag == false) {
         $code = substr(str_shuffle(str_shuffle($random_log)),0,$limit); 
-        $sql = "SELECT * FROM users WHERE (auth = '{$code}')";
-        $db_module = __DATABASE_LOGS__;
+        $sql = "SELECT * FROM {$state} WHERE (auth = '{$code}')";
+        $db_module = $db_;
         $e = $db_module->query($sql);
         if (isset($e[0])){
             $flag = true; 
@@ -60,8 +59,8 @@ function create_account_auth(){
 
 function credentials_exists($section,$data){
     $code = base64_encode($data); 
-    $sql = "SELECT * FROM users WHERE ({$section} = '{$code}')";
-    $db_module = __DATABASE_LOGS__;
+    $sql = "SELECT * FROM tblusers WHERE ({$section} = '{$code}')";
+    $db_module = __DATABASE_REGISTER__;
     $e = $db_module->query($sql);
     if (isset($e[0])){
         return true; 

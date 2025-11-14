@@ -13,7 +13,7 @@ if (isset($_POST['activation-action'])) {
     $encryption_module = new encryption_bin_module('vm.binaries');
 
     #Verify The username
-    if (!defined("__DATABASE_LOGS__")) {
+    if (!defined("__DATABASE_REGISTER__")) {
         __error("Database Module Missing");
     }
 
@@ -40,7 +40,7 @@ if (isset($_POST['activation-action'])) {
         if ($e) {
             #Proceed With Account Creation; 
             if ($cpassword === $password) {
-                @include_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."executables".DIRECTORY_SEPARATOR."script.php";
+                # @include_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."executables".DIRECTORY_SEPARATOR."script.php";
                 #Verify Email and Username Combination 
                 if (!credentials_exists('username', $username)) {
                     __error("Username Already Taken");
@@ -51,7 +51,7 @@ if (isset($_POST['activation-action'])) {
                 }
 
                 $otp = create_account_otp();
-                $auth = create_account_auth();
+                $auth = create_account_auth(__DATABASE_REGISTER__,'tblusers');
 
                 $username = base64_encode($username);
                 $email = base64_encode($email);
@@ -61,7 +61,7 @@ if (isset($_POST['activation-action'])) {
 
                 $sql = "INSERT INTO tblusers (`username`,`email`,`password_hash`,`password`,`auth`,`otp`) VALUES ('{$username}','{$email}','{$password_hash}','{$password}','{$auth}','{$otp}');";
                 #Create The User Account 
-                $e = __DATABASE_LOGS__->query($sql);
+                $e = __DATABASE_REGISTER__->query($sql);
                 if ($e) {
                                 
                     # Import License Module 

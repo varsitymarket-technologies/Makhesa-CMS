@@ -1,4 +1,6 @@
 <?php
+@include_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."executables".DIRECTORY_SEPARATOR."script.php"; 
+
 function __error($message){
     $error = 
     '<div id="error-message" style="z-index: 1000000000000000000000000000; top: 3vh; left: calc(100% - 335px); position: fixed; display: flex;">
@@ -18,10 +20,4 @@ function __error($message){
   </div>';
   echo $error;
 }
-
-
-function get_input($e){
-    return $_POST[$e] ;
-}
-
 ?>

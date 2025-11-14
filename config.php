@@ -38,8 +38,8 @@ function construct_database_env()
 {
     $e = [
         'root' => __DIR__ . DIRECTORY_SEPARATOR . "database",
-        'website.database' => '__WEBSITE_hDATABASE__.DB',
-        'email.database' => '__EMAIL_DATABASE__.DB',
+        'website.database' => '__WEBSITE_DATABASE__.DB',
+        'email.database' => '__EMAIL_DATABASE__'.'.DB',
         'logs.database' => '__.DB',
         'engine.database' => '__ENGINE_DATABASE__.DB',
         'register.database' => '__REGISTER_DATABASE__.DB',
@@ -49,9 +49,9 @@ function construct_database_env()
 
 define('__DATABASE_WEBSITE__', $db_website);
 define('__DATABASE_ENGINE__', $db_engine);
-define('__DATABASE_EMAILL__', '');
+define('__DATABASE_EMAILL__', $db_email);
 define('__DATABASE_LOGS__', $db_logs);
-define('__DATABASE_REGISTER__', '');
+define('__DATABASE_REGISTER__', $db_register);
 
 $dir = __DIR__; 
 

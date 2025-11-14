@@ -98,5 +98,5 @@ $db->createTable('tblsupport_chats', [
     'admin_code' => 'TEXT',
 ]); 
 
-echo "Database Restoration Task\n[COMPLETED RESTORATION]\n\n"; 
+echo "\n\tDatabase Restoration Task\n\t[COMPLETED RESTORATION]\n\n"; 
 ?>

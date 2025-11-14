@@ -106,7 +106,13 @@ function start_cli_application($source_code)
 function application_menu(){
     $menu_data = [
         'create.user' => "Creates New Admin Users For Your Control Panel",
-        'restore.database.website' => "Restores The Broken Website Database Structure",
+        
+        'restore.website.database' => "Restores The Broken Website Database Structure",
+        'restore.engine.database' => "Restores The Broken System Engine Database Structure",
+        'restore.email.database' => "Restores The Broken System Email Database Structure",
+        'restore.logs.database' => "Restores The Broken System Engine Logs Database Structure",
+        'restore.register.database' => "Restores The Broken System Register Database Structure",
+
         'git.version' => "Version Control For Your Control Panel",
         'local.server' => "Run the native PHP server",
         "quit" => "Close This Application. "
@@ -120,7 +126,8 @@ function application_menu(){
 }
 
 @application_menu();
-@label('MENU OPTION','e.g health.report');
+echo "\n"; 
+@label("MENU OPTION",'e.g health.report');
 $menu_script = input(' ');
 $e = start_cli_application($menu_script);
 ?>

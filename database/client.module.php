@@ -1,14 +1,14 @@
 <?php
-// cli.module.php
+// client.module.php
 
 #   TITLE   : sqllite-database-manager    
 #   DESC    : This manages The Defined SQL Database using the command line program 
 #   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
 #   VERSION : 1.0.1.1
 #   AUTHOR  : HARDY HASTINGS  
-#   RELEASE : 2025/06/29
+#   RELEASE : 2025/11/13
 
-define('__DATABASE_SOURCE__', hash("sha256","levidoc.sqllite").".db");
+define('__DATABASE_SOURCE__', ("vm.engine").".sqlite3");
 
 class database_manager
 {
@@ -149,7 +149,7 @@ class database_manager
             return $results;
         } catch (PDOException $e) {
             // Catch and display any errors during query execution
-            "Error executing query: " . $e->getMessage() . "\n";
+            # "Error executing query: " . $e->getMessage() . "\n";
             trigger_error("Error executing query: " . $e->getMessage() . "\n"); 
             return [];
         }
