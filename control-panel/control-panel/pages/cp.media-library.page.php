@@ -9,36 +9,38 @@ if (empty($internal_page)) {
     <?php include_once "blade.navbar.sidebar.php"; ?>
     <div class="main-container" id="application_canvas" style="overflow: visible">
 
-        <div class="main-header anim" style="--delay: 0s; text-align: center; padding: 1rem 3rem; position: inherit;">
+        <div class="main-header anim" style="--delay: 0s; text-align: center; padding: 4rem 3rem 1rem 3rem; position: inherit;">
             Media Library
         </div>
         <?php
         if ($internal_page == "add-image") {
-            $html = '
-            <div class="main-blog anim" style="--delay: 0.1s; width: 100%; height: max-content; background-color: bisque; background: linear-gradient(181deg, #8e8e8f, transparent); margin: 1rem 0rem;">
-                <div style="display: flex; align-items: center; padding-bottom: 10px; flex-direction: column;" class="main-blog__author">
-                    <h3 class="small-header" style="margin:0">Upload Image Preview</h3>
-                    <label for="hiddenFileInput" class="custom-file-upload">
+            $html = '<div id="media_container">
+            <div id="add_media_contents_tab">
+                <input type="file" id="hiddenFileInput" accept="image/*">
+
+                <div style="height: 60vh;" id="imagePreviewContainer">
+                    <img style=" max-height:21rem; ;" id="previewImage" src="" alt="Image Preview">
+                    <p id="noImageSelectedText">No image selected</p>
+                </div>
+                <br>
+                <div style="display: flex;">
+                    <label for="hiddenFileInput" style="background-color: #312e2a; margin: 0px 10px 0px 0px;" class="custom-file-upload">
                         Choose Image
                     </label>
-
-                    <input type="file" id="hiddenFileInput" accept="image/*">
-
-                    <div style="width:fit-content" id="imagePreviewContainer">
-                        <img style="max-width: 21rem; max-height:21rem; ;" id="previewImage" src="" alt="Image Preview">
-                        <p id="noImageSelectedText">No image selected</p>
-                    </div>
-                    <br>
                     <button id="submitButton">Submit Image</button>
-                    
                 </div>
-            </div>
+            </div></div><script>
+            document.addEventListener(\'DOMContentLoaded\', function(){
+                request_media(); 
+            });
+            </script>
+            
             ';
             echo $html;
         } else {
 
             @include_once dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . "systemctrl.php";
-            $data_sets = $db->query("SELECT * FROM gallery ORDER BY `id` DESC");
+            $data_sets = __DATABASE_WEBSITE__->query("SELECT * FROM gallery ORDER BY `id` DESC");
             $template_row = '
                     <div class="responsive">
                         <div class="gallery" style="padding:10px">
@@ -64,7 +66,7 @@ if (empty($internal_page)) {
             }
 
             if (empty($output)) {
-                $output = '<div style="display: flex; align-items: center; flex-direction: column;"><img src="' . __PROTOCOL__ . __DOMAIN_NAME__ . '/rescources/art/construction.svg"><h2>No Content</h2><br>No Media Available</div>';
+                $output = '<div class="anim" style="display: flex; align-items: center; flex-direction: column;"><h2><svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="height: 15rem;"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM224 176C250.5 176 272 197.5 272 224C272 250.5 250.5 272 224 272C197.5 272 176 250.5 176 224C176 197.5 197.5 176 224 176zM368 288C376.4 288 384.1 292.4 388.5 299.5L476.5 443.5C481 450.9 481.2 460.2 477 467.8C472.8 475.4 464.7 480 456 480L184 480C175.1 480 166.8 475 162.7 467.1C158.6 459.2 159.2 449.6 164.3 442.3L220.3 362.3C224.8 355.9 232.1 352.1 240 352.1C247.9 352.1 255.2 355.9 259.7 362.3L286.1 400.1L347.5 299.6C351.9 292.5 359.6 288.1 368 288.1z"></path></svg></h2><h2>No Content</h2><br>No Media Available</div>';
             }
 
             echo '

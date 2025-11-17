@@ -34,7 +34,10 @@ final class license_creator extends license_library
 
     }
 
-    public function export($file=dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."license.key"){
+    public function export($file=false){
+        if ($file == false){
+            $file=dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."license.key"; 
+        }
         $e = $this->create_print($this->fingerprint);
         $ei = $this->format_to_fingerprint($e,"\n");
         $ex = file_put_contents($file,$ei);

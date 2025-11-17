@@ -49,9 +49,9 @@ function create_account_auth($db_=__DATABASE_LOGS__,$state="users"){
         $sql = "SELECT * FROM {$state} WHERE (auth = '{$code}')";
         $db_module = $db_;
         $e = $db_module->query($sql);
-        if (isset($e[0])){
+        if (!isset($e[0])){
             $flag = true; 
-            return $code; 
+            return $code;
         }
     }
     die(0); 
@@ -60,8 +60,9 @@ function create_account_auth($db_=__DATABASE_LOGS__,$state="users"){
 function credentials_exists($section,$data){
     $code = base64_encode($data); 
     $sql = "SELECT * FROM tblusers WHERE ({$section} = '{$code}')";
-    $db_module = __DATABASE_REGISTER__;
-    $e = $db_module->query($sql);
+    #echo $sql; die(0); 
+    $e =  __DATABASE_REGISTER__->query($sql);
+    #print_r($e); die(0); 
     if (isset($e[0])){
         return true; 
     }
@@ -123,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "File not found: " . htmlspecialchars($file_path);
         }
     } else {
-        echo "Invalid request.";
+        #echo "Invalid request.";
     }
 }
 

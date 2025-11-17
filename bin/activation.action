@@ -6,16 +6,18 @@ if (isset($_POST['activation-action'])) {
     $var_email = 'acti-email';
     $var_wb_description = 'acti-wb-decription';
     $var_wb_name = 'acti-wb-name';
-
+    
     # Use Of The Encryption Module
     @include_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "encryption";
     @include_once dirname(__FILE__) . DIRECTORY_SEPARATOR . "bin.scripts";
-    $encryption_module = new encryption_bin_module('vm.binaries');
-
+    #$encryption_module = new encryption_bin_module('vm.binaries');
+   
+                
     #Verify The username
     if (!defined("__DATABASE_REGISTER__")) {
         __error("Database Module Missing");
     }
+                
 
     if (!get_input($var_cpassword)){
         __error("Pending Data Sets");
@@ -42,17 +44,21 @@ if (isset($_POST['activation-action'])) {
             if ($cpassword === $password) {
                 # @include_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."executables".DIRECTORY_SEPARATOR."script.php";
                 #Verify Email and Username Combination 
-                if (!credentials_exists('username', $username)) {
+                
+                
+                if (credentials_exists('username', $username)) {
                     __error("Username Already Taken");
-                }
+                }else
 
                 if (credentials_exists('email', $email)) {
                     __error("Email Already Taken");
-                }
+                }else {
 
-                $otp = create_account_otp();
+                
+
+                $otp = create_account_otp(); 
                 $auth = create_account_auth(__DATABASE_REGISTER__,'tblusers');
-
+                
                 $username = base64_encode($username);
                 $email = base64_encode($email);
 
@@ -62,19 +68,23 @@ if (isset($_POST['activation-action'])) {
                 $sql = "INSERT INTO tblusers (`username`,`email`,`password_hash`,`password`,`auth`,`otp`) VALUES ('{$username}','{$email}','{$password_hash}','{$password}','{$auth}','{$otp}');";
                 #Create The User Account 
                 $e = __DATABASE_REGISTER__->query($sql);
-                if ($e) {
-                                
-                    # Import License Module 
+                 
+                 # Import License Module 
                     @include_once dirname(__FILE__).DIRECTORY_SEPARATOR."license.creator";
                     $module = new license_creator($email,hash("sha256",$password),"","");
                     $module->export();
                     #License Created And Used For Root Users
+
+                if ($e) {
+                                
+                   
                     
                     @register_user_code($auth);
                     echo json_encode(['success' => true, 'message' => 'Account Created']);
                     die(0);
                 }
-                print_r($e);
+
+                }
             } else {
                 __error("Passwords Do Not Match");
             }

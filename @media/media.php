@@ -1,12 +1,14 @@
 <?php
 #   TITLE   : Media Scripts File   
-#   DESC    : All images are stored in a database and only can be called using their hash id. The syste is configured to use this format for security reasons
+#   DESC    : All images are stored in a database and only can be called using their hash id. The systeM is configured to use this format for security reasons
 #   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
 #   VERSION : 1.0.1.1
 #   AUTHOR  : HARDY HASTINGS  
 #   RELEASE : 2025/10/20
 
+include_once dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR ."config.php";
 @include_once dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . "scripts.php";
+
 
 $media_request = site_path(2) ?? false;
 if (empty($media_request)) {
@@ -14,12 +16,14 @@ if (empty($media_request)) {
     die(0);
 }
 
-$db = __DATABASE__;
+$db = __DATABASE_WEBSITE__;
 $sql = "SELECT * FROM gallery WHERE (`hash` = '{$media_request}') LIMIT 1";
-$image_data = $db->query($sql)[0];
+$image_data = __DATABASE_WEBSITE__->query($sql)[0];
 $currentImage = $image_data['image_path'] ?? '404.jpg';
 $curr_path = (dirname(__FILE__)) . DIRECTORY_SEPARATOR;
 $imagePath = $curr_path . $currentImage;
+
+
 
 // Check if the file actually exists and is readable
 if (file_exists($imagePath) && is_readable($imagePath)) {

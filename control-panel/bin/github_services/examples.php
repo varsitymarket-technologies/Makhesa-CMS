@@ -1,7 +1,7 @@
 <?php 
 include_once "function.php";
 
-$name = "immoralclothes"; 
+$name = "embededarchieve"; 
 $seed = "Introducing {$name} a brand that redefines sophistication and style. Our clothing line is the epitome of timeless elegance, combining impeccable craftsmanship with a modern flair. We believe in empowering individuals to express their unique personalities through what they wear, and we strive to make every piece a statement of individuality and luxury.
 
 At {$name}, we pay meticulous attention to detail, from the selection of the finest fabrics to the precision of our tailoring. Our designers draw inspiration from diverse cultural influences, creating collections that are a fusion of tradition and innovation. Whether you're looking for the perfect outfit for a special occasion or a wardrobe staple that exudes sophistication, our brand caters to every fashion need.
@@ -16,7 +16,7 @@ $env_data = [
     'private'=>true,
 ]; 
 
-$subdomain = strtolower($name.".penease.digital"); 
+$subdomain = strtolower($name.".levidoc.co.za"); 
 
 #$session = new varsitymarket_github_services(file_get_contents(dirname(__FILE__)."/phase3"));
 $session = new varsitymarket_github_services('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'); 

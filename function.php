@@ -658,7 +658,7 @@ function merge_page($page_path){
 
 function traffic_inspection(){
     # Verify Licence State
-    $license_file = dirname(__FILE__).DIRECTORY_SEPARATOR."license.key"; 
+    $license_file = dirname(__FILE__).DIRECTORY_SEPARATOR."bin".DIRECTORY_SEPARATOR."license.key"; 
     if (file_exists($license_file) == false){
         $file = dirname(__FILE__).DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."site.activation.page.php"; 
         include_once $file; 

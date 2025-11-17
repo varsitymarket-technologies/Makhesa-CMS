@@ -5,9 +5,9 @@ include_once "systemctrl.php";
 
 <head>
   <title>Control Panel</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/varsitymarket-technologies/" ?>">
-  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/varsitymarket-technologies/" ?>">
-  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/varsitymarket-technologies/" ?>">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo _rescource_(__PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/varsitymarket-technologies/") ?>">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo _rescource_(__PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/varsitymarket-technologies/") ?>">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo _rescource_(__PROTOCOL__ . __DOMAIN_NAME__ . "/@rescources/site/varsitymarket-technologies/") ?>">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

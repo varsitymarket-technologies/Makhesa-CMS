@@ -265,7 +265,87 @@
             //container.innerHTML = 'Error loading media content.';
         }
     }
+
+    async function request_media(e) {
+        // Check if the container exists, if not, create it and append to body
+        let container = document.getElementById('media_container');
+
+        // Get references to HTML elements
+        const hiddenFileInput = document.getElementById('hiddenFileInput');
+        const previewImage = document.getElementById('previewImage');
+        const noImageSelectedText = document.getElementById('noImageSelectedText');
+        const submitButton = document.getElementById('submitButton');
+
+        // Function to handle image selection and preview
+        hiddenFileInput.addEventListener('change', function () {
+            const file = this.files[0]; // Get the first selected file
+
+            if (file) {
+                // Check if the selected file is an image
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader(); // Create a FileReader object
+
+                    reader.onload = function (e) {
+                        // When the file is loaded, set the image source to the result
+                        previewImage.src = e.target.result;
+                        previewImage.style.display = 'block'; // Show the image
+                        noImageSelectedText.style.display = 'none'; // Hide the "No image selected" text
+                    };
+
+                    // Read the file as a Data URL (base64 encoded string)
+                    reader.readAsDataURL(file);
+                } else {
+                    error_feedback('Please select an image file (e.g., JPEG, PNG, GIF).');
+                    // Clear the file input if a non-image is selected
+                    hiddenFileInput.value = '';
+                    previewImage.style.display = 'none';
+                    noImageSelectedText.style.display = 'block';
+                }
+            } else {
+                // No file selected, reset preview
+                previewImage.src = '';
+                previewImage.style.display = 'none';
+                noImageSelectedText.style.display = 'block';
+            }
+        });
+
+        // Optional: Simulate submission to show the file is indeed in the input
+        submitButton.addEventListener('click', function () {
+            if (hiddenFileInput.files.length > 0) {
+                const selectedFile = hiddenFileInput.files[0];
+                //alert(`Image "${selectedFile.name}" (${selectedFile.type}, ${selectedFile.size} bytes) is ready for submission!`);
+                // In a real application, you would now send this file to a server
+                // using FormData and an XMLHttpRequest or Fetch API.
+                console.log("File ready for upload:", selectedFile);
+
+                const formData = new FormData();
+                formData.append('uploadedImage', selectedFile);
+ 
+                try {
+                    const response = fetch('<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . '/@scripts/control-panel/?request=media-upload' ?> ', {
+                        method: 'POST',
+                        body: formData, // FormData automatically sets 'Content-Type: multipart/form-data'
+                    });
+
+                    success_feedback('Image Saved'); 
+                    setTimeout(() => {
+                        window.location.href = `/<?php echo(__ADMIN_URL__) ?>/media/`; 
+                    }, 2000);
+                } catch (error) {
+                    console.error('Network or client-side error:', error);
+                    uploadStatus.textContent = `An error occurred: ${error.message}`;
+                    uploadStatus.className = 'error';
+                    error_feedback("Failed To Upload Image To Server");
+                }
+
+            } else {
+                error_feedback('No image has been selected yet.');
+            }
+        });
+
+    }
 </script>
+
 
 </div>
 

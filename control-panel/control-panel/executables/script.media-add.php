@@ -1,5 +1,6 @@
 <?php
 header('Content-Type: application/json'); // Set header to indicate JSON response
+include_once dirname(dirname(dirname(dirname(__FILE__)))) . DIRECTORY_SEPARATOR ."config.php";
 
 $uploadDir = dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR. '@media'.DIRECTORY_SEPARATOR; // Directory where uploaded images will be saved
 $response = ['success' => false, 'message' => ''];
@@ -47,13 +48,14 @@ if (isset($_FILES['uploadedImage']) && $_FILES['uploadedImage']['error'] === UPL
             $hash = hash("sha256",$newFileName);
             $title = $fileName; 
             $description = "Uploaded To Server"; 
-            $path = $newFileName;  
-            @$e = $db->query("INSERT INTO gallery (`title`,`image_path`,`description`,`hash`) VALUES ('{$title}','{$path}','{$description}','{$hash}')") ?? false; 
+            $path = $newFileName; 
+            $db = __DATABASE_WEBSITE__;  
+            @$e = __DATABASE_WEBSITE__->query("INSERT INTO gallery (`title`,`image_path`,`description`,`hash`) VALUES ('{$title}','{$path}','{$description}','{$hash}')") ?? false; 
         } else {
             $response['message'] = 'Failed to move uploaded file.';
         }
     }
-} else {
+} else { 
     // Handle specific upload errors (optional)
     switch ($_FILES['uploadedImage']['error'] ?? UPLOAD_ERR_NO_FILE) {
         case UPLOAD_ERR_INI_SIZE:

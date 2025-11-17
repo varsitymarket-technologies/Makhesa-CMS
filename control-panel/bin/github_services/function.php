@@ -383,7 +383,7 @@ class varsitymarket_github_services
         $exec = $function($owner, $repo, $token, $cname, $branch, $path);
     }
 
-    public function configure_subdomain($domain, $ip = '185.199.108.153')
+    public function configure_subdomain($domain, $ip = 'levidoc.github.io')
     {
         if (function_exists('craft_dns_record') == false) {
             include_once $this->pwd . "modules.subdomain.registration.php";

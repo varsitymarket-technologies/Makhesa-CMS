@@ -1,0 +1,1 @@
+INSERT INTO gallery (`title`,`image_path`,`description`,`hash`) VALUES ('Screenshot 2025-11-06 145222.png','img_691acfa26317f5.65751712.png','Uploaded To Server','3f270389a53ceb96e70324fcff29d3a80d880b225b7e6d9de4b88ef5e3727c06')

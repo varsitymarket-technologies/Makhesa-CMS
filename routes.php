@@ -29,7 +29,7 @@ $error_pages = [
     "500" => dirname(__FILE__) . "/pages/error.500.page.php",
 ];
 
-$e = traffic_inspection();
+#$e = traffic_inspection();
 
 # Control Panel Section 
 if ($traffic_request == __ADMIN_URL__) {

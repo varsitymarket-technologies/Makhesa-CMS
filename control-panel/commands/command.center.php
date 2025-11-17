@@ -9,12 +9,8 @@
 #   RELEASE : 2025/09/16
 
 $intro_text = " 
-##############################################
-
-    -- Developer Console --
-    -- Configure the varsitymarket ecosystem. With this command line tool 
-
-##############################################
+\t##############################################
+\t##############################################
 \t__     ___    ____  ____ ___ _______   __
 \t\ \   / / \  |  _ \/ ___|_ _|_   _\ \ / /
 \t \ \ / / _ \ | |_) \___ \| |  | |  \ V /
@@ -33,9 +29,11 @@ $intro_text = "
 \t| ||  __/ (__| | | | | | | (_) | | (_) | (_| | |  __/\__ \
 \t \__\___|\___|_| |_|_| |_|\___/|_|\___/ \__, |_|\___||___/
 \t                                        |___/
-\t[SYNC-SERVICES] => Gitub Deploying Application
+\t[ENGINE-SERVICES] => The Engine CLI Application 
 \tCreated By Hardy Hastings                                        
-\tThis application is responsible for managing code from production to development. 
+\t##############################################
+\n\tThis application is responsible for managing the control panel by providing additional features that are available to database users. 
+\n\t##############################################
 \n\n
 ";
 
@@ -112,9 +110,9 @@ function application_menu(){
         'restore.email.database' => "Restores The Broken System Email Database Structure",
         'restore.logs.database' => "Restores The Broken System Engine Logs Database Structure",
         'restore.register.database' => "Restores The Broken System Register Database Structure",
-
+        'deploy.static.website' => "Deploys the site to the github website",
         'git.version' => "Version Control For Your Control Panel",
-        'local.server' => "Run the native PHP server",
+        'web.server' => "Run the native PHP server",
         "quit" => "Close This Application. "
     ];
     $i = 0;

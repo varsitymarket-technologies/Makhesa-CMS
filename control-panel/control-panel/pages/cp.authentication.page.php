@@ -21,7 +21,6 @@ try {
     @register_user_code($authenctication_code);
     #$_COOKIE['user_code'] = $authentication_code; 
     setcookie('user_code', $authentication_code, time() + (86400 * 10), "/");
-    sleep(2); 
 
     $output = '
     <script>alert(`Authentication Success '.$authentication_code.'`); </script>
@@ -29,7 +28,10 @@ try {
     
     setcookie('user_code', $authentication_code, time() + (86400 * 10), "/");
     setcookie('user_code', $authentication_code, time() + (86400 * 10), "/");
-    echo $output; 
+    #echo $output;
+    echo "Authenticatig Session";
+    sleep(2); 
+    echo '<script> window.location.href=`'.__PROTOCOL__.__DOMAIN_NAME__.'/'.__ADMIN_URL__.'/`; </script>'; 
 
 } catch (\Throwable $th) {
 

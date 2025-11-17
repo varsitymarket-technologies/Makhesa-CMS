@@ -1,23 +1,26 @@
 <?php
 
-if (!function_exists('map_page')){    
-    function map_page(){
+if (!function_exists('map_page')) {
+    function map_page()
+    {
         $sys_token = parse_url($_SERVER['REQUEST_URI'])['path'];
-        $sys_token = explode("/",$sys_token);
+        $sys_token = explode("/", $sys_token);
 
-        return $sys_token; 
+        return $sys_token;
     }
 
 }
 
 
-function _media_($url){
-     $media_hash = explode('/@media/',$url)[1];
-     $db = __DATABASE__;
-     $sql = "SELECT * FROM gallery WHERE (`hash` = '{$media_hash}') LIMIT 1";
-     $image_data = $db->query($sql)[0];
+function _media_($url)
+{
+    $media_hash = explode('/@media/', $url)[1];
+    $media_hash = str_ireplace([`\\`], [], $media_hash);
+    $db = __DATABASE_WEBSITE__;
+    $sql = "SELECT * FROM gallery WHERE (`hash` = '{$media_hash}') LIMIT 1";
+    $image_data = $db->query($sql)[0];
     $currentImage = $image_data['image_path'] ?? '404.jpg';
-    $curr_path = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR."@media".DIRECTORY_SEPARATOR;
+    $curr_path = dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "@media" . DIRECTORY_SEPARATOR;
     $imagePath = $curr_path . $currentImage;
 
     // Check if the file actually exists and is readable
@@ -28,7 +31,7 @@ function _media_($url){
         #$mimeType = 'application/octet-stream'; // Default generic type
 
         $mimeType = 'image/jpg';
-        
+
         switch (strtolower($extension)) {
             case 'jpg':
                 $mimeType = 'image/jpg';
@@ -45,7 +48,7 @@ function _media_($url){
             case 'webp':
                 $mimeType = 'image/webp';
                 break;
-                // Add more image types if needed
+            // Add more image types if needed
         }
 
         // Read the file content
@@ -54,28 +57,30 @@ function _media_($url){
         $base64Image = base64_encode($imageData);
         $dataUri = "data:$mimeType;base64,$base64Image";
         return $dataUri;
-    } 
+    }
 }
 
-function _rescource_($url){
-    $media_hash = explode('/@rescources/',$url)[1];
-    $currentImage = dirname(__FILE__).'/@rescources/'.($media_hash);
+function _rescource_($url)
+{
+    $media_hash = explode('/@rescources/', $url)[1];
+    $currentImage = dirname(__FILE__) . '/@rescources/' . ($media_hash);
     @include_once dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR . "scripts.php";
 
-    $media_folder = explode('/',$media_hash)[0] ?? false; 
-    $media_request = explode('/',$media_hash)[1] ?? false;
+    $media_folder = explode('/', $media_hash)[0] ?? false;
+    $media_request = explode('/', $media_hash)[1] ?? false;
     if (empty($media_request)) {
         http_response_code(404);
         die(0);
     }
-    $Path = dirname(__FILE__).DIRECTORY_SEPARATOR.'rescources'.DIRECTORY_SEPARATOR. $media_folder. DIRECTORY_SEPARATOR;
+    $Path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'rescources' . DIRECTORY_SEPARATOR . $media_folder . DIRECTORY_SEPARATOR;
     $files = scandir($Path);
     $imagePath = null;
     $currentImage = null;
     $mimeType = null;
 
     foreach ($files as $file) {
-        if ($file === '.' || $file === '..') continue;
+        if ($file === '.' || $file === '..')
+            continue;
         $filename = pathinfo($file, PATHINFO_FILENAME);
         if ($filename === $media_request) {
             $imagePath = $Path . $file;
@@ -106,29 +111,31 @@ function _rescource_($url){
         // Determine the MIME type based on the file extension
         $extension = pathinfo($currentImage, PATHINFO_EXTENSION);
         #$mimeType = 'application/octet-stream'; // Default generic type
-        $imageData = file_get_contents($imagePath); 
+        $imageData = file_get_contents($imagePath);
         // Encode the binary data to Base64
-        $base64Image = base64_encode( $imageData);
+        $base64Image = base64_encode($imageData);
         $dataUri = "data:$mimeType;base64,$base64Image";
         return $dataUri;
     }
 }
 
-function seal_signature($data=null,$action="Read"){
+function seal_signature($data = null, $action = "Read")
+{
     #Action Is Based On File Commands
     #Action = Read, Insert
-    $file = dirname(__FILE__).DIRECTORY_SEPARATOR."seal.signature";
-    if ($action == "Insert"){ 
-        $e = file_put_contents($file,$data);
+    $file = dirname(__FILE__) . DIRECTORY_SEPARATOR . "seal.signature";
+    if ($action == "Insert") {
+        $e = file_put_contents($file, $data);
         return true;
-    }else {
+    } else {
         $e = file_get_contents($file);
         return $e;
     }
 
 }
 
-function fetchUrlContent($url) {
+function fetchUrlContent($url)
+{
     // 1. Initialize cURL session
     $ch = curl_init();
 
@@ -137,10 +144,10 @@ function fetchUrlContent($url) {
 
     // CRITICAL: Tells cURL to return the response data as a string 
     // instead of printing it directly to the browser/terminal.
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); 
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
     // Highly recommended: Follow any redirects (HTTP 301, 302, etc.)
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); 
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
     // Optional: Set a timeout (in seconds)
     curl_setopt($ch, CURLOPT_TIMEOUT, 10);
@@ -162,39 +169,39 @@ function fetchUrlContent($url) {
 }
 
 if (!defined("MEDIA_PATH")) {
-    define("MEDIA_PATH", dirname(__FILE__).DIRECTORY_SEPARATOR."@media".DIRECTORY_SEPARATOR);
+    define("MEDIA_PATH", dirname(__FILE__) . DIRECTORY_SEPARATOR . "@media" . DIRECTORY_SEPARATOR);
 }
 
 if (!defined("__DOMAIN_NAME__")) {
-    define("__DOMAIN_NAME__",$_SERVER['HTTP_HOST']); 
+    define("__DOMAIN_NAME__", $_SERVER['HTTP_HOST']);
 }
 
 if (!defined("__PROTOCOL__")) {
-    define("__PROTOCOL__",isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://");
+    define("__PROTOCOL__", isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://");
 }
 if (!defined("__URL__")) {
-        define("__URL__",__PROTOCOL__.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']); 
+    define("__URL__", __PROTOCOL__ . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 }
 if (!defined("__PAGE__")) {
-    define("__PAGE__",__PROTOCOL__.__DOMAIN_NAME__."/".map_page()[1]."/");
+    define("__PAGE__", __PROTOCOL__ . __DOMAIN_NAME__ . "/" . map_page()[1] . "/");
 }
 
 if (!defined("__CURRENCY_SIGN__")) {
-    define("__CURRENCY_SIGN__","R");
+    define("__CURRENCY_SIGN__", "R");
 }
 
 if (!defined("__WALLET_AMOUNT__")) {
-    define("__WALLET_AMOUNT__",299.00);
+    define("__WALLET_AMOUNT__", 299.00);
 }
 
-if (!defined("__USERNAME__")){
-    define("__USERNAME__","Hastings"); 
+if (!defined("__USERNAME__")) {
+    define("__USERNAME__", "Hastings");
 }
 
 
-include_once "config.php"; 
+include_once "config.php";
 
-@include_once dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR."database".DIRECTORY_SEPARATOR."client.module.php" ?? trigger_error("FAILED TO LOAD DATABASE MANAGER", E_USER_ERROR);
+@include_once dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR . "database" . DIRECTORY_SEPARATOR . "client.module.php" ?? trigger_error("FAILED TO LOAD DATABASE MANAGER", E_USER_ERROR);
 $db = new database_manager();
 function _script($file)
 {
@@ -208,11 +215,13 @@ function _e($data)
     echo $data;
 }
 
-function set_page($title){
-    echo "<script>document.title = '{$title}'; </script>"; 
+function set_page($title)
+{
+    echo "<script>document.title = '{$title}'; </script>";
 }
-function cookie_session($data){
-    
+function cookie_session($data)
+{
+
 }
 
 function change_page($change, $data_sets = false)
@@ -226,11 +235,12 @@ function change_page($change, $data_sets = false)
     }
 }
 
-function get_media_hash_from_link($path) {
+function get_media_hash_from_link($path)
+{
     $parts = explode('@media/', $path);
     $stringToHash = end($parts); // Get the last element of the array
     if (empty($stringToHash)) {
         return false;
     }
-    return $stringToHash; 
+    return $stringToHash;
 }

@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $license = [
         'username' => 'admin',
-        'password' => 'password12#',
+        'password' => 'password12#', 
         'auth' => '1',
     ];
 
@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $username.""; 
 
     $sql = "SELECT * FROM tblusers WHERE (`username` = '{$username}')"; 
+    $db = __DATABASE_REGISTER__ ; 
     $results = $db->query($sql); 
     if (isset($results[0])){
         $data = $results[0]; 
