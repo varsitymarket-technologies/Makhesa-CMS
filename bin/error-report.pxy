@@ -1,0 +1,38 @@
+[17-Nov-2025 11:11:11 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21
+[17-Nov-2025 11:11:21 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21
+[17-Nov-2025 11:12:05 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21
+[17-Nov-2025 11:13:27 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21
+[17-Nov-2025 11:26:16 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined function e() in C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\pages\cp.database.manager.page.php:26
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\interface.php(91): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(33): include('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\routes.php(36): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#4 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\pages\cp.database.manager.page.php on line 26
+[17-Nov-2025 13:02:58 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\Users\Hastings\Documents\vm.makhesa\control-panel\database-manager\pages\database-manager.php:65
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\database-manager\interface.php(9): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\database-manager\index.php(2): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(17): include('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\routes.php(36): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#5 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\database-manager\pages\database-manager.php on line 65
+[17-Nov-2025 13:04:52 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\Users\Hastings\Documents\vm.makhesa\control-panel\database-manager\pages\database-manager.php:67
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\database-manager\interface.php(9): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\database-manager\index.php(2): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(17): include('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\routes.php(36): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#5 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\database-manager\pages\database-manager.php on line 67
+[17-Nov-2025 17:05:59 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21
+[17-Nov-2025 17:06:52 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21
+[17-Nov-2025 17:07:17 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21
+[17-Nov-2025 17:07:29 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21
+[17-Nov-2025 17:07:41 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21
+[17-Nov-2025 17:08:08 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21
+[18-Nov-2025 02:31:49 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21
+[18-Nov-2025 10:05:35 Europe/Berlin] PHP Warning:  Undefined array key 0 in C:\Users\Hastings\Documents\vm.makhesa\@media\media.php on line 21

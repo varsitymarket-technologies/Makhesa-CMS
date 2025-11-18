@@ -12,18 +12,18 @@ if (empty($internal_page)) {
 
         </div>
         <div class="main-header anim" style="--delay: 0s; text-align: center; padding: 1rem 3rem; position: inherit;">
-            <svg style="width: 2rem;"  fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M21.5 181.1L78.3 67.4C89.2 45.7 111.3 32 135.6 32l304.9 0c24.2 0 46.4 13.7 57.2 35.4l56.8 113.7c3.6 7.2 5.5 15.1 5.5 23.2 0 27.3-21.2 49.7-48 51.6L512 448c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-192-96 0 0 176c0 26.5-21.5 48-48 48l-192 0c-26.5 0-48-21.5-48-48l0-176.1c-26.8-1.9-48-24.3-48-51.6 0-8 1.9-16 5.5-23.2zM128 256l0 112c0 8.8 7.2 16 16 16l128 0c8.8 0 16-7.2 16-16l0-112-160 0z"/></svg>
-           Database 
+            <svg style="width: 2rem;" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M448 205.8c-14.8 9.8-31.8 17.7-49.5 24-47 16.8-108.7 26.2-174.5 26.2S96.4 246.5 49.5 229.8c-17.6-6.3-34.7-14.2-49.5-24L0 288c0 44.2 100.3 80 224 80s224-35.8 224-80l0-82.2zm0-77.8l0-48C448 35.8 347.7 0 224 0S0 35.8 0 80l0 48c0 44.2 100.3 80 224 80s224-35.8 224-80zM398.5 389.8C351.6 406.5 289.9 416 224 416S96.4 406.5 49.5 389.8c-17.6-6.3-34.7-14.2-49.5-24L0 432c0 44.2 100.3 80 224 80s224-35.8 224-80l0-66.2c-14.8 9.8-31.8 17.7-49.5 24z"></path></svg>
+            Database System
         </div>
 
         <div>
-            <div style="background-color: #242424; padding: 10px;">   
+            <div style="border-radius:8px; background-color: #242424; padding: 10px;">   
                 
-                <h2>Database Management System</h2>
-                <img src="/@rescources/site/database-manager-screenshot/">
+                <h2>Database Management Application</h2>
+                <iframe id="canvas-engine-frame-holder" sandbox="" frameborder="0" style="height: 100vh !important; max-width: calc(100% - 0px); width: 100vw; transform-origin: 0 0; border: 3px solid #6c2bd9; transition: .3s; border-radius: 13px;" src="/control-panel/database-manager/engines/preview.php"></iframe>
                 <p>Manage Your Websites Database, this will allow you to perform changes to your sites database</p>
 
-                <button>Launch Application</button>
+                <button onclick="window.location='/<?php echo(__ADMIN_URL__) ?>/vm-database/application/'">Launch Application</button>
             </div>
         </div>
 

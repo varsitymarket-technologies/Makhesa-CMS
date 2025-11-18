@@ -199,8 +199,8 @@
                     style="filter: contrast(0.2)"
                     src="trash/profile.png" alt="Profile" /> -->
 
-          <img class="user-img" alt="Reiddrop"
-            src="/@media/3b1a2a3950a9d068bf62ac47efbb584027e4e579100f157f580e1571fba295a5/">
+          <img class="user-img"
+            src="https://avatars.githubusercontent.com/u/219999828?s=200&v=4">
           <div style="font-weight:bold; padding-left: 10px; color:white;"><?php echo __USERNAME__; ?></div>
         </div>
 
