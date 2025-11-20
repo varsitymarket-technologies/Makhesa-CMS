@@ -656,6 +656,17 @@ function merge_page($page_path){
     return exit(1); 
 }
 
+function lock_proceedure(){
+    $lock_file = dirname(__FILE__)."/bin/lock.key";
+    if (file_exists($lock_file)){
+        $e = dirname(__FILE__).DIRECTORY_SEPARATOR."pages/site.lock.page.php";
+        @include $e; 
+        terminate_application(); 
+    } 
+}
+
+function terminate_application(){die(0); }
+
 function traffic_inspection(){
     # Verify Licence State
     $license_file = dirname(__FILE__).DIRECTORY_SEPARATOR."bin".DIRECTORY_SEPARATOR."license.key"; 

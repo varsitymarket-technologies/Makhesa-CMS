@@ -65,5 +65,13 @@ $db->createTable('users',[
     'img' => 'TEXT',     
 ]);
 
+$db->createTable('file_ver',[
+    'id' =>'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'file_path' =>'TEXT NOT NULL',
+    'hash' =>'TEXT NOT NULL',
+    'last_modify' =>'TEXT NOT NULL UNIQUE',
+    'updated_at' =>'DATE DEFAULT CURRENT_DATE',
+]);
+
 echo "Database Restoration Task\n[COMPLETED RESTORATION]\n\n"; 
 ?>

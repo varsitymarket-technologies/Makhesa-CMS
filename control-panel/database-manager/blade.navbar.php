@@ -78,7 +78,7 @@
         <?php
         #Display All The Database Tables 
         $sql = "SELECT * FROM sqlite_master WHERE type='table'";
-        $engine_tables = __DATABASE_WEBSITE__->query($sql); 
+        $engine_tables = __DATABASE_LOGS__->query($sql); 
         foreach ($engine_tables as $key => $value) {
           $template = '  <div class="side-menu">
           <a style="background-color: #3c3c3c5c; padding: 0.8rem; border-radius: 10px;" onclick="window.location = `'.change_page('vm-database/dbms').'[@TITLE]/[@ID]/`" class="sidebar-link trending"

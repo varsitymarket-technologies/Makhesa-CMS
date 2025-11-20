@@ -111,6 +111,7 @@ function application_menu(){
         'restore.logs.database' => "Restores The Broken System Engine Logs Database Structure",
         'restore.register.database' => "Restores The Broken System Register Database Structure",
         'deploy.static.website' => "Deploys the site to the github website",
+        'lock.site' => "Lock your website from external users",
         'git.version' => "Version Control For Your Control Panel",
         'web.server' => "Run the native PHP server",
         "quit" => "Close This Application. "

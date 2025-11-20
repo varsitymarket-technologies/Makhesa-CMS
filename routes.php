@@ -43,6 +43,8 @@ if ($traffic_request == $public_request) {
     @include_once PWD . "/control-panel/control-panel/index.php";
     die(0);
 } else {
+    lock_proceedure(); 
+    #terminate_application(); 
     include_once PWD . DIRECTORY_SEPARATOR . '@website' . DIRECTORY_SEPARATOR . "index.php";
     die(0);
 

@@ -1,6 +1,7 @@
 <div style="width:100%; max-width:100vw; height:100%; max-height:100vh; padding:20px; overflow-y: scroll;">
     <br>
-    <div class="anim" style="--delay: 0s; text-align: center; padding: 1rem 0rem; display: flex; align-items: center; justify-content: space-between;">
+    <div class="anim"
+        style="--delay: 0s; text-align: center; padding: 1rem 0rem; display: flex; align-items: center; justify-content: space-between;">
         <div style="text-align: left;">
             <h1>Site Settings</h1>
         </div>
@@ -15,9 +16,19 @@
             </div>
 
             <div>
+                <span style="font-size:10px; ">Site Url</span><br>
+                <div class="search-bar" style="max-width: 100%;">
+                    <input value="<?php echo get_admin_url() ?>" placeholder="Your Website Title" type="text"
+                        id="edt_site_name" style="background-image: none; max-width: 100%;">
+                </div>
+            </div>
+            <br>
+
+            <div>
                 <span style="font-size:10px; ">Site Name</span><br>
                 <div class="search-bar" style="max-width: 100%;">
-                    <input value="<?php echo get_admin_url() ?>" placeholder="Your Website Title" type="text" id="edt_site_name" style="background-image: none; max-width: 100%;">
+                    <input value="<?php echo get_admin_url() ?>" placeholder="Your Website Title" type="text"
+                        id="edt_site_name" style="background-image: none; max-width: 100%;">
                 </div>
             </div>
             <br>
@@ -25,7 +36,8 @@
             <div>
                 <span style="font-size:10px; ">Domain</span><br>
                 <div class="search-bar" style="max-width: 100%;">
-                    <input value="<?php echo __DOMAIN_NAME__ ?>" placeholder="Your Website Domain" type="text" id="edt_site_name" style="background-image: none; max-width: 100%;">
+                    <input value="<?php echo __DOMAIN_NAME__ ?>" placeholder="Your Website Domain" type="text"
+                        id="edt_site_name" style="background-image: none; max-width: 100%;">
                 </div>
             </div>
             <br>
@@ -33,7 +45,9 @@
             <div>
                 <span style="font-size:10px; ">Site Icon</span><br>
                 <div class="video-name">
-                    <img class="add_media_data" id="site-icon-media" src="<?php echo __PROTOCOL__.__DOMAIN_NAME__?>/@media/sharie_image" style="max-width: 75vw; max-height: 75vh; object-fit: cover; border-radius: 8px; margin-bottom: 10px; margin: 10px auto; display: block; height: fit-content; width: fit-content;">
+                    <img class="add_media_data" id="site-icon-media"
+                        src="<?php echo __PROTOCOL__ . __DOMAIN_NAME__ ?>/@media/sharie_image"
+                        style="max-width: 75vw; max-height: 75vh; object-fit: cover; border-radius: 8px; margin-bottom: 10px; margin: 10px auto; display: block; height: fit-content; width: fit-content;">
                 </div>
             </div>
             <br>
@@ -50,17 +64,28 @@
         <div class="video-wrapper"></div>
         <div style="padding:15px;">
             <div class="small-header anim" style="--delay: .3s">
-                <span style="font-size:10px; ">Manage The General Settings For The Site</span><br>
-                Genral Admin Settings
+                <span style="font-size:10px; ">Control how you publish your website</span><br>
+                Site Deployment
             </div>
 
             <div>
-                <span style="font-size:10px; ">Admin Access Link</span><br>
+                <span style="font-size:10px; ">Website Lock</span><br>
                 <div class="search-bar" style="max-width: 100%;">
-                    <input value="<?php echo get_admin_url() ?>" placeholder="Configure Your Admin Route Path" type="text" id="edt_site_route_access" style="background-image: none; max-width: 100%;">
+                    <input value="<?php echo get_admin_url() ?>" placeholder="Configure Your Admin Route Path"
+                        type="text" id="edt_site_route_access" style="background-image: none; max-width: 100%;">
                 </div>
             </div>
             <br>
+
+            <div>
+                <span style="font-size:10px; ">Website Password</span><br>
+                <div class="search-bar" style="max-width: 100%;">
+                    <input value="<?php echo get_admin_url() ?>" placeholder="Configure Your Admin Route Path"
+                        type="password" id="edt_site_route_access" style="background-image: none; max-width: 100%;">
+                </div>
+            </div>
+            <br>
+
             <button onclick="save_website()">
                 Save Changes
             </button>
@@ -68,7 +93,7 @@
 
     </div>
 
-    
+
     <div class="video anim" style="--delay: .4s; margin:1rem 0px; ">
 
         <div class="video-wrapper"></div>
@@ -96,7 +121,8 @@
             <div>
                 <span style="font-size:10px; ">Admin Route Access Link</span><br>
                 <div class="search-bar" style="max-width: 100%;">
-                    <input placeholder="Configure Your Admin Route Path" type="text" id="edt_site_route_access" style="background-image: none; max-width: 100%;">
+                    <input placeholder="Configure Your Admin Route Path" type="text" id="edt_site_route_access"
+                        style="background-image: none; max-width: 100%;">
                 </div>
             </div>
             <br>
@@ -104,15 +130,18 @@
             <div>
                 <span style="font-size:10px; ">Website Domain</span><br>
                 <div class="search-bar" style="max-width: 100%;">
-                    <input placeholder="example.com" type="text" id="edt_page_title" style="background-image: none; max-width: 100%;">
+                    <input placeholder="example.com" type="text" id="edt_page_title"
+                        style="background-image: none; max-width: 100%;">
                 </div>
             </div>
             <div>
                 <span style="font-size:10px;">Choose a Setup Template</span><br>
                 <div id="template-gallery" style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
                     <!-- Example Template 1 -->
-                    <div class="template-card" onclick="selectTemplate('modern')" style="cursor:pointer; border:1px solid #ddd; border-radius:8px; padding:10px; width:140px; text-align:center; transition:box-shadow 0.2s;">
-                        <img src="https://via.placeholder.com/120x80?text=Modern" alt="Modern Template" style="width:100%; border-radius:4px;">
+                    <div class="template-card" onclick="selectTemplate('modern')"
+                        style="cursor:pointer; border:1px solid #ddd; border-radius:8px; padding:10px; width:140px; text-align:center; transition:box-shadow 0.2s;">
+                        <img src="https://via.placeholder.com/120x80?text=Modern" alt="Modern Template"
+                            style="width:100%; border-radius:4px;">
                         <div style="margin-top:8px; font-size:13px;">Blank Theme</div>
                     </div>
                 </div>

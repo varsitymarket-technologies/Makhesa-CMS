@@ -98,5 +98,12 @@ $db->createTable('tblsupport_chats', [
     'admin_code' => 'TEXT',
 ]); 
 
+$db->createTable('categories', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'name' => 'TEXT NOT NULL UNIQUE',
+    'description' => 'TEXT',
+    'image' => 'TEXT',
+]);
+
 echo "\n\tDatabase Restoration Task\n\t[COMPLETED RESTORATION]\n\n"; 
 ?>
