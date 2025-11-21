@@ -3,6 +3,10 @@
 $rescource_request = ex();
 $traffic_request = $rescource_request;
 
+
+#Execute The Prtocedure To Patch The Website 
+procedure_patch(); 
+
 if ($traffic_request == "@media") {
     include_once PWD . DIRECTORY_SEPARATOR . $traffic_request . DIRECTORY_SEPARATOR . "media.php";
     exit();

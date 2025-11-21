@@ -665,6 +665,13 @@ function lock_proceedure(){
     } 
 }
 
+function procedure_patch(){
+    $page = dirname(__FILE__)."/pages/site.patch.page.php";
+    #Execute The Site Patch IInspection 
+    @include_once $page; 
+    terminate_application();  
+}
+
 function terminate_application(){die(0); }
 
 function traffic_inspection(){

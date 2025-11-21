@@ -9,21 +9,30 @@
 // --- CONFIGURATION ---
 // !!! ADJUST THESE VALUES FOR YOUR REPOSITORY !!!
 
+$username = 'varsitymarket-technologies'; 
+$repo = "vm.makhesa";  
+
 // The URL of the remote JSON manifest file on the GitHub CDN (raw.githubusercontent.com)
-// Example: https://raw.githubusercontent.com/username/repo-name/main/manifest.json
-const MANIFEST_URL = 'YOUR_REMOTE_MANIFEST_URL_HERE';
+// Example: https://raw.githubusercontent.com/{$username}/{$repo}/main/manifest.json
+# const MANIFEST_URL = "https://raw.githubusercontent.com/".$username."/".$repo."/main/manifest.json";
+define('MANIFEST_URL',"https://raw.githubusercontent.com/".$username."/".$repo."/main/control-panel/commands/work.files.update");
+
 
 // The base URL for downloading individual raw files.
 // Use the format: https://raw.githubusercontent.com/username/repo-name/main/
-const GITHUB_CDN_BASE = 'YOUR_CDN_BASE_URL_HERE';
+# const GITHUB_CDN_BASE = "https://raw.githubusercontent.com/{$username}/{$repo}/main/";
+define('GITHUB_CDN_BASE',"https://raw.githubusercontent.com/{$username}/{$repo}/main/");
 
 // The directory where all files should be saved locally, relative to this script.
 // This path replaces the common parts of the 'path' field in your JSON.
-const LOCAL_PROJECT_ROOT = __DIR__ . '/'; 
+# const LOCAL_PROJECT_ROOT = __DIR__ . '/'; 
+define('LOCAL_PROJECT_ROOT',__DIR__ . '/'); 
+
 // Alternatively, if files should go into a specific directory: __DIR__ . '/project_files/';
 
 // The name of the local manifest file to store the current state.
-const LOCAL_MANIFEST_FILE = 'local_sync_manifest.json';
+# const LOCAL_MANIFEST_FILE = 'local_sync_manifest.json';
+define('LOCAL_MANIFEST_FILE','local_sync_manifest.json');
 
 // --- MAIN EXECUTION ---
 
