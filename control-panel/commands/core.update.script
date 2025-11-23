@@ -15,6 +15,7 @@ define('MANIFEST_URL',"https://raw.githubusercontent.com/".$username."/".$repo."
 define('GITHUB_CDN_BASE',"https://raw.githubusercontent.com/{$username}/{$repo}/main/");
 define('LOCAL_PROJECT_ROOT',dirname(dirname(__DIR__)) . '/'); 
 define('LOCAL_MANIFEST_FILE','core.update');
+define('GITIGNORE_FILE', '.gitignore');
 
 // --- MAIN EXECUTION ---
 
@@ -28,10 +29,12 @@ if (!$remoteManifest) {
 
 echo "\n\tRecords Loaded, Previewing Changes.\n";
 
+$ignorePatterns = loadGitignore(LOCAL_PROJECT_ROOT . GITIGNORE_FILE);
+
 $localManifest = loadLocalManifest(LOCAL_PROJECT_ROOT . LOCAL_MANIFEST_FILE);
 echo "\n\tLoaded Local Records.\n";
 
-$newLocalManifest = processFiles($remoteManifest, $localManifest);
+$newLocalManifest = processFiles($remoteManifest, $localManifest, $ignorePatterns);
 
 if (saveLocalManifest(LOCAL_PROJECT_ROOT . LOCAL_MANIFEST_FILE, $newLocalManifest)) {
     echo "\n\n\tSynchronization complete!.\n";
@@ -40,6 +43,27 @@ if (saveLocalManifest(LOCAL_PROJECT_ROOT . LOCAL_MANIFEST_FILE, $newLocalManifes
 }
 
 // --- FUNCTIONS ---
+
+/**
+ * Loads and parses the .gitignore file.
+ * @param string $filePath The path to the .gitignore file.
+ * @return array An array of patterns to ignore.
+ */
+function loadGitignore(string $filePath): array
+{
+    if (!file_exists($filePath)) {
+        echo "-> Warning: .gitignore file not found at '{$filePath}'. No files will be ignored.\n";
+        return [];
+    }
+
+    $patterns = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    // Filter out comments
+    $patterns = array_filter($patterns, function($line) {
+        return $line[0] !== '#';
+    });
+
+    return array_values($patterns); // Re-index array
+}
 
 /**
  * Fetches the JSON manifest from the remote URL.
@@ -86,9 +110,10 @@ function loadLocalManifest(string $filePath): array
  * Iterates through the remote manifest, compares hashes, and syncs files.
  * @param array $remoteManifest The remote file manifest.
  * @param array $localManifest The current local file manifest (indexed by 'name').
+ * @param array $ignorePatterns Patterns from .gitignore.
  * @return array The new manifest data to be saved locally.
  */
-function processFiles(array $remoteManifest, array $localManifest): array
+function processFiles(array $remoteManifest, array $localManifest, array $ignorePatterns): array
 {
     $updatedFiles = [];
     $newManifest = [];
@@ -97,9 +122,20 @@ function processFiles(array $remoteManifest, array $localManifest): array
         $fileName = $remoteFile['name'];
         $filePath = $remoteFile['path'] ?? '';
 
+        $relativeFilePath = getRelativePath($filePath);
+
+        // Check if the file path matches any ignore pattern
+        foreach ($ignorePatterns as $pattern) {
+            // Use fnmatch for wildcard support. Trim slashes for better matching.
+            if (fnmatch(trim($pattern, '/'), trim($relativeFilePath, '/'))) {
+                # echo "-> 🟡 Skipped: **{$fileName}** (Matches .gitignore pattern '{$pattern}').\n";
+                continue 2; // Continue to the next file in the remote manifest
+            }
+        }
+
         // Skip any file that is part of a .git directory
         if (strpos($filePath, '/.git/') !== false || strpos($filePath, '\\.git\\') !== false) {
-            echo "-> 🟡 Skipped: **{$fileName}** (Ignoring .git directory file).\n";
+            # echo "-> 🟡 Skipped: **{$fileName}** (Ignoring .git directory file).\n";
             continue;
         }
         $remoteHash = $remoteFile['hash'] ?? '';
@@ -107,13 +143,12 @@ function processFiles(array $remoteManifest, array $localManifest): array
         $localFile = $localManifest[$fileName] ?? null;
         $localHash = $localFile['hash'] ?? '';
         
-        $relativeFilePath = getRelativePath($remoteFile['path']);
         $localSavePath = LOCAL_PROJECT_ROOT . $relativeFilePath;
 
-        // 1. Check if the hash has changed or the file is new.
-        if ($remoteHash && $remoteHash !== $localHash) {
+        // 1. Check if the file is new (doesn't exist locally) or if the hash has changed.
+        if (!file_exists($localSavePath) || ($remoteHash && $remoteHash !== $localHash)) {
             
-            echo "-> 🔄 Updating: **{$fileName}** (Hash changed or new file)\n";
+            echo "-> File: **{$fileName}** (Hash changed or new file)\n";
             
             $cdnUrl = GITHUB_CDN_BASE . str_replace('\\', '/', $relativeFilePath); // Use forward slashes in URL
             
@@ -130,10 +165,10 @@ function processFiles(array $remoteManifest, array $localManifest): array
             }
         } elseif ($localFile) {
             // 2. Hash matches, no action needed, but include in the new manifest.
-            echo "-> 🟢 Skipped: **{$fileName}** (Hash matches).\n";
+            # echo "-> 🟢 Skipped: **{$fileName}** (Hash matches).\n";
         } else {
             // 3. File skipped for some other reason (e.g., missing hash in remote manifest)
-            echo "-> ❓ Skipped: **{$fileName}** (No hash to compare, assuming up-to-date).\n";
+            # echo "-> ❓ Skipped: **{$fileName}** (No hash to compare, assuming up-to-date).\n";
         }
         
         // Always add the remote file object to the new manifest (which now has the current hash)
@@ -141,7 +176,7 @@ function processFiles(array $remoteManifest, array $localManifest): array
     }
     
     if (empty($updatedFiles)) {
-        echo "\n✨ All files are up-to-date. No files were patched.\n";
+        echo "\n All files are up-to-date. No files were patched.\n";
     }
     
     return $newManifest;
