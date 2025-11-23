@@ -2,9 +2,9 @@
     {
         "name": "COMMIT_EDITMSG",
         "path": "C:\\Users\\Hastings\\Documents\\vm.makhesa\/.git\/COMMIT_EDITMSG",
-        "hash": "9bf22249ea146e04ff584007ddecab4dd28ec457ae269872bf676397b3d8af88",
-        "size": 0.0263671875,
-        "modified": 1763879775
+        "hash": "a6d699a6ec0ceeafdb77fc51bda99c64cb17f482b6c76504839d608c8d2e0756",
+        "size": 0.013671875,
+        "modified": 1763888254
     },
     {
         "name": ".gitignore",
@@ -2128,6 +2128,13 @@
         "modified": 1763680273
     },
     {
+        "name": "app.files.update",
+        "path": "C:\\Users\\Hastings\\Documents\\vm.makhesa\/control-panel\/commands\/app.files.update",
+        "hash": "1ccb9638b44623eeb10ccc8b08adcb3d96449e2f79310b4b8614d000891e4f6d",
+        "size": 0.0625,
+        "modified": 1763882756
+    },
+    {
         "name": "command.center.php",
         "path": "C:\\Users\\Hastings\\Documents\\vm.makhesa\/control-panel\/commands\/command.center.php",
         "hash": "c9eb68cc679a4d5ec8eee549bffaccc293818c36cc473d68579c4fb957ca9ad2",
@@ -2144,9 +2151,9 @@
     {
         "name": "core.update.script",
         "path": "C:\\Users\\Hastings\\Documents\\vm.makhesa\/control-panel\/commands\/core.update.script",
-        "hash": "c0fb74472d8a0638d4c434d32184a8c1b89c8c420e7c95a5dc55de5f50bc2c5e",
-        "size": 8.1162109375,
-        "modified": 1763877331
+        "hash": "d0e0ce70882b5ab19f97007c97084d543dc027c5e999c10106b461998e861ec7",
+        "size": 9.4853515625,
+        "modified": 1763883907
     },
     {
         "name": "create.user.script",
@@ -2291,9 +2298,9 @@
     {
         "name": "work.files.update",
         "path": "C:\\Users\\Hastings\\Documents\\vm.makhesa\/control-panel\/commands\/work.files.update",
-        "hash": "304a18c8b5721f700f909450e76771937a543180068e8dd3bd792740d1cc536a",
-        "size": 952.9140625,
-        "modified": 1763680314
+        "hash": "4770a3fa919f77e27f7011677dc09e3e3e20caca1843b66cfd07c99bf0aa1026",
+        "size": 953.2744140625,
+        "modified": 1763882756
     },
     {
         "name": "work.update",
@@ -5504,9 +5511,9 @@
     {
         "name": "__.DB",
         "path": "C:\\Users\\Hastings\\Documents\\vm.makhesa\/database\/__.DB",
-        "hash": "d9bba233672b6d91eaa2c5bfcd5092c398d15ce740cab09ada50952c92db0b8d",
-        "size": 264,
-        "modified": 1763882663
+        "hash": "fc0c94ece423cd681b976fae60a2128962fed40d9388c5c406d735a9c493fead",
+        "size": 732,
+        "modified": 1763888354
     },
     {
         "name": "__EMAIL_DATABASE__.DB",
@@ -5581,9 +5588,9 @@
     {
         "name": "index.php",
         "path": "C:\\Users\\Hastings\\Documents\\vm.makhesa\/index.php",
-        "hash": "e0087666278a6e520a418fb6ae0d1c2111fa5f7a1480c53b0877058aa2400d42",
-        "size": 0.734375,
-        "modified": 1763719356
+        "hash": "09f5ae73d6051a634f14179fe1873921eb716f89d4944ae976898c24114db55d",
+        "size": 0.736328125,
+        "modified": 1763888212
     },
     {
         "name": "invoice.html",
