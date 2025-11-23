@@ -104,7 +104,8 @@ function start_cli_application($source_code)
 function application_menu(){
     $menu_data = [
         'create.user' => "Creates New Admin Users For Your Control Panel",
-        
+        'core.patch' => 'Keep a version of your local project.',
+        'core.update' => 'Uppdate Your Local application with the latest patches in the background.',
         'restore.website.database' => "Restores The Broken Website Database Structure",
         'restore.engine.database' => "Restores The Broken System Engine Database Structure",
         'restore.email.database' => "Restores The Broken System Email Database Structure",

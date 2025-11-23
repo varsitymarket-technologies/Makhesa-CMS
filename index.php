@@ -17,6 +17,6 @@
 
 $_SERVER['SERVER_ADMIN'] = "varsity.market";
 
-#@include_once dirname(__FILE__).DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."site.susspended.pages.php"
+@include_once dirname(__FILE__).DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR."error.404.page.php";die(0);  
 @include_once dirname(__FILE__).DIRECTORY_SEPARATOR."routes.php"; 
 ?>
