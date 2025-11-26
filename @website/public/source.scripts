@@ -66,6 +66,14 @@ function construct_page(){
     }else{
         $page_url = ex(PAGE_INDEX);
         $sql = "SELECT * FROM `tblcanvas` WHERE (`id` = '{$page_url}')";
+        
+        $theme_folder = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."themes".DIRECTORY_SEPARATOR.__ACTIVE_THEME__.DIRECTORY_SEPARATOR;
+        $preview_file = $theme_folder."init/pages/".$page_url; 
+
+        if (file_exists($preview_file)){
+            @include_once $preview_file; 
+            return ; 
+        }
     }
 
 
@@ -73,11 +81,21 @@ function construct_page(){
     if (is_array($result)){
         if (!empty($result)){        
             $e = $result[0]['id'];
-            $source_page = hash("sha256",$e).".pages";
+            $source_page = hash("sha256",$e).".page";
             $pwd = dirname(__FILE__).DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR.$source_page;
-            @include_once $pwd;      
+            @include_once $pwd;
+            return ;       
         }
     }
+    
+    if (!defined('__ACTIVE_THEME__')){
+        return null;
+    }
+    $theme_folder = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."themes".DIRECTORY_SEPARATOR.__ACTIVE_THEME__.DIRECTORY_SEPARATOR;
+    $lost_file = $theme_folder."pages/404"; 
+
+    @include_once $lost_file; 
+    return;  
 }
 
 function use_script($source){

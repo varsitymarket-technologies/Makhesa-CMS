@@ -25,14 +25,8 @@
                     <i class="fa-solid fa-house"></i>
                 </button>
 
-                <button onclick="window.location=`/<?php echo _page_(1).'';  ?>/code.editor/`" class="icon-button">
-                    <i class="fa-solid fa-code"></i>
-                </button>
             </div>
             <div class="right">
-                <button onclick="save_session()" class="icon-button">
-                    <i class="fa-solid fa-file"></i>
-                </button>
 
             </div>
         </div>

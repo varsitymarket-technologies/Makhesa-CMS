@@ -1,0 +1,76 @@
+[25-Nov-2025 19:51:18 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "__ECOMMERCE_SERVICE__" in C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\init\pages\category-page:34
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\@website\public\source.scripts(74): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\web.interface(42): construct_page()
+#2 C:\Users\Hastings\Documents\vm.makhesa\@website\draft\constructor.php(23): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\routes.php(21): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#5 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\init\pages\category-page on line 34
+[25-Nov-2025 19:52:35 Europe/Berlin] PHP Parse error:  syntax error, unexpected token ";" in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.pages-list.blade.php on line 9
+[25-Nov-2025 19:53:48 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "__ECOMMERCE_SERVICE__" in C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\init\pages\category-page:34
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\@website\public\source.scripts(74): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\web.interface(42): construct_page()
+#2 C:\Users\Hastings\Documents\vm.makhesa\@website\draft\constructor.php(23): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\routes.php(21): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#5 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\init\pages\category-page on line 34
+[25-Nov-2025 20:41:11 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "__ECOMMERCE_SERVICE__" in C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\init\pages\category-page:34
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\@website\public\source.scripts(74): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\web.interface(42): construct_page()
+#2 C:\Users\Hastings\Documents\vm.makhesa\@website\draft\constructor.php(23): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\routes.php(21): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#5 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\init\pages\category-page on line 34
+[25-Nov-2025 20:58:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "__ECOMMERCE_SERVICE__" in C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\init\pages\category-page:34
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\@website\public\source.scripts(74): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\web.interface(42): construct_page()
+#2 C:\Users\Hastings\Documents\vm.makhesa\@website\draft\constructor.php(23): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\routes.php(21): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#5 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\init\pages\category-page on line 34
+[25-Nov-2025 21:42:11 Europe/Berlin] PHP Parse error:  syntax error, unexpected token "=" in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.pages-list.blade.php on line 129
+[26-Nov-2025 07:04:40 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "__ECOMMERCE_SERVICE__" in C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\init\pages\category-page:34
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\@website\public\source.scripts(74): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\web.interface(42): construct_page()
+#2 C:\Users\Hastings\Documents\vm.makhesa\@website\draft\constructor.php(23): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\routes.php(21): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#5 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\init\pages\category-page on line 34
+[26-Nov-2025 07:09:03 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "__ECOMMERCE_SERVICE__" in C:\Users\Hastings\Documents\vm.makhesa\@website\public\pages\e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\@website\public\source.scripts(86): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\web.interface(42): construct_page()
+#2 C:\Users\Hastings\Documents\vm.makhesa\@website\public\constructor.php(24): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\@website\index.php(11): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\routes.php(52): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#6 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\@website\public\pages\e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[26-Nov-2025 07:10:03 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "__ECOMMERCE_SERVICE__" in C:\Users\Hastings\Documents\vm.makhesa\@website\public\pages\e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\@website\public\source.scripts(86): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\web.interface(42): construct_page()
+#2 C:\Users\Hastings\Documents\vm.makhesa\@website\draft\constructor.php(23): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\routes.php(21): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#5 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\@website\public\pages\e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[26-Nov-2025 07:17:02 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined constant "__ECOMMERCE_SERVICE__" in C:\Users\Hastings\Documents\vm.makhesa\@website\public\pages\e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\@website\public\source.scripts(86): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\@website\themes\2023\web.interface(42): construct_page()
+#2 C:\Users\Hastings\Documents\vm.makhesa\@website\public\constructor.php(24): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\@website\index.php(11): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\routes.php(52): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#6 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\@website\public\pages\e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15

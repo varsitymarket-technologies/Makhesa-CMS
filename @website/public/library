@@ -11,6 +11,7 @@
 #   Configure Modules 
 $module_list = [
     '__SHOP_MODULE__'=>'shop.module',
+    '__ANALYTICS_MODULE__'=>'analytics.module',
 ]; 
 
 foreach ($module_list as $key => $value) {
