@@ -112,10 +112,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         "register-website" => "script.register-site.php",
 
+        # Menu AJAX Scripts
         "create-menu"=>"script.create-menu.php",
+        "add-menu-item"=>"script.add-menu-item.php",
+        "rearange-menu"=>"script.rearange-menu-items.php",
+        
 
     ];
-    
+     
     if (array_key_exists($page, $executable_map)) {
         $file_path = dirname(__FILE__) . DIRECTORY_SEPARATOR . $executable_map[$page];
         if (file_exists($file_path)) {

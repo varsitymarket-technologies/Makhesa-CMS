@@ -14,6 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } 
 
     $sql = "SELECT * FROM `menu` WHERE (`title` == '{$menu_name}')";
+    if (!defined('__DATABASE_WEBSITE__')){
+        include_once dirname(dirname(dirname(dirname(__FILE__)))) . DIRECTORY_SEPARATOR ."config.php";
+    }
+    $db = __DATABASE_WEBSITE__;
     $result = $db->query($sql);
     if (isset($result[0])){
         #Warning Menu Already Exists 
@@ -21,7 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die(0);
 
     }else{
-        $menu_data = [$menu_name=>['caption'=>$menu_caption],'link'=>$menu_link,'node'=>'text'];
+        #$menu_data = [$menu_name=>['caption'=>$menu_caption],'link'=>$menu_link,'node'=>'text'];
+        $menu_data[$menu_name][] = [
+            "node"=>"text",
+            "link"=>$menu_link,
+            "caption"=>$menu_caption,
+        ];
         $menu_data = json_encode($menu_data,JSON_PRETTY_PRINT);
         $sql = "INSERT INTO `menu` (`title`,`data_node`) VALUES ('{$menu_name}','$menu_data')";
         $db->query($sql);

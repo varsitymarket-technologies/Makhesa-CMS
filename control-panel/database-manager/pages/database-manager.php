@@ -33,7 +33,7 @@
         $ex = ex(5); 
         $sql = "SELECT * FROM sqlite_master WHERE (rootpage='{$ex}') AND (type='table')";
         
-        $engine_tables = __DATABASE_LOGS__->query($sql); 
+        $engine_tables = __DATABASE_WEBSITE__->query($sql); 
         $db_name = $engine_tables[0]['tbl_name']; 
         ?>
 
@@ -44,7 +44,7 @@
                 <tr>
                     <?php
                     $sql = "PRAGMA table_info('{$db_name}')";
-                    $engine_tables = __DATABASE_LOGS__->query($sql);
+                    $engine_tables = __DATABASE_WEBSITE__->query($sql);
                     foreach ($engine_tables as $key => $value) {
                         $template = "<th>" . $value['name'] . "</th>";
                         echo $template;
@@ -54,7 +54,7 @@
 
                 <?php
                 $sql = "SELECT * FROM '{$db_name}'";
-                $engine_tables = __DATABASE_LOGS__->query($sql);
+                $engine_tables = __DATABASE_WEBSITE__->query($sql);
                 foreach ($engine_tables as $db_key => $db_value) {
                     $keys = array_keys($db_value);
                     echo "<tr>"; 

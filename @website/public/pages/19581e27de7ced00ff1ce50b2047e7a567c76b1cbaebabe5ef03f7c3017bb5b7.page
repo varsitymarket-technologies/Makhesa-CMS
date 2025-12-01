@@ -1,0 +1,123 @@
+<main>
+    <div class="container">
+      <div class="row d-flex justify-content-center py-vh-5 pb-0">
+        <div class="col-12 col-lg-10 col-xl-8">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="display-1 fw-bold">
+              Business Startup Package 
+              </h1>
+              <p class="lead border-top pt-5 mt-5 aos-init" data-aos="fade-up">
+                Get a custom-built website plus all the essential technical utilities for one full year. This is the mandatory starting point for all projects.
+
+                The cost covers the fundamental costs of getting your site designed, built, and online securely for the first year.
+
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-lg-10 col-xl-8">
+          <div class="row d-flex align-items-start aos-init" data-aos="fade-right">
+            <div class="col-12 col-lg-7">
+              <h2 class="h3 mt-5 border-top pt-5">01. Custom Design &amp; Architecture</h2>
+              <p class="text-secondary">We create a professional, unique layout and site map (up to 10 pages) based on your brand and user goals.</p>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+              <h3 class="h6">tl;dr</h3>
+              <p class="text-secondary">
+                Custom Design &amp; Architecture
+              </p>
+            </div>
+          </div>
+
+          <div class="row d-flex align-items-start aos-init" data-aos="fade-right">
+            <div class="col-12 col-lg-7">
+              <h2 class="h3 mt-5 border-top pt-5">02. Domain Registration (1 Year)</h2>
+              <p class="text-secondary">We handle the registration and setup of one primary domain (e.g., yoursite.com).</p>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+              <h3 class="h6">Domain Registration (1 Year)</h3>
+              <p class="text-secondary">
+                Domain Registration (1 Year)
+              </p>
+            </div>
+          </div>
+
+          <div class="row d-flex align-items-start aos-init" data-aos="fade-right">
+            <div class="col-12 col-lg-7">
+              <h2 class="h3 mt-5 border-top pt-5">Secure Shared Hosting (1 Year)
+              </h2>
+              <p class="text-secondary">High-performance hosting optimized for speed and reliability, included for the first 12 months.</p>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+              <h3 class="h6">Secure Shared Hosting (1 Year)</h3>
+              <p class="text-secondary">
+                Secure Shared Hosting (1 Year)
+              </p>
+            </div>
+          </div>
+
+          <div class="row d-flex align-items-start aos-init" data-aos="fade-right">
+            <div class="col-12 col-lg-7">
+              <h2 class="h3 mt-5 border-top pt-5">04. Server Security &amp; SSL</h2>
+              <p class="text-secondary">
+                Essential security protocols, including an SSL certificate, to secure data and establish trust.
+              </p>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+              <h3 class="h6">Server Security &amp; SSL</h3>
+              <p class="text-secondary">
+                Server Security &amp; SSL
+              </p>
+            </div>
+          </div>
+          <div class="row d-flex align-items-start aos-init" data-aos="fade-right">
+            <div class="col-12 col-lg-7">
+              <h2 class="h3 mt-5 border-top pt-5">05. Lorem ipsum</h2>
+              <p class="text-secondary">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita
+                kasd gubergren, no sea takimata sanctus est Lorem
+                ipsum dolor sit amet. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                dolore magna aliquyam erat. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem
+                ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+                erat.</p>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+              <h3 class="h6">tl;dr</h3>
+              <p class="text-secondary">
+                Eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="row d-flex align-items-start justify-content-center py-vh-3 text-muted aos-init" data-aos="fade">
+        <div class="col-12 col-lg-10 col-xl-9">
+          <div class="p-5 small bg-gray-900">
+            <p>*At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd
+              gubergren, no sea takimata sanctus est Lorem
+              ipsum dolor sit amet. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+              dolore magna aliquyam erat. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+              gubergren, no sea takimata sanctus est Lorem
+              ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>

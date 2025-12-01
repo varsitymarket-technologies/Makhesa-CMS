@@ -1,0 +1,185 @@
+
+
+    <main>
+        <section id="hero">
+            <h1>Beyond Templates: Custom Websites That Are Built to Grow Your Business.</h1>
+            <p class="subtitle">We design and engineer sophisticated digital platforms—from showcase sites to complex e-commerce, booking systems, and custom retail software. <strong>If you can dream it, we can build it.</strong></p>
+            <a href="package.html" class="cta-button primary">See Our All-Inclusive Starter Package ($3500)</a>
+        </section>
+
+        <section id="capabilities">
+            <h2>The Custom Advantage</h2>
+            <p>We specialize in high-complexity builds that require unique logic and large-scale data handling.</p>
+            <div class="capabilities-grid">
+                <div class="capability-item">
+                    <h3>E-commerce & Retail</h3>
+                    <p>Bespoke product displays, custom checkout flows, and inventory management tailored to your supply chain.</p>
+                </div>
+                <div class="capability-item">
+                    <h3>Booking & Ticketing</h3>
+                    <p>Real-time scheduling, variable duration appointments, and secure integrated payment gateways.</p>
+                </div>
+                <div class="capability-item">
+                    <h3>Complex Systems</h3>
+                    <p>Custom integrations with accounting software (CRM/ERP), internal retail/POS solutions, and unique database architecture.</p>
+                </div>
+                <div class="capability-item">
+                    <h3>Simple Showcase</h3>
+                    <p>Professional, custom-designed brochure sites that establish immediate authority and presence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="package-teaser">
+            <h2>The Transparent Starting Point</h2>
+            <p>We make starting your ambitious project simple and transparent with a powerful foundation package.</p>
+            <div class="price-box">
+                <span class="price">$3500</span>
+                <p>Start your custom journey for this fixed price, which includes your first year of domain, hosting, and security.</p>
+                <ul>
+                    <li>✅ Custom Design & Development Foundation</li>
+                    <li>✅ 1 Year Domain Registration</li>
+                    <li>✅ 1 Year Secure Shared Hosting</li>
+                    <li>✅ Server Security & SSL</li>
+                </ul>
+                <a href="package.html" class="cta-button secondary">See What $3500 Really Gets You &rarr;</a>
+            </div>
+        </section>
+
+        <section id="social-proof">
+            <h2>Trusted By Innovators</h2>
+            <blockquote class="testimonial">
+                <p>"They built us a bespoke, real-time scheduling algorithm that cut our administrative hours by 50%."</p>
+                <footer>— Jane Doe, CEO of Local Ticketing Co.</footer>
+            </blockquote>
+        </section>
+    </main>
+
+
+
+
+  <main>
+    <div class="container">
+      <div class="row d-flex justify-content-center py-vh-5 pb-0">
+        <div class="col-12 col-lg-10 col-xl-8">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="display-1 fw-bold">Example
+                <span class="fs-4">of a</span><br>
+                content page
+              </h1>
+              <p class="lead border-top pt-5 mt-5" data-aos="fade-up">
+                The $3500 covers the fundamental costs of getting your site designed, built, and online securely for the first year.
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 py-vh-2">
+            <img src="img/webp/abstract18.webp" width="1446" height="982" alt="abstract image"
+              class="img-fluid position-relative rounded-5 shadow" data-aos="zoom-up">
+          </div>
+        </div>
+        <div class="col-12 col-lg-10 col-xl-8">
+          <div class="row d-flex align-items-start" data-aos="fade-right">
+            <div class="col-12 col-lg-7">
+              <h2 class="h3 mt-5 border-top pt-5">01. Custom Design & Architecture</h2>
+              <p class="text-secondary">We create a professional, unique layout and site map (up to 10 pages) based on your brand and user goals.</p>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+              <h3 class="h6">tl;dr</h3>
+              <p class="text-secondary">
+                Custom Design & Architecture
+              </p>
+            </div>
+          </div>
+
+          <div class="row d-flex align-items-start" data-aos="fade-right">
+            <div class="col-12 col-lg-7">
+              <h2 class="h3 mt-5 border-top pt-5">02. Domain Registration (1 Year)</h2>
+              <p class="text-secondary">We handle the registration and setup of one primary domain (e.g., yoursite.com).</p>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+              <h3 class="h6">Domain Registration (1 Year)</h3>
+              <p class="text-secondary">
+                Domain Registration (1 Year)
+              </p>
+            </div>
+          </div>
+          <div class="row d-flex align-items-start" data-aos="fade-right">
+            <div class="col-12 col-lg-7">
+              <h2 class="h3 mt-5 border-top pt-5">Secure Shared Hosting (1 Year)
+              </h2>
+              <p class="text-secondary">High-performance hosting optimized for speed and reliability, included for the first 12 months.</p>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+              <h3 class="h6">Secure Shared Hosting (1 Year)</h3>
+              <p class="text-secondary">
+                Secure Shared Hosting (1 Year)
+              </p>
+            </div>
+          </div>
+          <div class="row d-flex align-items-start" data-aos="fade-right">
+            <div class="col-12 col-lg-7">
+              <h2 class="h3 mt-5 border-top pt-5">04. Server Security & SSL</h2>
+              <p class="text-secondary">
+                Essential security protocols, including an SSL certificate, to secure data and establish trust.
+              </p>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+              <h3 class="h6">Server Security & SSL</h3>
+              <p class="text-secondary">
+                Server Security & SSL
+              </p>
+            </div>
+          </div>
+          <div class="row d-flex align-items-start" data-aos="fade-right">
+            <div class="col-12 col-lg-7">
+              <h2 class="h3 mt-5 border-top pt-5">05. Lorem ipsum</h2>
+              <p class="text-secondary">At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
+                consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita
+                kasd gubergren, no sea takimata sanctus est Lorem
+                ipsum dolor sit amet. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                dolore magna aliquyam erat. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                gubergren, no sea takimata sanctus est Lorem
+                ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+                erat.</p>
+            </div>
+            <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
+              <h3 class="h6">tl;dr</h3>
+              <p class="text-secondary">
+                Eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet
+              </p>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <div class="row d-flex align-items-start justify-content-center py-vh-3 text-muted" data-aos="fade">
+        <div class="col-12 col-lg-10 col-xl-9">
+          <div class="p-5 small bg-gray-900">
+            <p>*At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore
+              et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Stet clita kasd
+              gubergren, no sea takimata sanctus est Lorem
+              ipsum dolor sit amet. Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+              dolore magna aliquyam erat. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+              gubergren, no sea takimata sanctus est Lorem
+              ipsum dolor sit amet. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>

@@ -116,6 +116,8 @@ function load_module($name)
     $initiate_dependency = $library_folder.".json"; 
     if (!file_exists($initiate_dependency)){
         trigger_error("Failed To Find Initiation File: .json --".$name); 
+    }else{
+        trigger_error("Finding The .$name"); 
     }
 
     # Initiate The Library
@@ -136,6 +138,28 @@ function use_template($template,$search,$replace){
     return null; 
 }
 
+function construct_menu_element($menu,$template){
+    $menu_name = $menu; 
+    $sql = "SELECT * FROM `menu` WHERE (`title` == '{$menu_name}')";
+    if (!defined('__DATABASE_WEBSITE__')){
+        include_once dirname(dirname(dirname(__FILE__))) . DIRECTORY_SEPARATOR ."config.php";
+    } 
+
+    $db = __DATABASE_WEBSITE__;
+    $result = $db->query($sql);
+    if (isset($result[0])){
+        $contents = $result[0]['data_node']; 
+        $contents = json_decode($contents,true);
+        $contents = $contents[$menu_name];  
+        foreach ($contents as $key => $value) {
+            $nav = use_template($template,['{MENU_CAPTION}','{MENU_LINK}'],[$value['caption'],$value['link']]);
+            echo $nav;     
+        }
+        return true; 
+     }
+
+    return null; 
+}
 
 function _web_media_($url){
      $media_hash = explode('/@media/',$url)[1];

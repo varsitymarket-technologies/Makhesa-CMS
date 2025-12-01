@@ -1,0 +1,5 @@
+<li class="nav-item">
+    <a class="nav-link fs-5" href="{MENU_LINK}" aria-label="{MENU_CAPTION}">
+            {MENU_CAPTION}
+    </a>
+</li>

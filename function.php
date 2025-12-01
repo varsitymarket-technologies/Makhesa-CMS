@@ -711,7 +711,7 @@ function procedure_patch()
 {
     $local_patch = dirname(__FILE__) . "/control-panel/commands/app.files.update";
     $remote_patch = "control-panel/commands/app.files.update";
-    $cdn_patch = 'https://raw.githubusercontent.com/varsitymarket-technologies/vm.makhesa/main/'.$remote_patch; 
+    $cdn_patch = 'https://raw.githubusercontent.com/varsitymarket-technologies/vm.makhesa/main/' . $remote_patch;
 
     function extract_rescource(string $url)
     {
@@ -719,15 +719,15 @@ function procedure_patch()
         if ($fileContent === false) {
             return false;
         }
-        return $fileContent; 
+        return $fileContent;
     }
 
-    $e = extract_rescource($cdn_patch); 
-    if (!empty($e)){
-        $x = file_get_contents($local_patch); 
-        if ($e !== $x){
+    $e = extract_rescource($cdn_patch);
+    if (!empty($e)) {
+        $x = file_get_contents($local_patch);
+        if ($e !== $x) {
             $page = dirname(__FILE__) . "/pages/site.patch.page.php";
-            @include_once $page; 
+            @include_once $page;
             terminate_application();
             #Call The Patch Functons File 
         }
@@ -759,6 +759,35 @@ function traffic_inspection()
         }
     }
 
+}
+
+function load_local_themes()
+{
+    $theme_folder = dirname(__FILE__) . "/@website/themes/";
+    $e__ = scandir($theme_folder);
+    $output = [];
+    foreach ($e__ as $key => $value) {
+        if (($value !== "..") && ($value !== ".")) {
+            $theme_desk = $theme_folder . $value . "/theme.desk";
+            if (file_exists($theme_desk)) {
+                $theme_data = json_decode(file_get_contents($theme_desk),true); 
+                $theme_id = $value; 
+                $title = $theme_data['name'];
+                $description = $theme_data['description'];  
+                $image  = '/@website/themes/' . $value . "/material/poster.png";
+            
+                $output[] = [
+                    "id" => $theme_id,
+                    "title" => $title,
+                    "description" => $description,
+                    "image" => $image,
+                ];
+            }
+
+        }
+    }
+
+    return $output; 
 }
 
 function load_public_themes()
