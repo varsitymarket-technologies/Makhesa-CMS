@@ -1,3 +1,58 @@
+<?php
+if (isset($_POST['lock-execution'])) {
+
+    #Construcing The Website Lock; 
+    $target_file = dirname(dirname(__FILE__)) . "/bin/lock.key";
+    $module_file = dirname(dirname(__FILE__)) . "/bin\license.innit";
+    include_once $module_file;
+    $username = 'admin';
+    $password = $_POST['edt_site_name'] ?? null;
+
+    $module = new license_innit();
+    $module->import($target_file);
+    $e = $module->capture();
+
+    $lusername = $e['authentication']['username'];
+    $lpassword = $e['authentication']['password'];
+
+    if ($username == $lusername) {
+        if ($password == $lpassword) {
+            setcookie('lock.auth',base64_encode($password));
+
+            setcookie('lock.auth',base64_encode($password));
+            setcookie('lock.auth',base64_encode($password));
+
+            #echo $_COOKIE['lock.auth']." -- ".$password; 
+            #include_once PWD . DIRECTORY_SEPARATOR . '@website' . DIRECTORY_SEPARATOR . "index.php";
+            die(0);
+
+        }
+    }
+}else if (isset($_COOKIE['lock.auth'])){
+    #Construcing The Website Lock; 
+    $target_file = dirname(dirname(__FILE__)) . "/bin/lock.key";
+    $module_file = dirname(dirname(__FILE__)) . "/bin\license.innit";
+    include_once $module_file;
+    $username = 'admin';
+    $password = base64_decode($_COOKIE['lock.auth']);
+
+    $module = new license_innit();
+    $module->import($target_file);
+    $e = $module->capture();
+
+    $lusername = $e['authentication']['username'];
+    $lpassword = $e['authentication']['password'];
+
+    if ($username == $lusername) {
+        if ($password == $lpassword) { 
+            include_once PWD . DIRECTORY_SEPARATOR . '@website' . DIRECTORY_SEPARATOR . "index.php";
+            die(0);
+
+        }
+    }
+}
+?>
+
 <html lang="en">
 
 <head>
@@ -107,11 +162,15 @@
                 <h1 class="animate__animated animate__fadeIn">Website Locked</h1>
                 <div class="description-text animate__animated animate__fadeIn animate__delay-1s">
                     <p>Use Website Code</p>
-                    <div class="search-bar" style="max-width: 100%;">
-                        <input value="vm-admin" placeholder="Your Website Title" type="text" id="edt_site_name"
-                            style="background-image: none; max-width: 100%; padding: 10px; border: none; border-radius: 10px; background-color: #ffffff69;">
-                            <button style="border-radius: 10px; background-color: #6c2bd9; color:white; padding:10px; border:none; " type="submit">Unclock</button>
-                    </div>
+                    <form method="POST" action="">
+                        <div class="search-bar" style="max-width: 100%;">
+                            <input value="" placeholder="Code" type="text" name="edt_site_name" id="edt_site_name"
+                                style="background-image: none; max-width: 100%; padding: 10px; border: none; border-radius: 10px; background-color: #ffffff69;">
+                            <button name="lock-execution"
+                                style="border-radius: 10px; background-color: #6c2bd9; color:white; padding:10px; border:none; "
+                                type="submit">Unclock</button>
+                        </div>
+                    </form>
 
                     <section class="footer"><strong>Powered By vmTECH</strong></section>
                 </div>

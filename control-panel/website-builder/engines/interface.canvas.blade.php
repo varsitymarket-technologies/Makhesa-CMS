@@ -1,15 +1,25 @@
+<?php @include_once "@interface.element.tool"; ?>
+
 <div class="content" style="align-items: normal; padding: 20px; overflow: hidden;">
-    <div class="content-area-wrapper">
-        <p>Home Page</p>
+  <div class="content-area-wrapper">
+    <p>Page Contents</p>
 
-        <div id="container-canvas-frame" class="content-area" style="background: inherit;">
-            <iframe id="canvas-engine-frame-holder" style="height: calc(100vh  + calc(100vh * 0.3)) !important; max-width: calc(400vw - 25px); width: 100vw; transform: scale(0.7); transform-origin: 0 0; border: 3px solid #6c2bd9; transition: .3s; border-radius: 13px;" src="http://localhost:3000/"></iframe>
-            
-            <div id="container-canvas-frame-resizer"></div>
-        </div>
+    <div id="container-canvas-frame" class="content-area" style="background: inherit;">
+      <iframe id="canvas-engine-frame-holder"
+        style="height: 100vh !important; max-width: calc(100% - 0px); width: 100vw; transform-origin: 0 0; border: 3px solid #6c2bd9; transition: .3s; border-radius: 13px;"
+        src="http://localhost:9000/@preview/10/"></iframe>
 
+      <div id="container-canvas-frame-resizer"></div>
     </div>
+
+    <br>
+    <a href="http://localhost:9000/vm-admin/vm-editor/code-editor/10/"
+      style="text-decoration: none; border-width:2px; padding: 10px; border-style: solid; border-color: #ffffffff; background-color: #600cdfff; color: white; border-radius: 1rem;">
+      <i class="fa-solid fa-code"></i> Code Editor</a>
+
+  </div>
 </div>
+
 <!-- 
 
 <style>

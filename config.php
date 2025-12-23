@@ -2,6 +2,8 @@
 #Include Database Client 
 @include_once "database" . DIRECTORY_SEPARATOR . "client.module.php";
 
+define("__THEME_SOURCE__","http://127.0.0.1:4500/"); 
+
 $db_website = new database_manager();
 $db_engine = new database_manager();
 $db_email = new database_manager();

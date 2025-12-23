@@ -21,6 +21,10 @@ include_once dirname(__FILE__).DIRECTORY_SEPARATOR."themes";
 
 # Create The Website Interface
 $interface = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."themes".DIRECTORY_SEPARATOR.__ACTIVE_THEME__.DIRECTORY_SEPARATOR."web.interface";
-@include_once $interface; 
-
+if (file_exists($interface)){
+    @include_once $interface; 
+}else{
+    # Failed To Create Website Web Page 
+    @include_once dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR.'pages'.DIRECTORY_SEPARATOR.'site.construction.page.php'; 
+}
 ?>

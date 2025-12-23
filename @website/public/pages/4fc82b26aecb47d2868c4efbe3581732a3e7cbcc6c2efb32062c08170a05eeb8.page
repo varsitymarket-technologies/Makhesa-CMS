@@ -11,8 +11,8 @@
           <div class="">
             <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
-                <div class="p-5" style="overflow: hidden;">
-                  <iframe id="canvas-engine-frame-holder" style="height: 30rem;max-width: 50rem;width: 100vw;transform: scale(0.7);transform-origin: 0 0;border: 3px solid #6c2bd9;transition: .3s;border-radius: 13px;margin-bottom: -9rem;" src="https://learn.varsitymarket.tech/courses/fundamentals-of-php/"></iframe>
+                <div class="p-1" style="overflow: hidden; padding: 20px; ">
+                  <iframe id="canvas-engine-frame-holder" style="height: 35rem; width: 142%;transform: scale(0.7);transform-origin: 0 0;border: 3px solid #ffffffba;transition: .3s;border-radius: 13px;margin-bottom: -9rem;" src="https://learn.varsitymarket.tech/courses/fundamentals-of-php/"></iframe>
                   <p class="pb-4 text-secondary">Learning Management System </p>
                   <a href="https://learn.varsitymarket.tech/" class="link-fancy link-fancy-light">View Work</a>
                 </div>

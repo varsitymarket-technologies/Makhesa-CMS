@@ -7,18 +7,13 @@
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
         <?php # @construct_menu_element('app.header','menu-header.template'); ?>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="/home/" aria-label="Homepage">
-            Home
+          <a class="nav-link fs-5" href="/pricing/" aria-label="Homepage">
+            Pricing
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link fs-5" href="/portfolio/" aria-label="A sample content page">
             Portfolio
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fs-5" href="/pricing/">
-            Pricing
           </a>
         </li>
         <li class="nav-item">
@@ -28,7 +23,7 @@
         </li>
 
       </ul>
-      <a href="/creaate-website/" aria-label="Download this template"
+      <a href="/request-website/"
         class="btn btn-outline-light">
         <small>Get a Website</small>
       </a>

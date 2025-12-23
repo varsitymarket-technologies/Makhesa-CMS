@@ -1,0 +1,8 @@
+[13-Dec-2025 14:30:37 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Cannot access offset of type string on string in C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\pages\cp.menu.page.php:122
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\interface.php(91): include_once()
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(33): include('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#4 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\pages\cp.menu.page.php on line 122

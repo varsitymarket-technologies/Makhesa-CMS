@@ -8,15 +8,16 @@ function _page_($section=1){
 }
 
 $page_action = _page_(3);
-
+ 
 $meta = [
-    "assets.editor" => "interface.editor.blade.php",
+    "assets-editor" => "interface.editor.blade.php",
     "sculpt.editor" => "",
     "design.editor" => "",
-    "inspect.editor" => "interface.inspector.blade.php",
+    "inspect-editor" => "interface.inspector.blade.php",
     "" => "interface.dashboard.blade.php",
     "dashboard" => "interface.inspector.blade.php",
     "text~editor" => "interface.text.blade.php",
+    "canvas-editor" => 'interface.canvas.blade.php',
     "code-editor" => "vs.code.blade.php",
     "new-page" => "interface.new-page.blade.php",
     "pages" => "interface.pages-list.blade.php", 

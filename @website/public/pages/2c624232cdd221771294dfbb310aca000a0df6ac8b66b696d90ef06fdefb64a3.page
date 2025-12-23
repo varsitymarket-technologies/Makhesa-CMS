@@ -1,4 +1,7 @@
 <main>
+    <div style="padding-top:20vh !important;" class="p-5 pt-0 mt-5 aos-init aos-animate" data-aos="fade">
+    </div>
+
     <div class="container">
       <div class="row d-flex justify-content-center py-vh-5 pb-0">
         <div class="col-12 col-lg-10 col-xl-8">
@@ -31,9 +34,9 @@
               <p class="text-secondary">We create a professional, unique layout and site map (up to 10 pages) based on your brand and user goals.</p>
             </div>
             <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
-              <h3 class="h6">tl;dr</h3>
+              <h3 class="h6">Custom Design &amp; Architecture</h3>
               <p class="text-secondary">
-                Custom Design &amp; Architecture
+                A web assistant will be assigned to handle your sites development process.  
               </p>
             </div>
           </div>
@@ -44,9 +47,9 @@
               <p class="text-secondary">We handle the registration and setup of one primary domain (e.g., yoursite.com).</p>
             </div>
             <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
-              <h3 class="h6">Domain Registration (1 Year)</h3>
+              <h3 class="h6">Domain Registration</h3>
               <p class="text-secondary">
-                Domain Registration (1 Year)
+                We can manage your domains for you to help you focus on whats important
               </p>
             </div>
           </div>
@@ -60,7 +63,7 @@
             <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
               <h3 class="h6">Secure Shared Hosting (1 Year)</h3>
               <p class="text-secondary">
-                Secure Shared Hosting (1 Year)
+                Your Web application will be hosted on our designated shared servers. This is only valid for a year which can be renewed after. 
               </p>
             </div>
           </div>
@@ -75,7 +78,7 @@
             <div class="col-12 col-lg-4 offset-lg-1 bg-gray-900 p-5 mt-5">
               <h3 class="h6">Server Security &amp; SSL</h3>
               <p class="text-secondary">
-                Server Security &amp; SSL
+                Keeping your website safe and secure is still one of our top priorrities. 
               </p>
             </div>
           </div>

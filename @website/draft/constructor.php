@@ -9,8 +9,10 @@
 #   RELEASE : 2025/06/29
 
 define("PAGE_INDEX",2); 
-define("__ACTIVE_THEME__","2023");
 define("__DEBUG_PREVIEW__",true);
+
+#Include The Theme Scripts
+include_once dirname(__FILE__).DIRECTORY_SEPARATOR."themes"; 
 
 # Include The Source Scripts 
 include_once dirname(__FILE__).DIRECTORY_SEPARATOR."scripts";

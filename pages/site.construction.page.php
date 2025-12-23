@@ -102,7 +102,7 @@
                 </div>
                 <h1 class="animate__animated animate__fadeIn">Website Under Construction</h1>
                 <div class="description-text animate__animated animate__fadeIn animate__delay-1s">
-                    <p>Website Coming soon</p>
+                    <p>Website hasnt been published yet</p>
                     <section class="footer"><strong>Powered By vmTECH</strong></section>
                 </div>
             </div>

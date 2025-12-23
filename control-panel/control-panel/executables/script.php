@@ -117,6 +117,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "add-menu-item"=>"script.add-menu-item.php",
         "rearange-menu"=>"script.rearange-menu-items.php",
         
+        #Theme Ajax Scripts 
+        "activate-theme"=>"script.enable-theme.php",
 
     ];
      

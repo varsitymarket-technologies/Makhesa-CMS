@@ -802,6 +802,8 @@
                     </div>
                 </div>
                 <div class="right">
+                    <!-- 
+
                     <div class="toggle-area">
                         <p>Dark Mode</p>
                         <label class="switch-theme">
@@ -809,6 +811,8 @@
                             <span class="slider"></span>
                         </label>
                     </div>
+
+                    -->
                 </div>
             </div>
         </div>

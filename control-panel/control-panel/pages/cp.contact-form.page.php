@@ -8,9 +8,11 @@ if (empty($internal_page)) {
 <div class="wrapper" style="overflow: auto">
     <?php include_once "blade.navbar.sidebar.php"; ?>
     <div class="main-container" id="application_canvas" style="overflow: visible">
+        <div style="padding: 2rem;">
 
+        </div>
         <div class="main-header anim" style="--delay: 0s; text-align: center; padding: 1rem 3rem; position: inherit;">
-            Contact Form Section
+            Contact Forms
         </div>
 
         <?php
@@ -89,6 +91,10 @@ if (empty($internal_page)) {
 
             $contact_data = $db->query("SELECT * FROM contact_form ORDER BY id DESC");
             if (empty($contact_data)) {
+                $html = ' null data '; 
+                $html = '<div class="anim" style="display: flex; align-items: center; flex-direction: column;"><h2><svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" style="height: 15rem;"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM224 176C250.5 176 272 197.5 272 224C272 250.5 250.5 272 224 272C197.5 272 176 250.5 176 224C176 197.5 197.5 176 224 176zM368 288C376.4 288 384.1 292.4 388.5 299.5L476.5 443.5C481 450.9 481.2 460.2 477 467.8C472.8 475.4 464.7 480 456 480L184 480C175.1 480 166.8 475 162.7 467.1C158.6 459.2 159.2 449.6 164.3 442.3L220.3 362.3C224.8 355.9 232.1 352.1 240 352.1C247.9 352.1 255.2 355.9 259.7 362.3L286.1 400.1L347.5 299.6C351.9 292.5 359.6 288.1 368 288.1z"></path></svg></h2><h2>No Data</h2><br>No Contact Forms Available</div>';
+ 
+                echo $html; 
             } else {
                 $html = '';
                 foreach ($contact_data as $row) {

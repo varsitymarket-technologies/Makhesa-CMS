@@ -1,34 +1,141 @@
 <main>
-  <div class="bg-dark position-relative">
+  <style>
+    .ab_img{
+      width:100%; 
+    }
+  </style>
+  <div class="bg-black py-vh-3">
+    <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
+      <div style="padding-top:20vh !important;" class="p-5 pt-0 mt-5 aos-init aos-animate" data-aos="fade">
+        <span class="h5 text-secondary fw-lighter">About our agency</span>
+        <h2 class="display-4">About Us </h2>
+      </div>
+
+      
+        <div class="row gx-5">
+          <div class="col-12 col-md-6">
+            <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <div class="p-5">
+                  <h2 class="fw-lighter">Experts In Cloud Computing</h2>
+                  <p class="pb-4 text-secondary">Your business can now focus on whats important, we handle your cloud infrastructure as well. </p>
+                </div>
+              </div>
+            </div>
+
+            
+
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <img class="rounded-5 p-0 ab_img" src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcHV0ZXIlMjB0ZXJtaW5hbHxlbnwwfHwwfHx8MA%3D%3D"> 
+              </div>
+            </div>
+
+            
+
+          </div>
+
+        </div>
+
+        <div class="row gx-5">
+
+          <div class="col-12 col-md-6">
+            <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <img class="rounded-5 p-0 ab_img" src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=806&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> 
+              </div>
+            </div>
+
+            
+
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <div class="p-5">
+                  <h2 class="fw-lighter">Increase Your Productivity </h2>
+                  <p class="pb-4 text-secondary">Our business main goal is to allow you to have high performance websites that will take your business to greater heights. </p>
+                </div>
+              </div>
+            </div>
+
+            
+
+          </div>
+
+        </div>
+
+
+        <div class="row gx-5">
+
+          <div class="col-12 col-md-6">
+            <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <img class="rounded-5 p-0 ab_img" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> 
+              </div>
+            </div>
+
+            
+
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <div class="p-5">
+                  <h2 class="fw-lighter"> Dependable Developers </h2>
+                  <p class="pb-4 text-secondary">Our purpose is to bring your ideas to life, even if this means building one code at a time.  </p>
+                </div>
+              </div>
+            </div>
+
+            
+
+          </div>
+
+        </div>
+
+        <div class="row gx-5">
+
+          <div class="col-12 col-md-6">
+            <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <iframe class="rounded-5 p-0 ab_img" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2169.9483187504306!2d28.25764039463842!3d-25.66789474504019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e1!3m2!1sen!2sza!4v1765807949308!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+              </div>
+            </div>
+
+            
+
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <div class="p-5">
+                  <h2 class="fw-lighter"> Where are we located?? </h2>
+                  <p class="pb-4 text-secondary">38 Bougainvillea Dr, Montana Tuine, Pretoria, 0182</p>
+                </div>
+              </div>
+            </div>
+
+            
+
+          </div>
+
+        </div>
+
+
+    </div>
+  </div>
+
+  <div class="bg-black ">
     <div class="container px-vw-5 py-vh-5">
-      <div style="padding-top:20vh; " class="row d-flex align-items-center">
 
-          <div class="col-12 col-lg-7">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAAAmCAYAAABd76BbAAAOH0lEQVR4AeycCaxdVRWGbxtCCEFiCEFClOAYQxAZBI0gIBJQBkMZxDKIqAUrIMEBhAYJKhRFhAIyWEBK0QoFBMUBBEFjGEQEBRUFHBEJIYYYQgghrd937luXffY959z7Xt9wX3Ne9n/2vPa09tprD/fN7bR/bQ/Mwh5oGXcWDlpb5U6nZdyWC2ZlD4wk465evXou+AR4EFwINgNbgjvB/WBfsA3YFKwzK3u+rfQa9cBIMi4t2gUsAduA48DN4FqwG3gH+CF4EPwBrIR5DwAbg1FtD9VszWT2wIQGGgZZF2wFdgP7g8PB7mBzMJAmaTYEe4Ml4AZwDtgZhPTchEauC8LIrFuFJ7E3wr0/kKnvx74HGteCM8GhQDoEt2bmemBqSh7IZFEsTCCz7oItk/yb8AfAz8ANYDm4FfwZ/Is0K8DRYEfgcr4R9iZgO3AJaZ4AStFPYx8APgfuAN8n/k5s6QUT4x1oTLsFqXYEHwKngmVgd9CatbAHhmJcmEnJ9R3aL6PKGBvjViLKMEFD93qEbwY+DC4D94F/ABk1mP2T+M1vepw9I7198akO6Ma5RuYWct8EWrMW9kAwXW3TYFqZTOl4EIkmwlDmeTV5c0YlaMrMKiivnDNnzovYrVkLe6CRcWFaGe4K2v0uMFvMc1T0InAdaM1a2gO1jAvTGvdV2v1BMBvM36nkWWB7JO0J4GXcrVlLe0DmrGuauuxH6yJHKPwZ6nIK2AlmXQT+irs1E+iBYbIg0DYAnh652W7in2HIFWmgtx6Q3oZFwBCfyoIh4jHTmeRXP8UaSaNE/R412wl8DYZ9Crsw1N/jtv9gBzz5KOKG/ZDXo7XIP6z9BfJ5WfIwduR5ALeb28aiSbMOuBVEPu2tzUTYSUB/YA/DA8R5/BdxVbYnPbbnm6T12NJNdGQfaJNHRj0V2yPHv5Hhd+BPQLrLCN8DDL2HIa0XTF4oWe+HpQOk9wRxjwGPNPfEruW/SsaFyOHA4yWskTSPU6sjYdb54HHgZoygnrFdm+ILOBHxjsu4KY38w9qvooSnwUMg8myHe2cwyHjZ8m4SRT5VH9tJUEe6Ea6dD6iSyvA6vBYi7lM+he2xozeQJeYnvM/AOOuDk4iQURVknqfbL+597FNPkD5CvEehnse/CXejgZ75zyGRx6keW3o+b5j0tKXhai/NO0i/JWn7jANcCiShlfo4gX1xhI2C+SWV2Atm/S72yBnq5STy6PClpHLz6ddB/bkf6TcAYVZA64XwTLItE99MnTxrr6wXcU6GpZQrw8oTOGuNNNwL/Yh8nqVXJiTOCbSCyM+AYaS+E76SpgVCo2Tk8LeWQkbHozRTyk63Huux2sF0wyA4KCTrOLlCWup/Px8lCla/YUBlWAc+Im3nD8IzAfs08kRdj8D9eXA9eB6EWR/HeSAtF2+nQ33kC+M8jw8VQNXsVyT4LJD2UdhXgZTmW/AvJ//m2CVDmG30hCqV9NL8KQmPBdI8EvtbwJMhrMK48i8lf2nyWMEiNvnsgztfiggaCfMyUqiny05jjSz3esoehEesE+mUlN7c6RUOmjeEuqugLisi7nZoqCqEf7z2XeSPul6D++tAxngbhG4HYWTec2EKl/wI03b5/xiO4A8ZyVV4V+h8A0j7KmyZd3vS3QvCyLw+jMp5SCm7ZyTCdnJap32gczGQ5tXYxxC3LXDyY3VcwSy/nnFpgLNLncwMo4hVY3UcxbrldbqagFRdOAx/nZlPRDCJeVKmJyo3E/PDFE4G6/HrhMIbcKtTYhXSVhXh5MLT/cg4x5NXptLdDR37Ev4XnNb/Uewwe+NQX8cqaLo5PaHwdD+uYMeQ9yZQRdN6Bk1XD5nbsG5uvtFZOAuj3qFoLjwj+LEDRnli9bqMAVGi/LgX0On4TkM1LAkqBtUxSKWxapBLcindZHmol8eH6q1OkCB7MAIhJKRLuRukiPs5Dk9vsKoNNGUqz/yDCRWASs7I4K1rqirZL17JR3yfDU1X1vcQcTbuVB0hqP8huUvHKDOuE8vlqaj8dH4YWB8KNcHByqvke40YTNUFX7LlaZRO6VK9lIFSIuXpJtOvuvDPhKDCwPoZ5CYxbcsl1Edd1LgmuFl+NkngsZv8ZNAH/CSQZvRLElx2Uu6zoDKdsz1N7a5P5kjDRs3t+Z6Sdzrr5QDcQ4FN6JOmpL8b/BGEmccEkFb4tdXztIW6caN0M9GaAmawnN8ndBxzz59l2HRjnqdLspSd0FSCpyqIKkdI7rRv8nRlQkP6csb1HHDIrDOWzBXh0Gku3X5y09EEB79ULQbzfwSsBGE8s+xtwmBi+9ulOeLdYatihH8qbeuW0rcutiGdWP8lQd8yTVidcXmPOCeBT1pl4JzmGq8oDkgUpG3ltUcZ1vk0Br3HANNUWQe6CZVLGnXzsY8MgLMjY6QS1l129Ln5r4DZtU071ZCx0jJsW+rXrd6bpzO8DqFuRPyLtEe6StkIsw8cw/BPyM4JRCdOiFhDJjcEXyHejQfWQKPUaRpAFX3fJwwkNEkJXDLfCa0mFEdhpCkZPO6642gHb8dfjHglLUMcSECMgSqFqgVBU2uY9JaZn7U+B5MpXWOSWQn7WegeBp5QRDr14tB5n4xAbI+1Up2eoPEbG5Dmek3qmQS3529XQue94AwgA2M1Ghl2ISkuALqxKo2/M0uX2cpEkxS4ikF9dAAqlz/y2AZ/0aFtdVR1vLmScbwZMkz4ftj+0j3VsA6p3qmgiGU+nTxOLi9PBtaHyeD+KF0FpemkNa8nE9qBvkuPiBjWzhl3GInreZ03HN6aOKuaytqByAUMntLEgUtnM1GVxl8teGu0iNjbQJ1xGVtMhzmD69KMSrjHP7GLt8+9zZIhQprJsN5sTXl96S/L9y2K7wKivLtwuKpgdfwharj1LyCPeqruShAvzROJTHXZWxj34A9/7uX4k6QwC8mTll8E5h/SuDr5wEf6peg8IDqylCjxOIuOoEIeri8g3AfbaYUIKpm5pC3ix2wZuJQg8yiRTzYtsPM8LM9na5rFY5zjaGDejjTNjLtpi9L420lFPBaz/yLobtIM6ptIu6a2ZctkQUf9cxnlF+NEoCcDHpfhLIwnA+fRx+qmRUD6Idy+95z26CRclePC8ENbNcqNZwS5yZVmrhNHvNfOrkZexPjzL1/HlXjTQnuJceR+gnrGhp2L77egQ2WcTeqZzlaDqpAuHcZbCe06eE/d04MpQwntDcr5ZLAzsErG+joItQ87Sqln1uMxlwxsLRwwX4PpFt7ha08ZYLAtwBcpwAmUrlIyVE8Hp88dZ2+r0v72Ctg3CJ6KQKJroKck9vWY59W2yQjzq+albzUMl1cUTLqFJ0P+qDZVWWRY3+Z63ayUlr5agBcm6SVNx4GXyDBQIlw+1rAiPW4Hwqu8tJFF3NjHO+cxZ2F5px26VBGQfGRSX0TZ8F4wZdhYH3bsSqCqgxMGZ884E/15u6pDLzBzbE0n/2QIePuTZS28duYw+RcXqas/TshUkkUq+6PxFikSjsO2P6K+PmH0ratPE0+HhsyAVRjVvmPpY1e3IsAPfs947XPH1yB1XaXqffSh8AmjP5x9jEiZKiaCY2dbFkNDN9Fdg1+aKa/Ie/441n/w4lth3/X6btr3vk6EdAPnKnBjl1L3a+auq/vN/d3Q7ncJhauLdX2vfGVo31eWKjoWXZpNhDlI6rA4+4ybglDmS5GU6+ZISe8DoEOIVP89HtswrI7LyiI6ta7+Mrc6ZQM6xrlpkl4OB874QaiV/LTBCadkzfvJNwAu13mZa+K3HVFXfzXtpYIMG/1jHbxW9nlouuNPy7wcj+pMnAzg7ajD2kalnxtjL4KCpu1ThTyMtlYKMsJddbwKzmlaX6W6dJWw9rflWU8n+yHkVbAZViAKLTx8QtzjLBkZyiu9UqAeCEr8Yty/Abmxw3phY2l945lPABu9nHjtXvrcYTy4EZwF1K9lYlUV8/kfb+yAPNso+WWWdAlV0vl2dzrr6CN3mWc/+jA2jH3lE+e4OubvI9LNct3kMp3S1Kt4H85UMi00CgPdoKkAq6NpWt8/+NjnQPL01XMYxpUpTiGznSzBPhDnDHIZytN4jZiKfPPaSDtCd8AG2KHhH8qmXJnAu3U7zdkcEt4lzh9OjhceW0XZ/uOS8eZvZELqaz+pPwZdB0ahEGXW2b8gIvJoq3YQ1DP+WsDwOnyJlEpPVTd/m6fKlwsPkpQN9XWlc7y8NHk7se4nLsWW6ZSu0vUhjDR9Puk4Et1soCtNhY401X2lpRqoOnA2ufcC25LO55heYOAtm5xxy7Fdn9JUvaXrq/lSiEq+y0uawuXJWy43BkVZpHOGqgumTO6O9SCWen8qUqRLiTS5ofc8sNPU1Yry8Xtj4w8nx4siv+VBw3en483vmbXZawHd60DQvQj3wMEmje9zI4+2ummvDOI9ejK8DqeTRmZ9CDvt9x6NJgd5XgKeY5+PvRDMA/50SrqeiDRK2Sra5A+avv6SlmqL0lUheRvxjRMrZxIlVVqOTGbHqnek4XXuLxPhDtU8ODvS88zQxymXwZjF2R2VsuOdtaYR1kOJrWRR8R/1Jd86t5jBHpBh0uLdzSlhPZa6hgiZy2OLM2C6/GiL6LKBIV0KfcL2emJeB94I3gzmAf/7omoHzsK47HhD5k7T1/X6PbNVt3ETUCRqP20PVPVAiXFhvEuBS65Ktrc76jY7EHYUUC+polEKI90L4CnwJNB+Gvte8AjoiX/czwDLuwD7SuDPN7x8OBG3DFyim3pad9sDJcbNuwMGUjn3CCuPav1tD8xoDzQy7ozWrC287YGGHvg/AAAA//83Of++AAAABklEQVQDABoqc5hG2i7gAAAAAElFTkSuQmCC"> 
-          </div>
-          <div class="col-12 col-lg-5 bg-dark rounded-5 py-5 aos-init aos-animate" data-aos="fade">
-            <span class="h5 text-secondary fw-lighter">Who are we ??</span>
-            <h2 class="display-4">We are a web agency</h2>
-            <p>We are a tech startup that mainly focuses on constructing web applications for our users. </p>
-          </div>
-
-
-      </div>
-
-      <div style="padding-top:20vh; " class="row d-flex align-items-center">
-          
-          <div class="col-12 col-lg-7 bg-dark rounded-5 py-5 aos-init aos-animate" data-aos="fade">
-            <span class="h5 text-secondary fw-lighter">How do you stand out ??</span>
-            <h2 class="display-4">How We Work</h2>
-            <p>We construct your web application with its own control panel. This will enhance your productivity as the control panel eases the task of admin and site management. </p>
-          </div>
-
-          <div class="col-12 col-lg-5">
-            <img src="https://learn.varsitymarket.tech/wp-content/uploads/2025/06/PHP.jpg"> 
-          </div>
-
-          
-      </div>
     </div>
   </div>
 

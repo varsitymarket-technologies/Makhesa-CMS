@@ -1,4 +1,6 @@
 <?php
+// @media.media.php
+
 #   TITLE   : Media Scripts File   
 #   DESC    : All images are stored in a database and only can be called using their hash id. The systeM is configured to use this format for security reasons
 #   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES

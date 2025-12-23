@@ -1,4 +1,6 @@
 <?php
+// @rescources.sources.php
+
 #   TITLE   : Rescource Library Scripts  
 #   DESC    : The Requested assets that the site uses is called from the rescources library. For security reasons the actual files will be stored in the control panel
 #   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES

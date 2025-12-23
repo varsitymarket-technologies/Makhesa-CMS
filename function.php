@@ -792,51 +792,26 @@ function load_local_themes()
 
 function load_public_themes()
 {
-    $data = [
-        [
-            "id" => "vm_theme_68ff407d27e6a",
-            "title" => "playground.something",
-            "description" => "Testing The Theme Deployment Playground Section",
-            "image" => "http://localhost:9000/library/vm_theme_68ff407d27e6a/assets/site/cover.png"
-        ],
-        [
-            "id" => "vm_theme_68ff407d27e6a",
-            "title" => "Ossmosis",
-            "description" => "Testing The Theme Deployment Playground Section",
-            "image" => "http://localhost:9000/library/vm_theme_68ff407d27e6a/assets/site/studio.png"
-        ]
-    ];
-    return $data;
-    $source = "http://localhost:9000/library/records.json";
-    $source = 'C:\Users\Hastings\Documents\vm.themes.server\library\records.json';
-
-    $url = $source;
-
-    // Initialize cURL session
-    $ch = curl_init($url);
-
-    // Set cURL options
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-    // Execute the cURL request
-    $response = curl_exec($ch);
-
-    // Check for errors
-    if (curl_errno($ch)) {
-
-        #Try Getting The Data Using File Get Contents 
-        $data = file_get_contents($source);
-        print ($data);
-        return null;
-
-        echo 'Error: ' . curl_error($ch);
-        return null;
+    if (!defined("__THEME_SOURCE__")){
+        @include_once "config.php"; 
     }
 
-    // Close the cURL session
-    curl_close($ch);
-    print_r($response);
-    return $response;
-
+    $source = __THEME_SOURCE__;
+    return json_decode(file_get_contents($source, JSON_PRETTY_PRINT)); 
 }
+
+function node_theme($theme){
+    $source = dirname(__FILE__).DIRECTORY_SEPARATOR."@website".DIRECTORY_SEPARATOR."themes".DIRECTORY_SEPARATOR.$theme.DIRECTORY_SEPARATOR."preview.interface"; 
+    if (file_exists($source)){
+        return '@website/themes/'.$theme.'/preview.interface'; 
+    }else{
+        return '<body style="
+    text-align: center;
+    margin: 6rem 0rem;
+    background-color: #ffffff;
+    font: message-box;
+"><h2> Failed To Load Preview</h2><p>This Theme does not have any preview pages</p></body>'; 
+    }
+}
+
 ?>

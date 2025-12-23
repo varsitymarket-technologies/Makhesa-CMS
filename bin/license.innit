@@ -1,0 +1,34 @@
+<?php
+#   TITLE   : License Creator
+#   DESC    : This creates the website license, this is essential for creating licenses. 
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/11/11
+
+@include_once "license.library";
+final class license_innit extends license_library
+{
+    public $license_key;
+    public function __construct()
+    {
+        $this->license_key = dirname(dirname(__FILE__)) . "\license-key";
+    }
+
+    function import($file)
+    {
+        $this->license_key = $file;
+    }
+
+    function capture()
+    {
+        $contents = file_get_contents($this->license_key);
+        $e = $this->format_to_print($contents, "\n");
+        $i = $this->understand_print($e);
+        return $i;
+    }
+}
+
+# $e = new license_innit();
+# print_r($e->capture());
+?>
