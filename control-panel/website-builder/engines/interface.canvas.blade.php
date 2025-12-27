@@ -2,7 +2,15 @@
 
 <div class="content" style="align-items: normal; padding: 20px; overflow: hidden;">
   <div class="content-area-wrapper">
-    <p>Page Contents</p>
+
+    <div style="padding:5px; display: flex; align-content: stretch; justify-content: space-between;">
+      <p>Canvas Mode</p>
+
+      <a href="http://localhost:9000/vm-admin/vm-editor/code-editor/10/"
+        style="text-decoration: none; border-width:2px; padding: 10px; border-style: solid; border-color: transparent; background-color: #600cdfff; color: white; border-radius: 1rem;">
+        <i class="fa-solid fa-file"></i> Save</a>
+    </div>
+
 
     <div id="container-canvas-frame" class="content-area" style="background: inherit;">
       <iframe id="canvas-engine-frame-holder"
@@ -13,10 +21,6 @@
     </div>
 
     <br>
-    <a href="http://localhost:9000/vm-admin/vm-editor/code-editor/10/"
-      style="text-decoration: none; border-width:2px; padding: 10px; border-style: solid; border-color: #ffffffff; background-color: #600cdfff; color: white; border-radius: 1rem;">
-      <i class="fa-solid fa-code"></i> Code Editor</a>
-
   </div>
 </div>
 

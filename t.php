@@ -1,32 +1,29 @@
-<?php 
+<?php
+$template = "C:\Users\Hastings\Documents\\vm.makhesa\@website\\themes\agency\\footer.card";
 
-#Construcing The Website Lock; 
-$target_file = dirname(__FILE__)."/bin/lock.key";
-$module_file = dirname(__FILE__)."/bin\license.innit";   
-include_once $module_file; 
-$username = 'admin'; 
-$password =  "MembersOnly"; 
-$domain ='127.0.0.1'; 
-$ip = '127.0.0.1';
+$e = template_pallete_scraper($template); 
 
-$module = new license_innit(); 
-#Import The Lock File 
-$module->import($target_file);
+print_r($e); 
+die(0);
 
-#Capture The Lock Data 
-$e = $module->capture(); 
+#How The Scraping Process Works 
+# 1. First Find The Page 
+# 2. Second Find The Sections/Containers along with their id 
+# 3. Third Find All the elements in the sections 
+$db_cell = [];
+$id = "Pricing & Category";
+$section_id = "Pricing Container";
 
-$lusername = $e['authentication']['username']; 
-$lpassword = $e['authentication']['password']; 
+$db_cell[$id] = [];
+$db_cell[$id][$section_id] = [];
+$db_cell[$id][$section_id]['Text'] = "text";
+$db_cell[$id][$section_id]['thuggin'] = "image";
+$db_cell[$id][$section_id]['Text'] = "text";
+$db_cell[$id][$section_id]['image id'] = "image";
+$db_cell[$id][$section_id]['Text'] = "text";
+# Data Format 
 
-if ($username !== $lusername){
-    //Usernames Dont Match 
-    trigger_error('Usernames dont match'); 
-}
 
-if ($password !== $lpassword){
-    #Passwords Dont Match 
-    trigger_error("Invalid Password"); 
-}
-#Verify Password 
+print_r($db_cell);
+
 ?>

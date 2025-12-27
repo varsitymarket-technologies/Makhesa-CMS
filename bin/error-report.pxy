@@ -6,3 +6,138 @@ Stack trace:
 #3 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
 #4 {main}
   thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\pages\cp.menu.page.php on line 122
+[23-Dec-2025 23:05:16 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, bool given in C:\Users\Hastings\Documents\vm.makhesa\function.php:869
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\function.php(869): fclose(false)
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool(6): template_pallete_scraper('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.canvas.blade.php(1): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\constructor.engine.php(822): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\interface.php(29): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\index.php(16): include_once('C:\\Users\\Hastin...')
+#6 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(11): include('C:\\Users\\Hastin...')
+#7 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#8 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#9 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\function.php on line 869
+[23-Dec-2025 23:06:22 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: fclose(): Argument #1 ($stream) must be of type resource, bool given in C:\Users\Hastings\Documents\vm.makhesa\function.php:869
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\function.php(869): fclose(false)
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool(6): template_pallete_scraper('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.canvas.blade.php(1): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\constructor.engine.php(822): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\interface.php(29): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\index.php(16): include_once('C:\\Users\\Hastin...')
+#6 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(11): include('C:\\Users\\Hastin...')
+#7 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#8 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#9 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\function.php on line 869
+[24-Dec-2025 05:53:19 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: strtolower(): Argument #1 ($string) must be of type string, array given in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool:47
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool(47): strtolower(Array)
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.canvas.blade.php(1): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\constructor.engine.php(822): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\interface.php(29): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\index.php(16): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(11): include('C:\\Users\\Hastin...')
+#6 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#7 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#8 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool on line 47
+[24-Dec-2025 05:56:08 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: strtolower(): Argument #1 ($string) must be of type string, array given in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool:28
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool(28): strtolower(Array)
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.canvas.blade.php(1): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\constructor.engine.php(822): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\interface.php(29): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\index.php(16): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(11): include('C:\\Users\\Hastin...')
+#6 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#7 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#8 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool on line 28
+[24-Dec-2025 05:59:30 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: strtolower(): Argument #1 ($string) must be of type string, array given in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool:28
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool(28): strtolower(Array)
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.canvas.blade.php(1): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\constructor.engine.php(822): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\interface.php(29): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\index.php(16): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(11): include('C:\\Users\\Hastin...')
+#6 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#7 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#8 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool on line 28
+[24-Dec-2025 06:00:10 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: strtolower(): Argument #1 ($string) must be of type string, array given in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool:30
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool(30): strtolower(Array)
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.canvas.blade.php(1): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\constructor.engine.php(822): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\interface.php(29): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\index.php(16): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(11): include('C:\\Users\\Hastin...')
+#6 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#7 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#8 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool on line 30
+[24-Dec-2025 06:39:37 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_values(): Argument #1 ($array) must be of type array, string given in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool:28
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool(28): array_values('text')
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.canvas.blade.php(1): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\constructor.engine.php(822): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\interface.php(29): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\index.php(16): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(11): include('C:\\Users\\Hastin...')
+#6 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#7 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#8 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool on line 28
+[24-Dec-2025 06:40:07 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: array_values(): Argument #1 ($array) must be of type array, string given in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool:28
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool(28): array_values('text')
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.canvas.blade.php(1): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\constructor.engine.php(822): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\interface.php(29): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\index.php(16): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(11): include('C:\\Users\\Hastin...')
+#6 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#7 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#8 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool on line 28
+[24-Dec-2025 06:41:00 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: strtolower(): Argument #1 ($string) must be of type string, array given in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool:33
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool(33): strtolower(Array)
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.canvas.blade.php(1): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\constructor.engine.php(822): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\interface.php(29): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\index.php(16): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(11): include('C:\\Users\\Hastin...')
+#6 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#7 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#8 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool on line 33
+[24-Dec-2025 06:41:35 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: strtolower(): Argument #1 ($string) must be of type string, array given in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool:32
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool(32): strtolower(Array)
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.canvas.blade.php(1): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\constructor.engine.php(822): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\interface.php(29): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\index.php(16): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(11): include('C:\\Users\\Hastin...')
+#6 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#7 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#8 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool on line 32
+[24-Dec-2025 07:02:54 Europe/Berlin] PHP Parse error:  syntax error, unexpected token ";", expecting "]" in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool on line 26
+[25-Dec-2025 05:05:08 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: strtolower(): Argument #1 ($string) must be of type string, array given in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool:42
+Stack trace:
+#0 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool(42): strtolower(Array)
+#1 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\interface.canvas.blade.php(1): include_once('C:\\Users\\Hastin...')
+#2 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\constructor.engine.php(822): include_once('C:\\Users\\Hastin...')
+#3 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\interface.php(29): include_once('C:\\Users\\Hastin...')
+#4 C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\index.php(16): include_once('C:\\Users\\Hastin...')
+#5 C:\Users\Hastings\Documents\vm.makhesa\control-panel\control-panel\index.php(11): include('C:\\Users\\Hastin...')
+#6 C:\Users\Hastings\Documents\vm.makhesa\routes.php(40): include_once('C:\\Users\\Hastin...')
+#7 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
+#8 {main}
+  thrown in C:\Users\Hastings\Documents\vm.makhesa\control-panel\website-builder\engines\@interface.element.tool on line 42

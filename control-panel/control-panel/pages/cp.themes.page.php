@@ -279,7 +279,6 @@ if (empty($internal_page)) {
                     container.appendChild(iframe);
 
                 } else {
-                    alert('<?php echo __THEME_SOURCE__ . "/library/" . $source . ""; ?>');
                     iframe.src = '<?php echo __THEME_SOURCE__ . "/library/" . $source . "/interface.guide"; ?>';
                     let s_container = document.getElementById('source_preview');
                     s_container.appendChild(iframe);

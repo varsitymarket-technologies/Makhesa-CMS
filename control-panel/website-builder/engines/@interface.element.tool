@@ -1,14 +1,24 @@
 <?php
 
+# Scrape The Website 
+$active_theme = "agency"; 
+$header_file = dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR."@website".DIRECTORY_SEPARATOR."themes".DIRECTORY_SEPARATOR.$active_theme.DIRECTORY_SEPARATOR."header.card";
+$header_card = @array_values( template_pallete_scraper($header_file))[0] ?? [];  
+
+$footer_file = dirname(dirname(dirname(dirname(__FILE__)))).DIRECTORY_SEPARATOR."@website".DIRECTORY_SEPARATOR."themes".DIRECTORY_SEPARATOR.$active_theme.DIRECTORY_SEPARATOR."footer.card";
+$footer_card = @array_values( template_pallete_scraper($footer_file))[0] ?? [];  
+
 $element_structure = [
-    'Contact Page'=>[
+    ' Page Structure'=>[
+        "Header"=>$header_card,
         "Contact Form" => [
             "TEXT_ID_1"=>"text",
             "TEXT_ID_2"=>"text",
             "IMAGE_ID_1"=>"image",
             "BLOCK_ID_1"=>"image",
             "EDIT_ID_1"=>"image",
-        ]
+        ],
+        "Footer"=>$footer_card,
     ]
 ];
 
@@ -17,8 +27,12 @@ $inner_element = "";
 $element_page = array_keys($element_structure)[0];
 
 foreach ($element_structure[$element_page] as $key => $value) {
-    $inner_element = "";
+     $inner_element = "";
     foreach ($value as $element_cell) {
+        if (is_array($element_cell)){
+            @$element_cell = array_values($element_cell) ?? $element_cell; 
+        }
+
         if (strtolower($element_cell) == "text") {
             $inner_element .= '<li class="content-wrapper">
                                     <span class="list-content-left">
@@ -48,9 +62,30 @@ foreach ($element_structure[$element_page] as $key => $value) {
                                             <rect x="5" y="5" width="14" height="14" stroke="#4D4F60" stroke-width="2"></rect>
                                         </svg>
                                     </span>
-                                    <span>Background</span>
+                                    <span>Image</span>
                                 </li>
             ';
+        }else if (strtolower($element_cell) == "menu") {
+            $inner_element .= '<li class="content-wrapper">
+                                    <span class="list-content-left">
+                                        <span>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <line x1="6" y1="9" x2="6" y2="7" stroke="#4D4F60" stroke-width="2"></line>
+                                                <line x1="18" y1="9" x2="18" y2="7" stroke="#4D4F60" stroke-width="2"></line>
+                                                <line x1="12" y1="18" x2="12" y2="8" stroke="#4D4F60" stroke-width="2"></line>
+                                                <line x1="5" y1="6" x2="19" y2="6" stroke="#4D4F60" stroke-width="2"></line>
+                                                <line x1="9" y1="19" x2="15" y2="19" stroke="#4D4F60" stroke-width="2"></line>
+                                            </svg>
+                                        </span>
+                                        <span>Menu Item</span>
+                                    </span>
+                                    <span class="list-content-right">
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M3 7H13V14H3V7Z" fill="#515367"></path>
+                                            <path d="M5 7V4C5 2.89543 6.34315 2 8 2C9.65685 2 11 2.89543 11 4V7" stroke="#515367" stroke-width="2"></path>
+                                        </svg>
+                                    </span>
+                                </li>';
         }
 
         $in_output = '

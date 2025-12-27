@@ -814,4 +814,53 @@ function node_theme($theme){
     }
 }
 
+function template_pallete_scraper($source,$section_needle='section="true"',$element_needle='element="true"')
+{   $template_db = []; 
+    $template = $source;
+    $handle = fopen($template, "r");
+    if ($handle) {
+        $section_flag = false;
+        $element_flag = false; 
+        while (($line = fgets($handle)) !== false) {
+            if (str_contains($line, $section_needle)) {
+                $section_flag = true;
+            }
+
+            if ($section_flag == true){
+                if (preg_match('/.*id="([^"]+)"/',$line,$match)){
+                    # print_r($match); 
+                    $section_id = $match[1]; 
+                    $template_db[$section_id] = []; 
+                    $section_flag = false; 
+                }
+            }
+
+            if (str_contains($line, $element_needle)) {
+                $element_flag = true;
+            }
+
+            if ($element_flag == true){
+                if (preg_match('/.*type="([^"]+)"/',$line,$match)){
+                    # print_r($match); 
+                    $element_type = $match[1] ?? null; 
+                }
+
+                if (preg_match('/.*id="([^"]+)"/',$line,$match)){
+                    # print_r($match); 
+                    $element_id = $match[1]; 
+                    $template_db[$section_id][$element_id] = [];
+                    $template_db[$section_id][$element_id] = $element_type; 
+                    $element_id = false; 
+                }
+            }
+
+            #echo $line; 
+        }
+
+        return $template_db;
+    }
+
+    fclose($handle);
+
+}
 ?>
