@@ -3,6 +3,7 @@ $internal_page = map_page()[3] ?? false;
 if (empty($internal_page)) {
     $internal_page = "dashboard";
 }
+$db = __DATABASE_WEBSITE__; 
 ?>
 
 <div class="wrapper" style="overflow: auto">
@@ -183,8 +184,7 @@ $page_id = hash("sha256", "new-website-page");
         const data = new URLSearchParams();
         data.append('request', 'delete-faq');
         data.append('id', faq_id);
-
-        let registration_confirmation = await sendAndReceiveData(data, "<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . '/scripts/scripts.php'; ?>");
+        let registration_confirmation = await sendAndReceiveData(data, "<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . '/@scripts/scripts.php'; ?>");
         try {
             registration_confirmation = JSON.parse(registration_confirmation);
             operate_loader('stop'); 

@@ -412,3 +412,6 @@ foreach ($element_structure[$element_page] as $key => $value) {
     </ul>
 
 </div>
+
+
+<?php @include_once "@interface.style.tool" ?>

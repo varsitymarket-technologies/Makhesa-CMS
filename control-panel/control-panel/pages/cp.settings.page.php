@@ -1,11 +1,15 @@
 <div style="width:100%; max-width:100vw; height:100%; max-height:100vh; padding:20px; overflow-y: scroll;">
     <br>
-    <div class="anim"
-        style="--delay: 0s; text-align: center; padding: 1rem 0rem; display: flex; align-items: center; justify-content: space-between;">
-        <div style="text-align: left;">
-            <h1>Site Settings</h1>
+    <div
+        style="background: #0000006b;padding: 1rem 2rem 3rem 2rem;border-radius: 2rem;border-style: solid;border-color: #242424;">
+        <div class="small-header" style=" margin-bottom:0px">
+            <span style="font-size:10px; ">Site Settings</span><br>
+            General Settings
         </div>
+        <br><span class="" style="font-size: 10px;">Configure your website with our general settings.</span>
     </div>
+    <br>
+
     <div class="video anim" style="--delay: .4s; margin:1rem 0px; ">
 
         <div class="video-wrapper"></div>
@@ -16,7 +20,7 @@
             </div>
 
             <div>
-                <span style="font-size:10px; ">Site Url</span><br>
+                <span style="font-size:10px; ">Control Panel Page</span><br>
                 <div class="search-bar" style="max-width: 100%;">
                     <input value="<?php echo get_admin_url() ?>" placeholder="Your Website Title" type="text"
                         id="edt_site_name" style="background-image: none; max-width: 100%;">

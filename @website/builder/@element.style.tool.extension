@@ -1,0 +1,128 @@
+<?php 
+
+?>
+
+<style>
+    .inspected-highlight {
+        outline: 4px dotted #6610f2 !important; /* Nice blue color */
+        outline-offset: 5px;
+        transition: outline 0.2s ease-in-out;
+        position: relative;
+        z-index: 9999;
+    }
+</style>
+<script>
+   
+function assignAnchorIds(prefix = 'anchor-element.id') {
+    // 1. Select all elements within the body
+    const allElements = document.querySelectorAll('body *');
+    
+    allElements.forEach((prefix, index) => {
+        // 2. Only assign if it doesn't already have one
+        if (!prefix.getAttribute('data-anchor-id')) {
+            const uniqueId = `anchor-element.id-${index}`;
+            prefix.setAttribute('data-anchor-id', uniqueId);
+        }
+    });
+    //console.log(`Successfully indexed ${allElements.length} elements.`);
+}
+
+
+//assignAnchorIds();
+
+// Run the function as soon as the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    assignAnchorIds();
+});
+
+
+function inspectInlineStyles(element) {
+
+    const anchorId = element.getAttribute('data-anchor-id');
+
+    const styleObject = {};
+    for (let i = 0; i < element.style.length; i++) {
+        const key = element.style[i];
+        styleObject[key] = element.style.getPropertyValue(key);
+    }
+
+
+    const ins_element = document.querySelector('.inspected-highlight');
+    if (ins_element) {
+        ins_element.classList.remove('inspected-highlight');
+    }
+    
+    element.classList.add('inspected-highlight');
+    const inlineString = element.style.cssText;
+
+
+    for (let i = 0; i < element.style.length; i++) {
+        const key = element.style[i];
+        styleObject[key] = element.style.getPropertyValue(key);
+    }
+
+    const payload = {
+        anchorId: anchorId, // Now PHP knows EXACTLY which element this is
+        tagName: element.tagName,
+        attributes: {
+            id: element.id || null,
+            class: element.className || null
+        },
+        inlineStyles: styleObject,
+        rawCssText: inlineString
+    };
+
+    //window.alert(JSON.stringify(payload)); 
+
+    // --- 3. SEND TO PHP ---
+    fetch('/control-panel/website-builder/engines/@input.style.tile.inspect.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+    })
+    .then(res => res.text())
+    .then(data => console.log('PHP Response:', data))
+    .catch(err => console.error('Fetch error:', err));
+}
+
+// Global click listener
+document.addEventListener('click', function(e) {
+    // Don't trigger if we click a link or button normally
+    // unless you want to prevent all default actions
+    e.preventDefault(); 
+    inspectInlineStyles(e.target);
+}, true);
+
+
+let lastFileTime = 0;
+
+function syncStylesWithServer() {
+    // We call the PHP script we built earlier
+    fetch(`/control-panel/website-builder/engines/@input.style.tile.source?last_time=${lastFileTime}`)
+        .then(response => response.json())
+        .then(data => {
+                // Parse the JSON content from the file
+                const fileData = JSON.parse( JSON.stringify(data) ); 
+                 
+                const targetAnchor = fileData.id;
+                const styleString = fileData.style;
+
+                // 1. Locate the exact element using the Anchor ID
+                const element = document.querySelector(`[data-anchor-id="${targetAnchor}"]`);
+
+                if (element) {
+                    // 2. Apply the style string directly to the element
+                    element.style.cssText = styleString;
+                    
+                    
+                    //console.log(`Auto-updated styles for: ${targetAnchor}`);
+                }
+            
+        })
+        .catch(err => console.error("Sync Error:", err));
+}
+
+// Check for changes every 2 seconds
+setInterval(syncStylesWithServer, 2000);
+
+</script>

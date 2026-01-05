@@ -4,6 +4,7 @@ if (isset($_POST['lock-execution'])) {
     #Construcing The Website Lock; 
     $target_file = dirname(dirname(__FILE__)) . "/bin/lock.key";
     $module_file = dirname(dirname(__FILE__)) . "/bin\license.innit";
+    
     include_once $module_file;
     $username = 'admin';
     $password = $_POST['edt_site_name'] ?? null;

@@ -2,17 +2,7 @@
 
 Cloud-Manager is a powerful, flexible, and user-friendly Content Management System (CMS) designed to help you create, manage, and publish content on the web with ease. Inspired by popular platforms like WordPress, Cloud-Manager offers modern features, robust security, and a seamless user experience.
 
-
-# Installation 
-
-## Docker 
-Navigate to the root of your project, where the docker-compose.yml file is located. Change the Runing Port if you dont prefer runing on 8080. But for the default it will be port 8080. 
-
-Run The Following Command 
-docker compose up --build
- 
-
-## Features
+# Features
 
 - **Easy Installation:** Quick setup process for all users.
 - **User Management:** Role-based access control for admins, editors, and contributors.
@@ -21,13 +11,67 @@ docker compose up --build
 - **Media Management:** Effortlessly upload, organize, and use images, videos, and documents.
 - **SEO Friendly:** Built-in tools to optimize your content for search engines.
 - **REST API:** Integrate with other applications and services.
-- **Multilingual Support:** Create content in multiple languages.
 
-## Requirements
+# Requirements
 
 - PHP 7.4 or higher
 - MySQL 5.7 or higher
 - Apache/Nginx web server
+
+# Installation 
+
+## Runng Docker Locally  
+Navigate to the root of your project, where the docker-compose.yml file is located. Change the Runing Port if you dont prefer runing on 9000. But for the default it will be port 9000. 
+
+### 1. Run The Following Command 
+```bash
+docker compose up --build
+```
+
+
+## Runing On Docker Server
+Navigate to the automated docker deployment script, this will make it easier 
+```bash 
+cd setup
+```
+
+### Make the Script Executable
+```bash 
+chmod +x docker-guide.sh
+```
+
+### Execute the Automation
+Now, every time you want to deploy a new site, just run your script with the domain name:
+```bash 
+./docker-guide.sh example.co.za
+```
+Full documentation is available in the `docs/` directory, stored on the `docker-guide.md` file.
+
+
+
+
+
+
+==============
+END DOCUMENTATION 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Installation
 

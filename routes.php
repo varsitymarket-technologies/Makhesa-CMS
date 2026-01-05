@@ -22,6 +22,17 @@ if ($traffic_request == "@preview") {
     die(0);
 }
 
+if ($traffic_request == '$$vm-editor$$'){
+    include_once PWD . DIRECTORY_SEPARATOR . "@website" . DIRECTORY_SEPARATOR . "builder".DIRECTORY_SEPARATOR."constructor.php";
+    die(0);
+}
+
+if ($traffic_request == '@block'){
+    include_once PWD . DIRECTORY_SEPARATOR . "@website" . DIRECTORY_SEPARATOR . "sections".DIRECTORY_SEPARATOR."compiler.php";
+    die(0);
+}
+
+
 if ($traffic_request == "@scripts") {
     include_once PWD . DIRECTORY_SEPARATOR . $traffic_request . DIRECTORY_SEPARATOR . "index.php";
     die(0);
@@ -52,6 +63,7 @@ if ($traffic_request == $public_request) {
     include_once PWD . DIRECTORY_SEPARATOR . '@website' . DIRECTORY_SEPARATOR . "index.php";
     die(0);
 
+    /*
 
     #Webstore Section 
     include_once PWD . DIRECTORY_SEPARATOR . "website" . DIRECTORY_SEPARATOR . "web" . DIRECTORY_SEPARATOR . "index.php";
@@ -62,4 +74,6 @@ if ($traffic_request == $public_request) {
     $link = __PROTOCOL__ . __DOMAIN_NAME__ . '/' . $public_request . "/";
     header("Location: " . $link);
     die(0);
+
+    */
 }

@@ -115,6 +115,7 @@ function application_menu(){
         'lock.site' => "Lock your website from external users",
         'git.version' => "Version Control For Your Control Panel",
         'web.server' => "Run the native PHP server",
+        "web.tunnel" => "Configure The Website Tunnel To Allow.",
         "quit" => "Close This Application. "
     ];
     $i = 0;

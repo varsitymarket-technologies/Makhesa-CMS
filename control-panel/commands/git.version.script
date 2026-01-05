@@ -51,7 +51,7 @@ while (true) {
 
 
 
-    $command = '# git push origin main '; 
+    $command = 'git push origin main '; 
     // Open a log file to capture the output
     // Start the server process and redirect output to the log file
     $process = popen($command, 'r');

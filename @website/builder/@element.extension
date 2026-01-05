@@ -1,0 +1,53 @@
+<script>
+/**
+ * Auto-Scroll Resume Script
+ * Persists scroll position based on the specific page URL
+ */
+
+const ScrollPersistence = {
+    // Unique key for storage based on the current path
+    storageKey: `scroll_pos_${window.location.pathname}`,
+
+    init() {
+        // 1. Restore position when the page is ready
+        window.addEventListener('load', () => {
+            this.restorePosition();
+        });
+
+        // 2. Save position when the user leaves or closes the tab
+        window.addEventListener('beforeunload', () => {
+            this.savePosition();
+        });
+    },
+
+    savePosition() {
+        const scrollData = {
+            x: window.scrollX,
+            y: window.scrollY
+        };
+        localStorage.setItem(this.storageKey, JSON.stringify(scrollData));
+    },
+
+    restorePosition() {
+        const savedData = localStorage.getItem(this.storageKey);
+        
+        if (savedData) {
+            const { x, y } = JSON.parse(savedData);
+            
+            // Use scrollTo with 'smooth' behavior for a nicer transition, 
+            // or 'auto' for an instant jump.
+            window.scrollTo({
+                top: y,
+                left: x,
+                behavior: 'smooth' 
+            });
+            
+            console.log(`Restored position to: ${y}px`);
+        }
+    }
+};
+
+// Start the script
+ScrollPersistence.init();
+
+</script>

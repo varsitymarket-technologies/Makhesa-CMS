@@ -103,13 +103,12 @@ if (empty($internal_page)) {
 
         </div>
 
-        <div class="video-name"
-            style="background: #0000006b;padding: 1rem 2rem 5rem 2rem;border-radius: 2rem;border-style: solid;border-color: #242424;">
-            <div class="small-header anim" style="--delay: .3s; margin-bottom:0px">
+        <div 
+            style="background: #0000006b;padding: 1rem 2rem 3rem 2rem;border-radius: 2rem;border-style: solid;border-color: #242424;">
+            <div class="small-header" style=" margin-bottom:0px">
                 <span style="font-size:10px; ">Welcome To </span><br>
-                Theme Library
-            </div>
-            <br><span class="anim" style="font-size: 10px;">Style your website with different designs.</span>
+                Theme Page</div>
+            <br><span class="" style="font-size: 10px;">Style your website with different designs.</span>
         </div>
         <br>
 

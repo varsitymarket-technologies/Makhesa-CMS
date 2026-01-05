@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Please fill in both the question and response fields";
         #echo json_encode(['success' => true, 'message' => 'FAQ added successfully!']);
     } else {
+        $db = __DATABASE_WEBSITE__; 
         $sql = "INSERT INTO faq (question, response, category) VALUES ('{$question}', '{$response}', 'General')";
         $e = $db->query($sql);
         #if ($db->query($sql)){

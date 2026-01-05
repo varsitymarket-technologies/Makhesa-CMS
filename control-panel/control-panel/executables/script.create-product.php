@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "INSERT INTO `products` 
         (`title`,`description`,`price`,`image`,`sku`,`stock`,`category`,`brand`,`sale_price`,`source`) VALUES 
         ('{$title}','{$description}','{$price}','{$image}','{$sku}','{$stock}','{$category}','{$brand}','{$sale_price}','{$source}')"; 
-    
+        $db = __DATABASE_WEBSITE__; 
         $e = $db->query($sql); 
         echo json_encode(['success' => true, 'message' => 'Category '.$title.' was created!']);
         die(0); 

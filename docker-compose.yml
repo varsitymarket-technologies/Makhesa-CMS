@@ -4,7 +4,7 @@ services:
   php-apache:
     image: sigblue/apache-php:83-full
     ports:
-      - 8080:80
+      - 9000:80
     volumes:
       - ./:/var/www/html/public/
     environment:

@@ -863,4 +863,17 @@ function template_pallete_scraper($source,$section_needle='section="true"',$elem
     fclose($handle);
 
 }
+
+
+function compile_script($source_code){
+    $e = null; 
+    $tmp_dir = dirname(__FILE__).DIRECTORY_SEPARATOR."trash";
+    $tmp_file = $tmp_dir.DIRECTORY_SEPARATOR.uniqid("sourcce_base64_").".pxy";
+    $e = file_put_contents($tmp_file,$source_code) ?? trigger_error("Failed To Create TMP Source File"); 
+    @include_once $tmp_file; 
+    $e = unlink($tmp_file); 
+    return TRUE; 
+}
+
+
 ?>
