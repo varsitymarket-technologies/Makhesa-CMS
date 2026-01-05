@@ -2,7 +2,7 @@
 #Include Database Client 
 @include_once "database" . DIRECTORY_SEPARATOR . "client.module.php";
 
-define("__THEME_SOURCE__","http://127.0.0.1:4500/"); 
+define("__THEME_SOURCE__","http://varsitymarket.tech/"); 
 
 $db_website = new database_manager();
 $db_engine = new database_manager();
