@@ -195,3 +195,184 @@ Stack trace:
 #5 C:\Users\Hastings\Documents\vm.makhesa\index.php(21): include_once('C:\\Users\\Hastin...')
 #6 {main}
   thrown in C:\Users\Hastings\Documents\vm.makhesa\@website\public\pages\7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page on line 16
+[05-Jan-2026 21:01:20 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /var/www/html/public/@website/public/source.scripts:127
+Stack trace:
+#0 /var/www/html/public/@website/public/library(18): load_module()
+#1 /var/www/html/public/@website/builder/library(5): include_once('...')
+#2 /var/www/html/public/@website/builder/constructor.php(21): include_once('...')
+#3 /var/www/html/public/routes.php(26): include_once('...')
+#4 /var/www/html/public/index.php(21): include_once('...')
+#5 {main}
+  thrown in /var/www/html/public/@website/public/source.scripts on line 127
+[05-Jan-2026 21:01:29 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /var/www/html/public/@website/public/source.scripts:127
+Stack trace:
+#0 /var/www/html/public/@website/public/library(18): load_module()
+#1 /var/www/html/public/@website/builder/library(5): include_once('...')
+#2 /var/www/html/public/@website/builder/constructor.php(21): include_once('...')
+#3 /var/www/html/public/routes.php(26): include_once('...')
+#4 /var/www/html/public/index.php(21): include_once('...')
+#5 {main}
+  thrown in /var/www/html/public/@website/public/source.scripts on line 127
+[05-Jan-2026 21:01:44 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /var/www/html/public/@website/public/source.scripts:127
+Stack trace:
+#0 /var/www/html/public/@website/public/library(18): load_module()
+#1 /var/www/html/public/@website/public/constructor.php(15): include_once('...')
+#2 /var/www/html/public/@website/index.php(11): include_once('...')
+#3 /var/www/html/public/routes.php(63): include_once('...')
+#4 /var/www/html/public/index.php(21): include_once('...')
+#5 {main}
+  thrown in /var/www/html/public/@website/public/source.scripts on line 127
+[05-Jan-2026 21:01:46 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /var/www/html/public/@website/public/source.scripts:127
+Stack trace:
+#0 /var/www/html/public/@website/public/library(18): load_module()
+#1 /var/www/html/public/@website/public/constructor.php(15): include_once('...')
+#2 /var/www/html/public/@website/index.php(11): include_once('...')
+#3 /var/www/html/public/routes.php(63): include_once('...')
+#4 /var/www/html/public/index.php(21): include_once('...')
+#5 {main}
+  thrown in /var/www/html/public/@website/public/source.scripts on line 127
+[05-Jan-2026 21:08:12 UTC] PHP Fatal error:  Uncaught Error: Class name must be a valid object or a string in /var/www/html/public/@website/public/source.scripts:127
+Stack trace:
+#0 /var/www/html/public/@website/public/library(18): load_module()
+#1 /var/www/html/public/@website/public/constructor.php(15): include_once('...')
+#2 /var/www/html/public/@website/index.php(11): include_once('...')
+#3 /var/www/html/public/routes.php(63): include_once('...')
+#4 /var/www/html/public/index.php(21): include_once('...')
+#5 {main}
+  thrown in /var/www/html/public/@website/public/source.scripts on line 127
+[05-Jan-2026 22:41:16 UTC] PHP Warning:  Undefined array key 0 in /var/www/html/public/@media/media.php on line 23
+[05-Jan-2026 22:53:48 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[05-Jan-2026 22:53:48 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page on line 15
+[05-Jan-2026 22:53:49 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page on line 15
+[05-Jan-2026 22:53:49 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page on line 15
+[05-Jan-2026 22:53:49 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[05-Jan-2026 22:53:49 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[05-Jan-2026 22:53:50 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page on line 15
+[05-Jan-2026 22:53:50 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page on line 15
+[05-Jan-2026 22:53:50 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[05-Jan-2026 22:53:50 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[05-Jan-2026 23:04:23 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:23 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:23 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:23 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:23 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:23 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:23 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:23 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:23 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:23 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:30 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:30 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:30 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:30 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:30 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:30 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:30 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:30 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:30 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:04:30 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:06:20 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:06:36 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:06:37 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:06:37 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:06:37 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:06:37 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:06:37 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:06:37 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:07:04 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:07:04 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:07:04 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:07:04 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:07:04 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:07:04 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[05-Jan-2026 23:07:04 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76

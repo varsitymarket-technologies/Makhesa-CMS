@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <br>
-                <button onclick="window.location = '<?php echo __PROTOCOL__.__DOMAIN_NAME__ ?>/vm-editor/'">Launch Builder</button>
+                <button onclick="window.location = '<?php echo __PROTOCOL__.__DOMAIN_NAME__.'/'.__ADMIN_URL__ ?>/vm-editor/'">Launch Builder</button>
             </div>
 
             <div class="main-blog__time">Github Control</div>

@@ -15,7 +15,7 @@ $module_list = [
 ]; 
 
 foreach ($module_list as $key => $value) {
-    define($key,load_module($value)); 
+    #define($key,load_module($value)); 
 }
 
 ?>
