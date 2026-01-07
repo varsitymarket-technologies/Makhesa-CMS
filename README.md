@@ -1,5 +1,7 @@
+<h1 align="center">
+    <a><img src="https://avatars.githubusercontent.com/u/219999828?s=400&u=2166fd2a4b7e592c0f1e9893a34aeb1105bc6bea&v=4" width="175px" alt="< VM.MAKHESA >"></a>
+</h1>
 
-![VM.MAKHESA](https://avatars.githubusercontent.com/u/219999828?s=400&u=2166fd2a4b7e592c0f1e9893a34aeb1105bc6bea&v=4)
 
 # VM.MAKHESA 
 
@@ -39,6 +41,7 @@ Open the docker application which is runing on port 9000.
 
 ## Restricted File Access 
 ![App Screenshot](https://raw.githubusercontent.com/varsitymarket-technologies/vm.makhesa/refs/heads/main/docs/Restricted_File_Permission.png?token=GHSAT0AAAAAADSRAZO5TUWFD3BOICQPBJRK2K6CG6Q)
+
 
 This Page will be displayed to warn users that the system does not have permission to the existing files.
 Provide the application with enough permissions to continue with its operations. 
