@@ -21,10 +21,8 @@
             max-width: 1000px;
             max-height: 90vh;
             overflow-y: auto;
-            padding: 20px;
             background: var(--bg);
             border-radius: 16px;
-            border: 1px solid #334155;
         }
 
         /* Component Card */
@@ -57,43 +55,65 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.9);
             padding: 8px;
             font-size: 12px;
             text-align: center;
+            color: white;
+            border-color: #ffffff21;
+            border-width: 2px;
+            border-style: solid;
         }
     </style>
 
-<div id="explorer-overlay">
-    <div class="grid-container" id="grid"></div>
+<div id="explorer-overlay" style="display:none; ">
 </div>
 
 
 <script>
-let container_div = document.getElementById('explorer-overlay'); 
-   
 
-    async function load_interface_blocks() {
-        operate_loader();
-    
-        const data = new URLSearchParams();
-        data.append('request', 'delete-faq');
-        data.append('id', faq_id);
-        let registration_confirmation = await sendAndReceiveData(data, "<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . '/control-panel/website-builder/engines/@interface.blocks.menu.php'; ?>");
-        try {
-            let content = registration_confirmation; 
-            container_div.innerHTML = `${content}`;
-
-            registration_confirmation = JSON.parse(registration_confirmation);
-            operate_loader('stop'); 
-        } catch (error) {
-            console.error(error);
-            error_feedback();
-            operate_loader('stop');
-        }
+    async function load_blocks_menu() {
+        var xhr = new XMLHttpRequest();
+        let container_div = document.getElementById('explorer-overlay'); 
+        xhr.open('GET', "<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . '/control-panel/website-builder/engines/@interface.blocks.menu.php'; ?>", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                container_div.style.display = "flex"; 
+                document.getElementById("explorer-overlay").innerHTML = xhr.responseText;
+            } else if (xhr.readyState === 4) {
+                console.error("Error loading data: " + xhr.status);
+            }
+        };
+        xhr.send();
     }
 
+    async function loading_block_data(data_id) {
+        var xhr = new XMLHttpRequest();
+        let container_div = document.getElementById('explorer-overlay'); 
+        let url = "<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . '/control-panel/website-builder/engines/@input.builder.extension.xhr.php'; ?>";
 
-load_interface_blocks(); 
+        xhr.open('POST', url, true);
 
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                alert("Block Already Added "); 
+                close_menu_blocks(); 
+
+            } else if (xhr.readyState === 4) {
+                console.error("Error loading data: " + xhr.status);
+            }
+        };
+
+        let params = "id=" + data_id + "&action=run_indefinitely";
+
+        xhr.send(params);
+    }
+
+    function close_menu_blocks(){
+        let container_div = document.getElementById('explorer-overlay'); 
+        container_div.innerHTML = ""; 
+        container_div.style.display = "none"; 
+    }
 </script>

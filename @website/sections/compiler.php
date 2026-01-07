@@ -29,15 +29,15 @@ function prevent_card($e){
 }
 
 function block_styles($path){
-    echo "<style>".file_get_contents(THEME_DIR__.THEME__."\\".$path)."</style>"; return true; 
+    echo "<style>".file_get_contents(THEME_DIR__.THEME__."/".$path)."</style>"; return true; 
 }
 
 function block_scripts($path){
-    echo "<script>".file_get_contents(THEME_DIR__.THEME__."\\".$path)."</script>"; return true; 
+    echo "<script>".file_get_contents(THEME_DIR__.THEME__."/".$path)."</script>"; return true; 
 }
 
 
-$interface_guide = file_get_contents(THEME_DIR__.THEME__."\web.interface"); 
+$interface_guide = file_get_contents(THEME_DIR__.THEME__."/web.interface"); 
 $clean_interface = str_ireplace(['construct_page();','use_card','__HEADER__','use_style','use_script'],['compile_block();','prevent_card','prevent_card','block_styles','block_scripts'],$interface_guide); 
 $e = compile_script($clean_interface); 
 die(0); 

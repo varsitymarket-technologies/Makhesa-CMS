@@ -3,6 +3,7 @@ services:
 # Use Docker Compose
   php-apache:
     image: sigblue/apache-php:83-full
+    restart: unless-stopped
     ports:
       - 9000:80
     volumes:

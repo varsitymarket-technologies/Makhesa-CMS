@@ -869,34 +869,32 @@ function builder_construct_website($data){
 <div id="catch_block_container"></div>
 
 <script>
-    function catch_element_block(){
-        let e = document.getElementById(\'catch_block_container\'); 
-        let data_contents = `
-        
-      <div class="position-absolute w-100 h-100 bg-black opacity-75 top-0 start-0"></div>
-      <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
-        <div class="row d-flex align-items-center justify-content-center py-vh-5">
-          <div class="col-12 col-xl-10">
-            <span class="h5 text-secondary fw-lighter">You are lost</span>
-            <h1 class="display-huge mt-3 mb-3 lh-1">Page Does Not Exists</h1>
-          </div>
-          <div class="col-12 col-xl-8">
-            <p class="lead text-secondary">Sorry, the page you are looking for does not exist.</p>
-          </div>
-          <div class="col-12 text-center">
-            <a href="/home" class="btn btn-xl btn-light">Back to Home
-            </a>
-          </div>
-        </div>
-      </div>
+    let lastTimestamp = 0;
+    const displayDiv = document.getElementById(\'catch_block_container\');
 
-    
-        `;
-        e.innerHTML = data_contents; 
+    function sync_ui() {
+        // Send the last timestamp we know about to PHP
+        fetch(`/control-panel/website-builder/engines/@input.builder.extension.php?last_time=${lastTimestamp}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.changed) {
+                    lastTimestamp = data.newTimestamp;
+                    displayDiv.innerHTML = `<section class="block-request-engine-container"><div class="block-engine-container-toolbar">
+    <button class="tool-btn edit-btn" title="Edit Settings">
+      <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+      </svg>
+      <span>Edit Block</span>
+    </button>
+  </div>${data.content}</section>`;
+                    alert(`ui changes `); 
+
+                }
+        })
     }
 
+    setInterval(sync_ui, 1000);
 
-    catch_element_block(); 
 </script>
  
 <?php # pass;'],$data); 

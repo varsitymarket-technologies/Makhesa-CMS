@@ -210,7 +210,11 @@ foreach ($element_structure[$element_page] as $key => $value) {
                 <span class="arrow">
                 </span>
                 <p><i class="fa-solid fa-file"></i> <?php echo $element_page;  ?></p>
-                <button>[O]</button>
+
+                <div style="display:flex; ">
+                    <div onclick="load_blocks_menu()" style="background-color: transparent; margin: 10px; font-size: 20px;"><i class="fa-solid fa-table-cells"></i></div>
+                    <div onclick="load_blocks_menu()" style="background-color: transparent; margin: 10px; font-size: 20px;"><i class="fa-solid fa-square-plus"></i></div>
+                </div>
             </div>
             <?php  echo $output;  ?>
         </li>
