@@ -1,4 +1,5 @@
 <?php @include_once "@interface.element.tool"; ?>
+<?php @include_once "@interface.blocks.menu.tool"; ?>
 
 <div class="content" style="align-items: normal; padding: 20px; overflow: hidden;">
   <div class="content-area-wrapper">

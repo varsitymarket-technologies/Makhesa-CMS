@@ -376,3 +376,112 @@ Stack trace:
 [05-Jan-2026 23:07:04 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
 [05-Jan-2026 23:07:04 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
 [05-Jan-2026 23:07:04 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /var/www/html/public/@website/builder/@element.rearrange.tool.extension on line 76
+[06-Jan-2026 11:55:18 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[06-Jan-2026 11:55:18 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page on line 15
+[06-Jan-2026 11:55:19 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[06-Jan-2026 11:55:19 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[06-Jan-2026 11:55:19 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page on line 15
+[06-Jan-2026 11:55:19 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page on line 15
+[06-Jan-2026 11:55:20 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[06-Jan-2026 11:55:20 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683.page on line 15
+[06-Jan-2026 11:55:20 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page on line 15
+[06-Jan-2026 11:55:20 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "__SHOP_MODULE__" in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page:15
+Stack trace:
+#0 /var/www/html/public/@website/public/source.scripts(86): include_once()
+#1 /var/www/html/public/@website/themes/agency/web.interface(76): construct_page()
+#2 /var/www/html/public/@website/public/constructor.php(25): include_once('...')
+#3 /var/www/html/public/@website/index.php(11): include_once('...')
+#4 /var/www/html/public/routes.php(63): include_once('...')
+#5 /var/www/html/public/index.php(21): include_once('...')
+#6 {main}
+  thrown in /var/www/html/public/@website/public/pages/7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451.page on line 15
+[06-Jan-2026 15:22:48 UTC] PHP Warning:  file_get_contents(/var/www/html/public/@website/themes/agency\web.interface): Failed to open stream: No such file or directory in /var/www/html/public/@website/sections/compiler.php on line 40
+[06-Jan-2026 15:22:48 UTC] PHP Warning:  file_get_contents(/var/www/html/public/@website/themes/agency\web.interface): Failed to open stream: No such file or directory in /var/www/html/public/@website/sections/compiler.php on line 40
+[06-Jan-2026 15:22:48 UTC] PHP Warning:  file_get_contents(/var/www/html/public/@website/themes/agency\web.interface): Failed to open stream: No such file or directory in /var/www/html/public/@website/sections/compiler.php on line 40
+[06-Jan-2026 15:22:48 UTC] PHP Warning:  file_get_contents(/var/www/html/public/@website/themes/agency\web.interface): Failed to open stream: No such file or directory in /var/www/html/public/@website/sections/compiler.php on line 40
+[06-Jan-2026 15:22:48 UTC] PHP Warning:  file_get_contents(/var/www/html/public/@website/themes/agency\web.interface): Failed to open stream: No such file or directory in /var/www/html/public/@website/sections/compiler.php on line 40
+[06-Jan-2026 15:22:48 UTC] PHP Warning:  file_get_contents(/var/www/html/public/@website/themes/agency\web.interface): Failed to open stream: No such file or directory in /var/www/html/public/@website/sections/compiler.php on line 40
+[06-Jan-2026 15:22:48 UTC] PHP Warning:  file_get_contents(/var/www/html/public/@website/themes/agency\web.interface): Failed to open stream: No such file or directory in /var/www/html/public/@website/sections/compiler.php on line 40
+[06-Jan-2026 15:22:48 UTC] PHP Warning:  file_get_contents(/var/www/html/public/@website/themes/agency\web.interface): Failed to open stream: No such file or directory in /var/www/html/public/@website/sections/compiler.php on line 40
+[06-Jan-2026 15:22:48 UTC] PHP Warning:  file_get_contents(/var/www/html/public/@website/themes/agency\web.interface): Failed to open stream: No such file or directory in /var/www/html/public/@website/sections/compiler.php on line 40

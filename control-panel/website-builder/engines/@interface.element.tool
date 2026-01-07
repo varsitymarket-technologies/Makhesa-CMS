@@ -204,10 +204,13 @@ foreach ($element_structure[$element_page] as $key => $value) {
 <div class="side-bar">
     <ul class="collapsible-accordion">
         <li>
-            <div class="collapsible-header">
+            <div style="display: flex;
+  align-content: stretch;
+  justify-content: space-between;" class="collapsible-header">
                 <span class="arrow">
                 </span>
                 <p><i class="fa-solid fa-file"></i> <?php echo $element_page;  ?></p>
+                <button>[O]</button>
             </div>
             <?php  echo $output;  ?>
         </li>

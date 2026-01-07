@@ -22,7 +22,8 @@ include_once dirname(__FILE__).DIRECTORY_SEPARATOR."library";
 
 # Create The Website Interface
 $interface = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."themes".DIRECTORY_SEPARATOR.__ACTIVE_THEME__.DIRECTORY_SEPARATOR."web.interface";
-@include_once $interface; 
+$ie = file_get_contents($interface); 
+$e = compile_script(builder_construct_website($ie)); 
 
 $element_tool = dirname(__FILE__).DIRECTORY_SEPARATOR."@element.extension"; 
 @include_once $element_tool; 

@@ -2,18 +2,18 @@
 
     <div class="bg-black py-vh-3">
       <div  section="true"  class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
-          <div style="padding-top:20vh !important;" class="p-5 pt-0 mt-5 aos-init aos-animate" data-aos="fade">
+          <div   element="true" section="true" style="padding-top:20vh !important;" class="p-5 pt-0 mt-5 aos-init aos-animate" data-aos="fade">
             <span element="true" type="text" class="h5 text-secondary fw-lighter">What we have to offer</span>
             <h2 element="true" type="text" class="display-4">Our Services packages </h2>
           </div>
 
-        <div  section="true"  class="row gx-5">
+        <div  element="true" class="row gx-5">
           <div class="col-12 col-md-6">
             <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
-                <div class="p-5">
+                <div  section="true"  class="p-5">
                   <h2 class="fw-lighter" element="true" type="text">Business Startup Package</h2>
-                  <p class="pb-4 text-secondary" element="true" type="text">PRICED: ZAR 3,500.00/year</p>
+                  <p class="pb-4 text-secondary" style="color:inherit" element="true" type="text">PRICED: ZAR 3,500.00/year</p>
                   <a href="/business-startup-package/" element="true" type="link" class="link-fancy link-fancy-light">View Package</a>
                 </div>
               </div>

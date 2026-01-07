@@ -72,7 +72,7 @@
         
         <button id="btn-save" class="wm-btn save wm-hidden" onclick="WriterMode.saveText()"><i class="fas fa-check"></i></button>
     </div>
-    
+
     <script>
         const WriterMode = (() => {
             const toolbar = document.getElementById('wm-toolbar');
@@ -170,6 +170,27 @@
                 }
             };
         })();
+
+
+        function assignAnchorIds(prefix = 'anchor-element.id') {
+            // 1. Select all elements within the body
+            const allElements = document.querySelectorAll('body *');
+            
+            allElements.forEach((prefix, index) => {
+                // 2. Only assign if it doesn't already have one
+                if (!prefix.getAttribute('data-anchor-id')) {
+                    const uniqueId = `anchor-element.id-${index}`;
+                    prefix.setAttribute('data-anchor-id', uniqueId);
+                }
+            });
+            //console.log(`Successfully indexed ${allElements.length} elements.`);
+        }
+
+        // Run the function as soon as the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            assignAnchorIds();
+        });
+
 
         // 4. BACKEND SYNC (To PHP)
         function syncData(anchorId, type, content) {
