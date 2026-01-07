@@ -1,3 +1,6 @@
+
+![VM.MAKHESA](https://avatars.githubusercontent.com/u/219999828?s=400&u=2166fd2a4b7e592c0f1e9893a34aeb1105bc6bea&v=4)
+
 # VM.MAKHESA 
 
 VM.MAKHESA is a Website-Manager, a powerful, flexible, and user-friendly Content Management System (CMS) designed to help you create, manage, and publish content on the web with ease. Inspired by popular platforms like WordPress, Cloud-Manager offers modern features, robust security, and a seamless user experience.
@@ -35,7 +38,8 @@ Open the docker application which is runing on port 9000.
 # Setup and Configuration 
 
 ## Restricted File Access 
-img: Restricted_File_Permission.png
+![App Screenshot](https://raw.githubusercontent.com/varsitymarket-technologies/vm.makhesa/refs/heads/main/docs/Restricted_File_Permission.png?token=GHSAT0AAAAAADSRAZO5TUWFD3BOICQPBJRK2K6CG6Q)
+
 This Page will be displayed to warn users that the system does not have permission to the existing files.
 Provide the application with enough permissions to continue with its operations. 
 
