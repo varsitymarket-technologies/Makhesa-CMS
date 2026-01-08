@@ -105,5 +105,16 @@ $db->createTable('categories', [
     'image' => 'TEXT',
 ]);
 
+$db->createTable('wishlist', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'product_id' => 'TEXT',
+    'description' => 'TEXT',
+    'quantity' => 'TEXT',
+    'user_id' => 'TEXT',
+    'ghost_id'=>'TEXT',
+    'quantity'=>'INTEGER', 
+]);
+
+
 echo "\n\tDatabase Restoration Task\n\t[COMPLETED RESTORATION]\n\n"; 
 ?>

@@ -11,7 +11,6 @@ if (file_exists($theme_dir)){
     $e = file_get_contents($theme_dir); 
     file_put_contents($targetFile,$e); 
     #Make Sure The Permissions are set for CRUD operations
-    echo "Block Template Copied"; 
 }
 ?>
    

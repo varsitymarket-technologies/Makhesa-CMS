@@ -87,6 +87,13 @@ class __SHOP_MODULE__ {
         }
         return $products;
     }
-}
 
+    function record_wishlist($product_id,$quantity=1,$user_id="GHOST"){
+        if ($user_id == "GHOST"){
+            #Create a New GHOST UNIQUE ID
+        }
+
+        $sql = "INSERT INTO `wishlist`('product_id', ) VALUES (); "; 
+    }
+}
 ?>
