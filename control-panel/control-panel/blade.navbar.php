@@ -42,7 +42,7 @@
     </div>
 
     <a class="logo-expand-top" style="z-index: 1000; position: fixed;">
-      Cloud Host
+      Crafted By
       <div style="
               background-color: #6c2bd9;
               padding: 4px 12px;
@@ -53,7 +53,7 @@
         <span style="
                 font-variant: small-caps;
                 font: menu;
-                font-sie: 8px;
+                font-size: 8px;
                 color: #ffffff;
               ">  <?php echo(seal_signature()) ?> </span>
       </div>
