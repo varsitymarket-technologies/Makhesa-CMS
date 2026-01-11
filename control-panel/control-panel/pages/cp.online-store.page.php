@@ -116,5 +116,49 @@ if (empty($internal_page)) {
             </div>
 
         </div>
+
+        <div class="main-header anim" style="--delay: 0s; text-align: center; padding: 1rem 3rem; position: inherit;">
+            <br><br>Product & Inventory 
+        </div>
+
+        <div>
+            <div class="responsive anim" style="--delay: .4s;">
+                <div class="gallery" style=" border-radius:2rem;">
+                    <div style="background-color: #242424; padding: 10px; border-radius:2rem;">
+                        <h1
+                            style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: space-between;">
+                            Products
+                        </h1>
+                        <button onclick="window.location = '<?php echo change_page('reviews') ?>'">Manage Products</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="responsive anim" style="--delay: .4s;">
+                <div class="gallery" style=" border-radius:2rem;">
+                    <div style="background-color: #242424; padding: 10px; border-radius:2rem;">
+                        <h1
+                            style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: space-between;">
+                            Categories
+                        </h1>
+                        <button onclick="window.location = '<?php echo change_page('category') ?>'">Manage Category</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="responsive anim" style="--delay: .4s;">
+                <div class="gallery" style=" border-radius:2rem;">
+                    <div style="background-color: #242424; padding: 10px; border-radius:2rem;">
+                        <h1
+                            style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: space-between;">
+                            Product Review
+                        </h1>
+                        <button onclick="window.location = '<?php echo change_page('reviews') ?>'">Manage Reviews</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
     </div>
 </div>

@@ -31,7 +31,11 @@ if ($traffic_request == '@block'){
     include_once PWD . DIRECTORY_SEPARATOR . "@website" . DIRECTORY_SEPARATOR . "sections".DIRECTORY_SEPARATOR."compiler.php";
     die(0);
 }
-
+ 
+if ($traffic_request == "@element"){
+    include_once PWD . DIRECTORY_SEPARATOR . "@website" . DIRECTORY_SEPARATOR . "sections".DIRECTORY_SEPARATOR."elements.compiler.php";
+    die(0);
+}
 
 if ($traffic_request == "@scripts") {
     include_once PWD . DIRECTORY_SEPARATOR . $traffic_request . DIRECTORY_SEPARATOR . "index.php";

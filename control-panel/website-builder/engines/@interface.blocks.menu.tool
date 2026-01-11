@@ -87,6 +87,21 @@
         xhr.send();
     }
 
+    async function load_elements_menu() {
+        var xhr = new XMLHttpRequest();
+        let container_div = document.getElementById('explorer-overlay'); 
+        xhr.open('GET', "<?php echo __PROTOCOL__ . __DOMAIN_NAME__ . '/control-panel/website-builder/engines/@interface.elements.menu.php'; ?>", true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                container_div.style.display = "flex"; 
+                document.getElementById("explorer-overlay").innerHTML = xhr.responseText;
+            } else if (xhr.readyState === 4) {
+                console.error("Error loading data: " + xhr.status);
+            }
+        };
+        xhr.send();
+    }
+
     async function loading_block_data(data_id) {
         var xhr = new XMLHttpRequest();
         let container_div = document.getElementById('explorer-overlay'); 

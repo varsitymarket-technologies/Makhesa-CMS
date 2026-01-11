@@ -1,0 +1,9 @@
+{
+    "class": "",
+    "style": "",
+    "attributes": "href=\"#\" alt=\"#\" src=\"\" element=\"true\" type=\"text\"",
+    "content": "",
+    "tag": "img",
+    "title": "Image Media",
+    "structure": "<{element.tag} class=\"{element.class}\" {element.attributes} style=\"{element.style}\">"
+}

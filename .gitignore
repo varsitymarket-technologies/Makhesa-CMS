@@ -1,0 +1,9 @@
+# 1. SPECIFIC FILES
+# Ignore a specific file in the root directory
+.env
+
+.key
+
+# 2. DIRECTORIES
+# Ignore a whole directory (must end with a slash)
+sites/

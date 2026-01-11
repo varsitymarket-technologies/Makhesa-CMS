@@ -213,7 +213,7 @@ foreach ($element_structure[$element_page] as $key => $value) {
 
                 <div style="display:flex; ">
                     <div onclick="load_blocks_menu()" style="background-color: transparent; margin: 10px; font-size: 20px;"><i class="fa-solid fa-table-cells"></i></div>
-                    <div onclick="load_blocks_menu()" style="background-color: transparent; margin: 10px; font-size: 20px;"><i class="fa-solid fa-square-plus"></i></div>
+                    <div onclick="load_elements_menu()" style="background-color: transparent; margin: 10px; font-size: 20px;"><i class="fa-solid fa-square-plus"></i></div>
                 </div>
             </div>
             <?php  echo $output;  ?>
