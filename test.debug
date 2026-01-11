@@ -1,0 +1,8 @@
+<?php 
+
+@include_once "config.php";
+$db = __DATABASE_WEBSITE__; 
+$e = $db->query("DELETE FROM `products`"); 
+print_r($e); 
+
+?>

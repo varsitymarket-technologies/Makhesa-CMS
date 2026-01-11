@@ -1,0 +1,9 @@
+{
+    "class": "",
+    "style": "background-color: #717fe0; min-width: 161px; height: 46px; font-family: Poppins-Medium; font-size: 15px; line-height: 1.466667; text-transform: uppercase; outline: none; border: none; cursor: pointer;",
+    "attributes": "element=\"true\" type=\"text\"",
+    "content": "Button",
+    "tag": "button",
+    "title": "Button",
+    "structure": "<{element.tag} class=\"{element.class}\" {element.attributes} style=\"{element.style}\">{element.contents}</{element.tag}>"
+}

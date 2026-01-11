@@ -25,97 +25,6 @@ if (empty($internal_page)) {
         </div>
         <br>
 
-        <div class="main-header anim" style="--delay: 0s; text-align: center; padding: 1rem 3rem; position: inherit;">
-            Store Inventory
-        </div>
-
-        <div>
-            <div class="responsive anim" style="--delay: .4s;">
-                <div class="gallery">
-                    <div style="background-color: #242424; padding: 10px;">
-
-                        <h1
-                            style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: space-between;">
-                            Products
-                        </h1>
-                        <button onclick="window.location = '<?php echo change_page('inventory') ?>'">Manage Products</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="responsive anim" style="--delay: .4s;">
-                <div class="gallery">
-                    <div style="background-color: #242424; padding: 10px;">
-
-                        <h1
-                            style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: space-between;">
-                            Categories
-                        </h1>
-                        <button onclick="window.location = '<?php echo change_page('category') ?>'">Manage Categories</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="responsive anim" style="--delay: .4s;">
-                <div class="gallery">
-                    <div style="background-color: #242424; padding: 10px;">
-
-                        <h1
-                            style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: space-between;">
-                            Brands
-                        </h1>
-                        <button onclick="window.location = '<?php echo change_page('brands') ?>'">View Page</button>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="main-header anim" style="--delay: 0s; text-align: center; padding: 1rem 3rem; position: inherit;">
-            Store Sales
-        </div>
-
-        <div>
-            <div class="responsive anim" style="--delay: .4s;">
-                <div class="gallery">
-                    <div style="background-color: #242424; padding: 10px;">
-
-                        <h1
-                            style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: space-between;">
-                            Orders
-                        </h1>
-                        <button onclick="window.location = '<?php echo change_page('inventory') ?>'">Manage Products</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="responsive anim" style="--delay: .4s;">
-                <div class="gallery">
-                    <div style="background-color: #242424; padding: 10px;">
-
-                        <h1
-                            style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: space-between;">
-                            Promotions
-                        </h1>
-                        <button onclick="window.location = '<?php echo change_page('inventory') ?>'">Manage Products</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="responsive anim" style="--delay: .4s;">
-                <div class="gallery">
-                    <div style="background-color: #242424; padding: 10px;">
-
-                        <h1
-                            style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: space-between;">
-                            Coupons
-                        </h1>
-                        <button onclick="window.location = '<?php echo change_page('category') ?>'">Manage Categories</button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
         <div class="main-header anim" style="--delay: 0s; text-align: center; padding: 1rem 3rem; position: inherit;">
             <br><br>Product & Inventory 
@@ -129,7 +38,7 @@ if (empty($internal_page)) {
                             style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-content: space-between;">
                             Products
                         </h1>
-                        <button onclick="window.location = '<?php echo change_page('reviews') ?>'">Manage Products</button>
+                        <button onclick="window.location = '<?php echo change_page('inventory') ?>'">Manage Products</button>
                     </div>
                 </div>
             </div>

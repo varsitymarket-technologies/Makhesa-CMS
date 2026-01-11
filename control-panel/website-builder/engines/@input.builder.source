@@ -1,6 +1,0 @@
-<div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
-    <div style="padding-top:20vh !important; " class="p-5 pt-0 mt-5 aos-init aos-animate" data-aos="fade">
-        <span class="h5 text-secondary fw-lighter">Topic Subheading</span>
-        <h2 class="display-4">Topic Header </h2>
-    </div>
-</div>

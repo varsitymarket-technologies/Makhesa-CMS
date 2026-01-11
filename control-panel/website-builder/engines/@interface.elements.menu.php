@@ -1,22 +1,48 @@
 <?php 
 
-
-
-
 $theme_id = "agency"; 
-$e = ['p','h1','h2','blockquote'];
+$e = ['h1','h2','h3','h4','h5','h6','p','blockquote'];
 $element = ''; 
 foreach ($e as $key => $value) {
     $block_caption = 'title'; 
     $element_id = $value; 
     $element .= '
-    <div onclick="loading_block_data(`'.$element_id.'`)" class="component-card">
+    <div style="aspect-ratio:2/1;" onclick="loading_block_data(`'.$element_id.'`)" class="component-card">
         <iframe src="/@element/'.$theme_id.'/'.$element_id.'/?element_id=builder&amp;preview=true"></iframe>
         <div class="card-label">'.$block_caption.'</div>
     </div>'; 
 }
 
-$element = '<h3 style="color:white; ">Text Elements</h3><br><div class="grid-container" id="grid">'.$element.'</div>'; 
+$element = '<h3 style="color:white; padding-top:15rem; ">Text Content</h3><br><div class="grid-container" id="grid">'.$element.'</div>'; 
+
+$e = ['button'];
+$el = ''; 
+foreach ($e as $key => $value) {
+    $block_caption = 'button'; 
+    $element_id = $value; 
+    $el .= '
+    <div style="aspect-ratio:2/1;" onclick="loading_block_data(`'.$element_id.'`)" class="component-card">
+        <iframe src="/@element/'.$theme_id.'/'.$element_id.'/?element_id=builder&amp;preview=true"></iframe>
+        <div class="card-label">'.$block_caption.'</div>
+    </div>'; 
+}
+
+$element .= '<h3 style="color:white; ">Button Content</h3><br><div class="grid-container" id="grid">'.$el.'</div>'; 
+
+$e = ['img'];
+$el = ''; 
+foreach ($e as $key => $value) {
+    $block_caption = 'button'; 
+    $element_id = $value; 
+    $el .= '
+    <div style="aspect-ratio:1/1;" onclick="loading_block_data(`'.$element_id.'`)" class="component-card">
+        <iframe src="/@element/'.$theme_id.'/'.$element_id.'/?element_id=builder&amp;preview=true"></iframe>
+        <div class="card-label">'.$block_caption.'</div>
+    </div>'; 
+}
+
+$element .= '<h3 style="color:white; ">Media Content</h3><br><div class="grid-container" id="grid">'.$el.'</div>'; 
+
 ?>
 
     <div onclick="close_menu_blocks()" style="left:calc(100vw - 6rem); color: white; display: flex; align-items: center; background-color: #515151; padding: 5px; border-radius: 21px; z-index: 1; position: absolute; top: 2vh !important;">

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Precision Element Rulers</title>
+    <style>
+        :root {
+            --figma-blue: #18A0FB;
+            --section-border: #e0e0e0;
+            --section-active: rgba(24, 160, 251, 0.15);
+        }
+
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background: #f9f9f9;
+            overflow: hidden;
+        }
+
+        /* --- Sidebar --- */
+        .sidebar {
+            width: 250px;
+            background: #fff;
+            border-right: 1px solid #ddd;
+            padding: 20px;
+            z-index: 100;
+        }
+
+        .asset {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: grab;
+            font-size: 13px;
+        }
+
+        .asset:active { cursor: grabbing; }
+
+        /* --- Canvas & Sections --- */
+        .canvas {
+            flex-grow: 1;
+            padding: 40px;
+            position: relative;
+            overflow-y: auto;
+        }
+
+        .drop-section {
+            width: 100%;
+            min-height: 150px;
+            background: white;
+            border: 1px solid var(--section-border);
+            margin-bottom: 30px;
+            padding: 20px;
+            position: relative;
+            transition: border-color 0.3s, background 0.3s;
+            box-sizing: border-box;
+        }
+
+        /* The "Calm Lil Border" for valid sections */
+        .drop-section.is-active {
+            border: 1.5px solid var(--figma-blue);
+            background: rgba(24, 160, 251, 0.02);
+        }
+
+        /* Ignored state */
+        [gen="holder"] {
+            background: #f1f1f1 !important;
+            border: 1px solid #ddd !important;
+            opacity: 0.6;
+        }
+
+        /* --- The Element Ghost & Rulers --- */
+        .ghost-placeholder {
+            height: 50px;
+            background: rgba(24, 160, 251, 0.1);
+            border: 1px dashed var(--figma-blue);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+
+        .ruler {
+            position: fixed;
+            background: var(--figma-blue);
+            pointer-events: none;
+            display: none;
+            z-index: 999;
+        }
+
+        .ruler-h { width: 100vw; height: 1px; left: 0; border-top: 1px dashed var(--figma-blue); }
+        .ruler-v { height: 100vh; width: 1px; top: 0; border-left: 1px dashed var(--figma-blue); }
+
+        .placed-item {
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="rt" class="ruler ruler-h"></div>
+    <div id="rb" class="ruler ruler-h"></div>
+    <div id="rl" class="ruler ruler-v"></div>
+    <div id="rr" class="ruler ruler-v"></div>
+
+    <div class="sidebar">
+        <h3>Components</h3>
+        <div class="asset" draggable="true">Image Widget</div>
+        <div class="asset" draggable="true">Text Block</div>
+        <div class="asset" draggable="true">Social Icons</div>
+    </div>
+
+    <div class="canvas">
+        <div class="drop-section" section="true">
+            <div class="placed-item">Existing Content A</div>
+        </div>
+
+        <div class="drop-section" section="true" gen="holder">
+            Locked Holder (Ignored)
+        </div>
+
+        <div class="drop-section" section="true">
+            <div class="placed-item">Existing Content B</div>
+        </div>
+    </div>
+
+    <script>
+        const rulers = {
+            t: document.getElementById('rt'),
+            b: document.getElementById('rb'),
+            l: document.getElementById('rl'),
+            r: document.getElementById('rr')
+        };
+
+        let dragName = "";
+        let ghost = document.createElement('div');
+        ghost.className = 'ghost-placeholder';
+
+        document.querySelectorAll('.asset').forEach(el => {
+            el.addEventListener('dragstart', () => dragName = el.innerText);
+            el.addEventListener('dragend', hideRulers);
+        });
+
+        document.querySelectorAll('.drop-section').forEach(section => {
+            section.addEventListener('dragover', (e) => {
+                const isSection = section.getAttribute('section') === 'true';
+                const isHolder = section.getAttribute('gen') === 'holder';
+
+                if (isSection && !isHolder) {
+                    e.preventDefault();
+                    section.classList.add('is-active');
+
+                    // Determine where to put the ghost (top or bottom of existing items)
+                    const afterElement = getDragAfterElement(section, e.clientY);
+                    if (afterElement == null) {
+                        section.appendChild(ghost);
+                    } else {
+                        section.insertBefore(ghost, afterElement);
+                    }
+
+                    // Wrap rulers around the GHOST element, not the section
+                    updateRulers(ghost);
+                }
+            });
+
+            section.addEventListener('dragleave', () => {
+                section.classList.remove('is-active');
+                if (ghost.parentNode === section) section.removeChild(ghost);
+                hideRulers();
+            });
+
+            section.addEventListener('drop', (e) => {
+                e.preventDefault();
+                section.classList.remove('is-active');
+                
+                const newItem = document.createElement('div');
+                newItem.className = 'placed-item';
+                newItem.innerText = dragName;
+                
+                section.replaceChild(newItem, ghost);
+                hideRulers();
+            });
+        });
+
+        function updateRulers(target) {
+            const rect = target.getBoundingClientRect();
+            rulers.t.style.top = `${rect.top}px`;
+            rulers.b.style.top = `${rect.bottom}px`;
+            rulers.l.style.left = `${rect.left}px`;
+            rulers.r.style.left = `${rect.right}px`;
+
+            [rulers.t, rulers.b, rulers.l, rulers.r].forEach(r => r.style.display = 'block');
+        }
+
+        function hideRulers() {
+            [rulers.t, rulers.b, rulers.l, rulers.r].forEach(r => r.style.display = 'none');
+        }
+
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll('.placed-item:not(.ghost-placeholder)')];
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        }
+    </script>
+</body>
+</html>

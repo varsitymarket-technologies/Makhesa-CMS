@@ -24,7 +24,7 @@ $node->create($element);
 $node_data = $node->build(); 
 
 function compile_element($data){
-    @$e = compile_script($data); 
+    @$e = compile_script("<div style=\"padding:2rem; \">".$data."</div>"); 
 }
 
 function prevent_card($e){

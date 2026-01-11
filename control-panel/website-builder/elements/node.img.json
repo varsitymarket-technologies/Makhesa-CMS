@@ -1,7 +1,7 @@
 {
     "class": "",
-    "style": "",
-    "attributes": "href=\"#\" alt=\"#\" src=\"\" element=\"true\" type=\"text\"",
+    "style": "width: 100%; height: auto;",
+    "attributes": " alt=\"#\" src=\"https://avatars.githubusercontent.com/u/157944600?v=4\" element=\"true\" type=\"image\"",
     "content": "",
     "tag": "img",
     "title": "Image Media",

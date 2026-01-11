@@ -25,7 +25,7 @@ $db = __DATABASE_WEBSITE__;
         <?php
         if ($internal_page == "add-product") {
             $html = '
-            <div id="section_seo" style="display: contents;">
+            <div id="section_seo" style="padding-top:2rem;">
                 <div class="video anim" style="--delay: .4s; margin:0.2rem 0px; ">
                     <div class="video-wrapper"></div>
                     <div class="video-name">

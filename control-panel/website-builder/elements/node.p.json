@@ -1,6 +1,6 @@
 {
     "class": "",
-    "style": "font-size:30px;",
+    "style": "font-size:0.9rem;",
     "attributes": "element=\"true\" type=\"text\"",
     "content": "Example Text",
     "tag": "p",
