@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Product</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            font-family: "Lexend", sans-serif !important;
+            font-optical-sizing: auto !important;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        h1 {
+        font-family: 'Lexend', sans-serif !important;
+        font-weight: 700; /* Bold */
+        }
+
+        h2 {
+  font-family: 'Lexend', sans-serif !important;
+  font-weight: 700; /* Bold */
+}
+
+h3 {
+  font-family: 'Lexend', sans-serif !important;
+  font-weight: 700; /* Bold */
+}
+
+h4 {
+  font-family: 'Lexend', sans-serif !important;
+  font-weight: 700; /* Bold */
+}
+
+h5 {
+  font-family: 'Lexend', sans-serif !important;
+  font-weight: 700; /* Bold */
+}
+
+h6 {
+  font-family: 'Lexend', sans-serif !important;
+  font-weight: 700; /* Bold */
+}
+
+p {
+  font-family: 'Lexend', sans-serif !important;
+  font-weight: 700; /* Bold */
+}
+
+.stext-107 {
+      font-family: 'Lexend', sans-serif !important;
+  font-weight: 700; /* Bold */
+}
+
+a {
+      font-family: 'Lexend', sans-serif !important;
+  font-weight: 700; /* Bold */
+}
+
+div {
+    font-family: 'Lexend', sans-serif !important;
+  font-weight: 700; /* Bold */    
+}
+
+span {
+    font-family: 'Lexend', sans-serif !important;
+  
+}
+
+    </style>
+
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.png"/>
+<!--===============================================================================================-->
+	<?php @use_style('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>
+<!--===============================================================================================-->
+	<?php @use_style('assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css'); ?>
+<!--===============================================================================================-->
+	<?php @use_style('assets/fonts/iconic/css/material-design-iconic-font.min.css'); ?>
+<!--===============================================================================================-->
+	<?php @use_style('assets/fonts/linearicons-v1.0.0/icon-font.min.css'); ?>
+<!--===============================================================================================-->
+	<?php @use_style('assets/vendor/animate/animate.css'); ?>
+<!--===============================================================================================-->	
+	<?php @use_style('assets/vendor/css-hamburgers/hamburgers.min.css'); ?>
+<!--===============================================================================================-->
+	<?php @use_style('assets/vendor/animsition/css/animsition.min.css'); ?>
+<!--===============================================================================================-->
+	<?php @use_style('assets/vendor/select2/select2.min.css'); ?>
+<!--===============================================================================================-->	
+	<?php @use_style('assets/vendor/daterangepicker/daterangepicker.css'); ?>
+<!--===============================================================================================-->
+	<?php @use_style('assets/vendor/slick/slick.css'); ?>
+<!--===============================================================================================-->
+	<?php @use_style('assets/vendor/MagnificPopup/magnific-popup.css'); ?>
+<!--===============================================================================================-->
+	<?php @use_style('assets/vendor/perfect-scrollbar/perfect-scrollbar.css'); ?>
+<!--===============================================================================================-->
+	<?php @use_style('assets/css/util.css'); ?>
+	<?php @use_style('assets/css/main.css'); ?>
+<!--===============================================================================================-->
+</head>
+<body class="animsition">
+	
+    <?php @use_card('header'); ?>
+
+    <?php @construct_page(); ?>
+
+    <?php @use_card("footer") ?>
+
+<!--===============================================================================================-->	
+	<?php @use_script('assets/vendor/jquery/jquery-3.2.1.min.js'); ?>
+<!--===============================================================================================-->
+	<?php @use_script('assets/vendor/animsition/js/animsition.min.js'); ?>
+<!--===============================================================================================-->
+	<?php @use_script('assets/vendor/bootstrap/js/popper.js'); ?>
+	<?php @use_script('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>
+<!--===============================================================================================-->
+	<?php @use_script('assets/vendor/select2/select2.min.js'); ?>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<?php @use_script('assets/vendor/daterangepicker/moment.min.js'); ?>
+	<?php @use_script('assets/vendor/daterangepicker/daterangepicker.js'); ?>
+<!--===============================================================================================-->
+	<?php @use_script('assets/vendor/slick/slick.min.js'); ?>
+	<?php @use_script('assets/js/slick-custom.js'); ?>
+<!--===============================================================================================-->
+	<?php @use_script('assets/vendor/parallax100/parallax100.js'); ?>
+	<script>
+        $('.parallax100').parallax100();
+	</script>
+<!--===============================================================================================-->
+	<?php @use_script('assets/vendor/MagnificPopup/jquery.magnific-popup.min.js'); ?>
+	<script>
+		$('.gallery-lb').each(function() { // the containers for all your galleries
+			$(this).magnificPopup({
+		        delegate: 'a', // the selector for gallery item
+		        type: 'image',
+		        gallery: {
+		        	enabled:true
+		        },
+		        mainClass: 'mfp-fade'
+		    });
+		});
+	</script>
+<!--===============================================================================================-->
+	<?php @use_script('assets/vendor/isotope/isotope.pkgd.min.js'); ?>
+<!--===============================================================================================-->
+	<?php @use_script('assets/vendor/sweetalert/sweetalert.min.js'); ?>
+	<script>
+		$('.js-addwish-b2, .js-addwish-detail').on('click', function(e){
+			e.preventDefault();
+		});
+
+		$('.js-addwish-b2').each(function(){
+			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-b2');
+				$(this).off('click');
+			});
+		});
+
+		$('.js-addwish-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+
+				$(this).addClass('js-addedwish-detail');
+				$(this).off('click');
+			});
+		});
+
+		/*---------------------------------------------*/
+
+		$('.js-addcart-detail').each(function(){
+			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to cart !", "success");
+			});
+		});
+	
+	</script>
+<!--===============================================================================================-->
+	<?php @use_script('assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js'); ?>
+	<script>
+		$('.js-pscroll').each(function(){
+			$(this).css('position','relative');
+			$(this).css('overflow','hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+		});
+	</script>
+<!--===============================================================================================-->
+	<?php @use_script('assets/js/main.js'); ?>
+
+</body>
+</html>

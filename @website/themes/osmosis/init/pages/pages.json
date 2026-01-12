@@ -1,0 +1,26 @@
+[
+    {
+        "title": "About Us Page",
+        "html": "about-page"
+    },
+    {
+        "title": "Category Page",
+        "html": "category-page"
+    },
+    {
+        "title": "Terms and Condition Page",
+        "html": "tos-page"
+    },
+    {
+        "title": "Support Page",
+        "html": "support-page"
+    },
+    {
+        "title": "Register Page",
+        "html": "register-page"
+    },
+    {
+        "title": "Product Page",
+        "html": "product-page"
+    }
+]
