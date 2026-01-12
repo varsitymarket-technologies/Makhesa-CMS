@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Precision Element Rulers</title>
+
     <style>
         :root {
             --figma-blue: #18A0FB;
@@ -38,7 +34,7 @@
             font-size: 13px;
         }
 
-        .asset:active { cursor: grabbing; }
+        .asset:active { cursor: grabbing; border:solid;  }
 
         /* --- Canvas & Sections --- */
         .canvas {
@@ -62,7 +58,7 @@
 
         /* The "Calm Lil Border" for valid sections */
         .drop-section.is-active {
-            border: 1.5px solid var(--figma-blue);
+            border: 1.5px dashed var(--figma-blue);
             background: rgba(24, 160, 251, 0.02);
         }
 
@@ -84,7 +80,6 @@
 
         .ruler {
             position: fixed;
-            background: var(--figma-blue);
             pointer-events: none;
             display: none;
             z-index: 999;
@@ -101,13 +96,12 @@
             margin-bottom: 10px;
         }
     </style>
-</head>
-<body>
 
     <div id="rt" class="ruler ruler-h"></div>
     <div id="rb" class="ruler ruler-h"></div>
     <div id="rl" class="ruler ruler-v"></div>
     <div id="rr" class="ruler ruler-v"></div>
+    <!-- 
 
     <div class="sidebar">
         <h3>Components</h3>
@@ -129,6 +123,7 @@
             <div class="placed-item">Existing Content B</div>
         </div>
     </div>
+    -->
 
     <script>
         const rulers = {
@@ -215,5 +210,3 @@
             }, { offset: Number.NEGATIVE_INFINITY }).element;
         }
     </script>
-</body>
-</html>
