@@ -5,7 +5,7 @@
 
 # VM.MAKHESA 
 
-VM.MAKHESA is a Website-Manager, a powerful, flexible, and user-friendly Content Management System (CMS) designed to help you create, manage, and publish content on the web with ease. Inspired by popular platforms like WordPress, Cloud-Manager offers modern features, robust security, and a seamless user experience.
+VM.MAKHESA is a Website-Manager, a powerful, flexible, and user-friendly Content Management System (CMS) designed to help you create, manage, and publish content on the web with ease. Inspired by popular platforms like WordPress, Our CMS offers modern features, robust security, and a seamless user experience.
 
 # Features
 
