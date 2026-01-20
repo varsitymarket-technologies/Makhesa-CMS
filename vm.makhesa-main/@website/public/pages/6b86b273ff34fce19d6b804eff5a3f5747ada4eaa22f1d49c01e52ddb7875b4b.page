@@ -1,0 +1,93 @@
+
+
+    <main>
+
+        <div style="padding-top:20vh !important;" class="p-5 pt-0 mt-5 aos-init aos-animate" data-aos="fade">
+          <span class="h5 text-secondary fw-lighter">Welcome to </span>
+          <h2 class="display-4">Levidoc Agency </h2>
+          <p class="subtitle">We design and engineer sophisticated digital platforms—from showcase sites to complex e-commerce, booking systems, and custom retail software. <strong>If you can dream it, we can build it.</strong></p>
+          <a href="/pricing/" class="btn btn-outline-light">View Available Packages </a>
+        </div>
+        
+
+        <section id="capabilities" style="padding:1rem; ">
+            <h2>Our Custom Builds</h2>
+            <p>We specialize in high-complexity builds that require unique logic and large-scale data handling.</p>
+            <p class="pb-4 text-secondary">What you can expect from us </p>
+
+            <div class="row gx-5">
+              <div class="col-12 col-md-6">
+                <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+                  <div class="bg-dark shadow rounded-5 p-0">
+                    <div class="p-5">
+                      <h2 class="fw-lighter">Booking & Ticketing</h2>
+                      <p class="pb-4 text-secondary">Real-time scheduling, variable duration appointments, and secure integrated payment gateways.</p>
+                    </div>
+                  </div>
+                </div>
+
+                
+
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+                  <div class="bg-dark shadow rounded-5 p-0">
+                    <div class="p-5">
+                      <h2 class="fw-lighter">E-commerce & Retail</h2>
+                      <p class="pb-4 text-secondary">Bespoke product displays, custom checkout flows, and inventory management tailored to your supply chain.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+                  <div class="bg-dark shadow rounded-5 p-0">
+                    <div class="p-5">
+                      <h2 class="fw-lighter">Complex Systems</h2>
+                      <p class="pb-4 text-secondary">Custom integrations with accounting software (CRM/ERP), internal retail/POS solutions, and unique database architecture.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6">
+                <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+                  <div class="bg-dark shadow rounded-5 p-0">
+                    <div class="p-5">
+                      <h2 class="fw-lighter">User Friendly Designs </h2>
+                      <p class="pb-4 text-secondary">Professional, custom-designed sites that establish immediate authority and presence.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+
+        </section>
+
+        <section style="margin:1rem;">      
+          <div class="row d-flex align-items-start justify-content-center py-vh-3 text-muted" data-aos="fade">
+            <div class="col-12 col-lg-10 col-xl-9">
+              <h2>The Transparent Starting Point</h2>
+              <p>We make starting your ambitious project simple and transparent with a powerful foundation package.</p>
+            
+              <div class="p-5 small bg-gray-900">
+                <span class="price" style="font-size:2rem; font-weight:bold; ">R3,500.00</span>
+                <p>Start your custom journey for this fixed price, which includes your first year of domain, hosting, and security.</p>
+                <ul>
+                    <li>Custom Design & Development Foundation</li>
+                    <li>1 Year Domain Registration</li>
+                    <li>1 Year Secure Shared Hosting</li>
+                    <li>Server Security & SSL</li>
+                </ul>
+                <a href="/business-startup-package/" class="btn btn-outline-light">View Package </a>
+
+              </div>
+            </div>
+          </div>
+        </section>
+    </main>

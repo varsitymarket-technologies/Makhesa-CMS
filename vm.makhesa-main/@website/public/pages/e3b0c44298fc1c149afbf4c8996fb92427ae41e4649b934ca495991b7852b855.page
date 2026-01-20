@@ -1,0 +1,30 @@
+<main>
+
+    <div class="bg-black py-vh-3">
+      <div class="container bg-black px-vw-5 py-vh-3 rounded-5 shadow">
+          <div class="p-5 pt-0 mt-5 aos-init aos-animate" data-aos="fade">
+            <span class="h5 text-secondary fw-lighter">A sample of our work</span>
+            <h2 class="display-4">Our Portfolio </h2>
+          </div>
+
+        <div class="row gx-5">
+          <div class="col-12 col-md-6">
+            <div class="card bg-transparent mb-5 aos-init aos-animate" data-aos="zoom-in-up">
+              <div class="bg-dark shadow rounded-5 p-0">
+                <div class="p-5">
+                  <iframe id="canvas-engine-frame-holder" style="height: calc(100vh  + calc(100vh * 0.3)) !important; max-width: calc(400vw - 25px); width: 100vw; transform: scale(0.7); transform-origin: 0 0; border: 3px solid #6c2bd9; transition: .3s; border-radius: 13px;" src="https://learn.varsitymarket.tech/"></iframe>
+                  <p class="pb-4 text-secondary">Learning Management System </p>
+                  <a href="/business-startup-package/" class="link-fancy link-fancy-light">View Package</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>

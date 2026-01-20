@@ -1,0 +1,14 @@
+# 1. SPECIFIC FILES
+# Ignore a specific file in the root directory
+.env
+*.key
+*.DB
+*.debug
+*.pxy 
+
+bin/error-report.pxy
+
+# 2. DIRECTORIES
+# Ignore a whole directory (must end with a slash)
+sites/
+trash/

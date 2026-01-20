@@ -1,0 +1,119 @@
+<?php
+//  core.patch.script
+
+#   TITLE   : Application Patch   
+#   DESC    : This file is responsible for sync the local files with their corresponding changes. This is intended for publishing the website files after all the changes. 
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/11/21
+
+function scan_public_html( $directory): string|false
+{
+    // Initialize the result array
+    $result = [];
+
+    // Ensure the directory exists and is readable
+    if (!is_dir($directory) || !is_readable($directory)) {
+        return json_encode(['error' => 'Invalid or inaccessible directory.']);
+    }
+
+
+    // Use a recursive function to traverse subdirectories
+    $recursiveScan = function ($dir) use (&$result, &$recursiveScan) {
+        $files = scandir($dir);
+        foreach ($files as $file) {
+            if ($file === '.' || $file === '..') {
+                continue; // Skip current and parent directory entries
+            }
+
+            $filePath = $dir . '/' . $file;
+
+            if (is_dir($filePath)) {
+                // Recursively scan subdirectories
+                $recursiveScan($filePath);
+            } else if (is_file($filePath)) {
+                // Calculate file hash (e.g., SHA256)
+                $hash = hash_file('sha256', $filePath);
+
+                // Add file information to the result array
+                $result[] = [
+                    'name' => $file,
+                    'path' => $filePath,
+                    'hash' => $hash,
+                    'size' => (filesize($filePath) / 1024), // Include file size
+                    'modified' => filemtime($filePath), // Include last modified timestamp
+                ];
+
+                $sql = "SELECT * FROM `file_ver` WHERE (`file_path` = '{$filePath}')";
+                #Search For The File 
+                $sql = "UPDATE `file_ver` SET 'hash' = '{$hash}','last_modify'= '".filemtime($filePath)."' WHERE (`file_path` = '{$filePath}')";  
+                #Update Any Existing Files 
+
+                $sql = "INSERT INTO `file_ver` ('file_path','hash', 'last_modify') values ('{$filePath}','{$hash}','".filemtime($filePath)."') "; 
+                @include_once dirname(dirname(dirname(__FILE__)))."/config.php"; 
+                $e = __DATABASE_LOGS__->query($sql); 
+
+            }
+        }
+    };
+
+    // Start the recursive scan from the specified directory
+    $recursiveScan($directory);
+
+    // Return the result as a JSON string
+    return json_encode($result, JSON_PRETTY_PRINT);
+}
+
+function set_anchor($work)
+{
+    $worker_file = dirname(__FILE__) . "/work.files.update";
+    $anchor_file = dirname(__FILE__) . "/app.files.update";
+
+    $anchor_signature = which_anchor();
+    if ($anchor_signature !== hash("sha256", $work)) {
+        #Update Occured 
+        file_put_contents($worker_file, $work);
+        file_put_contents($anchor_file, hash("sha256", $work));
+    }
+}
+
+function which_anchor()
+{
+    $p = dirname(__FILE__) . "/app.files";
+    @$e = file_get_contents($p) ?? false;
+    return $e;
+}
+
+function slugify($string)
+{
+    // Convert to lowercase
+    $string = strtolower($string);
+
+    // Replace non-letter or digits by hyphen
+    $string = preg_replace('~[^\pL\d]+~u', '-', $string);
+
+    // Transliterate characters to ASCII
+    $string = iconv('utf-8', 'us-ascii//TRANSLIT', $string);
+
+    // Remove unwanted characters
+    $string = preg_replace('~[^-\w]+~', '', $string);
+
+    // Trim hyphens from the start and end
+    $string = trim($string, '-');
+
+    // Return the slug
+    return $string;
+}
+
+$project_path = input("\tProject Path : ");
+if (strlen($project_path) <= 2){
+    $project_path = dirname(dirname(dirname(__FILE__))) . "";
+}
+
+$starter_files = json_decode(scan_public_html($project_path), JSON_PRETTY_PRINT);
+print_r($starter_files); 
+set_anchor(json_encode($starter_files, JSON_PRETTY_PRINT));
+echo "\tCompleted Updater"; 
+
+?>

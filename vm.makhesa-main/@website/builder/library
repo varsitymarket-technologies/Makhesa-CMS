@@ -1,0 +1,6 @@
+<?php 
+# For The Site Library, Use The Public Library Compiler 
+
+$file = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."public".DIRECTORY_SEPARATOR."library"; 
+@include_once $file;  
+?>

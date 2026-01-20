@@ -1,0 +1,169 @@
+<?php
+#   TITLE   : License Library
+#   DESC    : This contains the scripts to create the system license. 
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/11/11
+
+include dirname(__FILE__) . DIRECTORY_SEPARATOR . "encryption";
+class License_Library{
+    
+    function understand_print($fingerprint_signature, $signature_algorithm = 'decryption_threading')
+    {
+        if (class_exists('encryption_bin_module')) {
+            $e_ = new encryption_bin_module('CONSTANT_VAL');
+            $fingerprint = json_decode($e_->$signature_algorithm($fingerprint_signature), JSON_PRETTY_PRINT);
+
+            if ($fingerprint['algorithm'] == "silk_encryption") {
+                $algorithm = "silk_decryption";
+            }
+
+            if (method_exists('encryption_bin_module', $algorithm)) {
+                $fingerprint_lock = $e_->$signature_algorithm($fingerprint['fingerprint_lock']);
+                $e = new encryption_bin_module($fingerprint_lock);
+                $authentication = $e->$algorithm($fingerprint['authentication']);
+
+                $fingerprint_signature = [
+                    'algorithm' => false,
+                    'fingerprint_lock' => false,
+                    'authentication' => false,
+                ];
+                #Configure The Default Fingerprint Signature
+
+                $fingerprint_signature['algorithm'] = $algorithm;
+                $fingerprint_signature['fingerprint_lock'] = $fingerprint_lock;
+                $fingerprint_signature['authentication'] = json_decode($authentication, JSON_PRETTY_PRINT);
+
+                return $fingerprint_signature;
+            }
+        }
+    }
+
+
+
+    function format_to_print($fingerprint, $space = "[SPACE]", $begin_header = "BEGIN_FINGERPRINT[SPACE]---------------------------[SPACE]", $end_header = "=============================[SPACE]END_FINGERPRINT")
+    {
+        $fingerprint_format = str_replace($space, '', $fingerprint);
+        $begin_header = str_replace('[SPACE]', '', $begin_header);
+        $end_header = str_replace('[SPACE]', '', $end_header);
+
+        $finger_print_data = trim($fingerprint_format);
+
+        // Define the start and end markers
+        $startMarker = $begin_header;
+        $endMarker = $end_header;
+        $input = $finger_print_data;
+
+        // Locate the start and end markers
+        $startPos = strpos($input, $startMarker);
+        $endPos = strpos($input, $endMarker);
+
+        // Check if both markers are found
+        if ($startPos === false || $endPos === false) {
+            return null; // Return null if markers are not found
+        }
+
+        // Extract the fingerprint
+        $startPos += strlen($startMarker); // Move past the start marker
+        $fingerprint = substr($input, $startPos, $endPos - $startPos);
+
+        // Trim any whitespace or new lines
+        return trim($fingerprint);
+    }
+    
+    public function create_client($username, $password, $lock = false, $client_hash_algorithm = 'default', $password_encryption_algorithm = 'default')
+    {
+        if ($lock !== false) {
+            if ($this->verify_lock($lock)) {
+                return false;
+            }
+        }
+        #Check If the Lock Is Enabled 
+
+        #Create The Bloging Client 
+        $file = $this->register_file;
+
+        if ($client_hash_algorithm == "default") {
+            $enc_username = hash('sha256', $username);
+        } else {
+            $enc = $this->bypass_encoding;
+            $enc_username = $enc($username);
+        }
+
+        if ($password_encryption_algorithm == "default") {
+            $enc = $this->bypass_encoding;
+            $enc_password = $enc($password);
+        } else {
+            $enc = $password_encryption_algorithm;
+            $enc_password = $enc($password);
+        }
+        #Encryption Process 
+
+
+        $encode = $this->bypass_encoding;
+        $decode = $this->bypass_decoding;
+        #Use The Defines Encryption Procedures 
+
+        $register_data = [];
+        if (file_exists($file)) {
+            $register_data = json_decode($decode(file_get_contents($file)), JSON_PRETTY_PRINT);
+        }
+        #Creating The Blog Client Register 
+
+        #Check If User Already Exists 
+        if (isset($register_data[hash('sha256', $username)])) {
+            return null;
+        }
+
+        $register_data[hash('sha256', $username)] = json_encode(['s' => $enc_password, 'auth' => $enc_username], JSON_PRETTY_PRINT);
+        if (file_put_contents($file, $encode(json_encode($register_data, JSON_PRETTY_PRINT)))) {
+            return $encode(hash('sha256', $username));
+        }
+
+        return false;
+
+    }
+
+   public  function format_to_fingerprint($fingerprint, $space = "<br>", $begin_header = "BEGIN_FINGERPRINT[SPACE]---------------------------[SPACE]", $end_header = "=============================[SPACE]END_FINGERPRINT")
+    {
+        $output = "";
+        $begin_header = str_replace('[SPACE]', $space, $begin_header);
+        $end_header = str_replace('[SPACE]', $space, $end_header);
+
+        $e = str_split($fingerprint, 128);
+        foreach ($e as $v) {
+            $output .= $v . $space;
+        }
+        return $begin_header . $output . $end_header;
+    }
+
+    public function create_print($fingerprint, $signature_algorithm = 'encryption_threading')
+    {
+        $algorithm = $fingerprint['algorithm'] ?? 'silk_encryption';
+        $print_lock = $fingerprint['fingerprint_lock'] ?? str_shuffle('ACCEESS_CODE');
+        $authentication_signature = $fingerprint['authentication'];
+
+        if (class_exists('encryption_bin_module')) {
+            if (method_exists('encryption_bin_module', $algorithm)) {
+                $fingerprint_signature = [
+                    'algorithm' => false,
+                    'fingerprint_lock' => false,
+                    'authentication' => false,
+                ];
+                #Configure The Default Fingerprint Signature 
+                $e = new encryption_bin_module($print_lock);
+                $e_ = new encryption_bin_module("CONSTANT_VAL");
+                $authentication_signature = $e->$algorithm(json_encode($authentication_signature, JSON_PRETTY_PRINT));
+
+                $fingerprint_signature['authentication'] = $authentication_signature;
+                $fingerprint_signature['fingerprint_lock'] = $e_->$signature_algorithm($print_lock);
+                $fingerprint_signature['algorithm'] = $algorithm;
+
+                return $e_->$signature_algorithm(json_encode($fingerprint_signature, JSON_PRETTY_PRINT));
+            }
+        }
+    }
+}
+
+?>

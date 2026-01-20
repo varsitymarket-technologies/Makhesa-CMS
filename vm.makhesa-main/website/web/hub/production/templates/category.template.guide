@@ -1,0 +1,16 @@
+                <!-- {CATEGORY_TITLE} Category -->
+                <li class="category-item">
+                  <div class="d-flex justify-content-between align-items-center category-header collapsed" data-bs-toggle="collapse" data-bs-target="#categories-1-{CATEGORY_TITLE}-subcategories" aria-expanded="false" aria-controls="categories-1-{CATEGORY_TITLE}-subcategories">
+                    <a href="javascript:void(0)" class="category-link">{CATEGORY_TITLE}</a>
+                    <span class="category-toggle">
+                      <i class="bi bi-chevron-down"></i>
+                      <i class="bi bi-chevron-up"></i>
+                    </span>
+                  </div>
+                  <ul id="categories-1-{CATEGORY_TITLE}-subcategories" class="subcategory-list list-unstyled collapse ps-3 mt-2">
+                    <li><a href="#" class="subcategory-link">Smartphones</a></li>
+                    <li><a href="#" class="subcategory-link">Laptops</a></li>
+                    <li><a href="#" class="subcategory-link">Tablets</a></li>
+                    <li><a href="#" class="subcategory-link">Accessories</a></li>
+                  </ul>
+                </li>

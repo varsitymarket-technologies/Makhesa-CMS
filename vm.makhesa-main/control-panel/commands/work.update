@@ -1,0 +1,51 @@
+[
+    {
+        "name": "readme",
+        "path": "C:\\Users\\Hastings\\Documents\\vm.themes.server\\library\\vm_theme_68ff407d27e6b\\\/assets\/readme",
+        "hash": "77faba0a88701efb4e35152aa8f16648a9317a5459217728a50c9c5bc160e3d8",
+        "size": 0.2197265625,
+        "modified": 1761290048
+    },
+    {
+        "name": "cover.png",
+        "path": "C:\\Users\\Hastings\\Documents\\vm.themes.server\\library\\vm_theme_68ff407d27e6b\\\/assets\/site\/cover.png",
+        "hash": "f0fafcae3db89e34666cd0d48e1ac1dae59e34539fcf938d52d20b3f30240c93",
+        "size": 14.130859375,
+        "modified": 1761292333
+    },
+    {
+        "name": "studio.png",
+        "path": "C:\\Users\\Hastings\\Documents\\vm.themes.server\\library\\vm_theme_68ff407d27e6b\\\/assets\/site\/studio.png",
+        "hash": "469d04fc67a4730999dbdb5ff78685d5372c96653c672c09f68505a7372baf4e",
+        "size": 494.8349609375,
+        "modified": 1761592685
+    },
+    {
+        "name": "index.html",
+        "path": "C:\\Users\\Hastings\\Documents\\vm.themes.server\\library\\vm_theme_68ff407d27e6b\\\/index.html",
+        "hash": "a810c7e11fa39eb82f877172472046ee7110a5509040c89aca66dea7a05b3e55",
+        "size": 0.7734375,
+        "modified": 1761291675
+    },
+    {
+        "name": "interface.guide",
+        "path": "C:\\Users\\Hastings\\Documents\\vm.themes.server\\library\\vm_theme_68ff407d27e6b\\\/interface.guide",
+        "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "size": 0,
+        "modified": 1761290224
+    },
+    {
+        "name": "material",
+        "path": "C:\\Users\\Hastings\\Documents\\vm.themes.server\\library\\vm_theme_68ff407d27e6b\\\/material",
+        "hash": "11ea62c9bcafc4f1e99b7f86aa5776d0443cee6cc31736288cea084741360443",
+        "size": 0.1806640625,
+        "modified": 1761557674
+    },
+    {
+        "name": "readme",
+        "path": "C:\\Users\\Hastings\\Documents\\vm.themes.server\\library\\vm_theme_68ff407d27e6b\\\/readme",
+        "hash": "1b88e84896bc7a74d0723742df96f4a6a7d57a029230be58a1a035641077739d",
+        "size": 1.3134765625,
+        "modified": 1761550133
+    }
+]

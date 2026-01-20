@@ -1,0 +1,68 @@
+{
+    "p": {
+        "element": "<{element.tag} {element.event} style=\"{element.style}\" class=\"{element.class}\">{element.innerTEXT}<\/{element.tag}>",
+        "tag": "p",
+        "event": "",
+        "style": "font-size:20rem;",
+        "class": "introduction",
+        "innerTEXT": "SAMPLE TEXT"
+    },
+    "breadcrumbs": {
+        "element": "\r\n        <{element.tag} {element.event} style=\"{element.style}\" class=\"{element.class}\">\r\n            <ol>\r\n                <li><a href=\"{element.parent_page}\">{element.parent_title}<\/a><\/li>\r\n                <li class=\"current\">{element.page}<\/li>\r\n            <\/ol>\r\n        <\/{element.tag}>",
+        "event": "",
+        "tag": "nav",
+        "style": "",
+        "class": "breadcrumbs",
+        "parent_page": "index.html",
+        "parent_title": "Home",
+        "page": "Page Title"
+    },
+    "h1": {
+        "element": "<{element.tag} {element.event} style=\"{element.style}\" class=\"{element.class}\">{element.innerTEXT}<\/{element.tag}>",
+        "tag": "h1",
+        "event": "",
+        "style": "",
+        "class": "",
+        "innerTEXT": "Heading 1"
+    },
+    "h2": {
+        "element": "<{element.tag} {element.event} style=\"{element.style}\" class=\"{element.class}\">{element.innerTEXT}<\/{element.tag}>",
+        "tag": "h2",
+        "event": "",
+        "style": "",
+        "class": "",
+        "innerTEXT": "Heading 2"
+    },
+    "h3": {
+        "element": "<{element.tag} {element.event} style=\"{element.style}\" class=\"{element.class}\">{element.innerTEXT}<\/{element.tag}>",
+        "tag": "h3",
+        "event": "",
+        "style": "",
+        "class": "",
+        "innerTEXT": "Heading 3"
+    },
+    "h4": {
+        "element": "<{element.tag} {element.event} style=\"{element.style}\" class=\"{element.class}\">{element.innerTEXT}<\/{element.tag}>",
+        "tag": "h4",
+        "event": "",
+        "style": "",
+        "class": "",
+        "innerTEXT": "Heading 4"
+    },
+    "h5": {
+        "element": "<{element.tag} {element.event} style=\"{element.style}\" class=\"{element.class}\">{element.innerTEXT}<\/{element.tag}>",
+        "tag": "h5",
+        "event": "",
+        "style": "",
+        "class": "",
+        "innerTEXT": "Heading 5"
+    },
+    "h6": {
+        "element": "<{element.tag} {element.event} style=\"{element.style}\" class=\"{element.class}\">{element.innerTEXT}<\/{element.tag}>",
+        "tag": "h6",
+        "event": "",
+        "style": "",
+        "class": "",
+        "innerTEXT": "Heading 6"
+    }
+}

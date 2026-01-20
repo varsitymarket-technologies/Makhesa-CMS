@@ -1,0 +1,25 @@
+<?php 
+#   TITLE   : Restart System Logs Database   
+#   DESC    : Once Database has been Destroyed or deleted, this script helps with creating a restored database structure with empty data. This does not delete existing databases. 
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/10/23
+
+define("__cmd__",true);
+
+@include_once dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR."config.php"; 
+$database = __DATABASE_ENV__['root'].DIRECTORY_SEPARATOR.__DATABASE_ENV__['logs.database']; 
+$db = __DATABASE_LOGS__; 
+$db->override_connection($database); 
+
+$db->createTable('file_ver',[
+    'id' =>'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'file_path' =>'TEXT NOT NULL',
+    'hash' =>'TEXT NOT NULL',
+    'last_modify' =>'TEXT NOT NULL UNIQUE',
+    'updated_at' =>'DATE DEFAULT CURRENT_DATE',
+]);
+
+echo "Database Restoration Task\n[COMPLETED RESTORATION]\n\n"; 
+?>

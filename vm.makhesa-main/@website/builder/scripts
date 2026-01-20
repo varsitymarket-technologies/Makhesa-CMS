@@ -1,0 +1,6 @@
+<?php 
+#For The Base Preview Functions Use The Public Functiosn as Well. 
+
+$file = dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."public".DIRECTORY_SEPARATOR."source.scripts"; 
+include_once $file;
+?>

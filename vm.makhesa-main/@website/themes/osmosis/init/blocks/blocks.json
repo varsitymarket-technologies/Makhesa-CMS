@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Services Pricing ",
+        "html": "pricing.card"
+    },
+    {
+        "title": "Call To Action",
+        "html": "call-to-action.card"
+    },
+    {
+        "title": "Header Card",
+        "html": "header-intro.card"
+    },
+    {
+        "title": "Source Frame",
+        "html": "source-frame.card"
+    },
+    {
+        "title": "Blank",
+        "html": "empty.card"
+    }
+]

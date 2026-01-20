@@ -1,0 +1,9 @@
+{
+    "class": "",
+    "style": "font-size:2.5rem;",
+    "attributes": "element=\"true\" type=\"text\"",
+    "content": "Sub Heading",
+    "tag": "h2",
+    "title": "Heading 2",
+    "structure": "<{element.tag} class=\"{element.class}\" {element.attributes} style=\"{element.style}\">{element.contents}</{element.tag}>"
+}

@@ -1,0 +1,368 @@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+    <style>
+
+        /* Style for elements that are currently being edited */
+        [contenteditable="true"] {
+            outline: 2px solid #3498db;
+            padding: 5px;
+            border-radius: 4px;
+            background-color: rgba(52, 152, 219, 0.05);
+        }
+
+        /* --- WRITER'S MODE EXTENSION CSS --- */
+
+        /* The floating toolbar container */
+        #wm-floating-toolbar {
+            position: absolute;
+            display: none; /* Hidden by default */
+            background: white;
+            padding: 5px 8px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            z-index: 9999;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            border: 1px solid #eaeaea;
+            /* prevent toolbar from flickering when moving mouse between element and toolbar */
+            pointer-events: auto; 
+        }
+
+        /* Toolbar items/buttons */
+        .wm-toolbar-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            margin: 0 2px;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #555;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            background: transparent;
+            border: none;
+        }
+
+        .wm-toolbar-item:hover {
+            background-color: #f0f2f5;
+            color: #3498db;
+        }
+
+        /* Specific color for save button */
+        .wm-btn-save { color: #2ecc71; }
+        .wm-btn-save:hover { background-color: #eafaf1; color: #27ae60; }
+
+        /* Hidden state class */
+        .wm-hidden {
+            display: none !important;
+        }
+
+        /* Indicator that an element is recognized as editable */
+        .wm-editable-hover {
+            outline: 2px dashed #3498dbaa;
+            outline-offset: 2px;
+        }
+    </style>
+
+    <script>
+
+           
+function assignAnchorIds(prefix = 'anchor-element.id') {
+    // 1. Select all elements within the body
+    const allElements = document.querySelectorAll('body *');
+    
+    allElements.forEach((prefix, index) => {
+        // 2. Only assign if it doesn't already have one
+        if (!prefix.getAttribute('data-anchor-id')) {
+            const uniqueId = `anchor-element.id-${index}`;
+            prefix.setAttribute('data-anchor-id', uniqueId);
+        }
+    });
+    //console.log(`Successfully indexed ${allElements.length} elements.`);
+}
+
+
+        assignAnchorIds();
+
+        // Run the function as soon as the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', () => {
+        //  assignAnchorIds();
+        });
+
+
+
+        /**
+         * Writer's Mode Extension Script
+         */
+        const WritersMode = (function() {
+            let toolbar;
+            let currentTarget = null;
+            let isEditingText = false;
+            let hoverTimeout;
+
+            // Initialization: Create toolbar and add global listeners
+            function init() {
+                createToolbar();
+                attachGlobalListeners();
+                console.log("Writer's Mode initialized.");
+            }
+
+            // Create the floating toolbar HTML structure dynamically
+            function createToolbar() {
+                toolbar = document.createElement('div');
+                toolbar.id = 'wm-floating-toolbar';
+                toolbar.innerHTML = `
+                    <button class="wm-toolbar-item wm-btn-text wm-hidden" title="Edit Text">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button class="wm-toolbar-item wm-btn-save wm-hidden" title="Save Text Changes">
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                     <button class="wm-toolbar-item wm-btn-image wm-hidden" title="Change Image Source">
+                        <i class="fa-regular fa-image"></i>
+                    </button>
+                    <button class="wm-toolbar-item wm-btn-link wm-hidden" title="Edit Link URL">
+                        <i class="fa-solid fa-link"></i>
+                    </button>
+                `;
+                document.body.appendChild(toolbar);
+
+                // Attach click handlers to the buttons we just created
+                toolbar.querySelector('.wm-btn-text').addEventListener('click', startTextEditing);
+                toolbar.querySelector('.wm-btn-save').addEventListener('click', finishTextEditing);
+                toolbar.querySelector('.wm-btn-image').addEventListener('click', editImageSource);
+                toolbar.querySelector('.wm-btn-link').addEventListener('click', editLinkHref);
+            }
+
+            // Core logic for detecting hover over editable elements
+            function attachGlobalListeners() {
+                // Use document-level delegation for performance
+                document.addEventListener('mouseover', handleMouseOver);
+            }
+
+            function handleMouseOver(e) {
+                // If we are currently deep inside editing text, don't move the toolbar away
+                if (isEditingText) return;
+
+                const target = e.target;
+
+                // 1. Identify Editable Elements based on attributes or tags
+                // We look for element="true" attribute OR specific tags like A or IMG defined as editable
+                let isEditable = false;
+                let type = '';
+
+                if (target.getAttribute('element') === 'true' && target.getAttribute('type') === 'text') {
+                    isEditable = true;
+                    type = 'text';
+                } else if (target.tagName === 'IMG' && target.getAttribute('element') === 'true') {
+                    isEditable = true;
+                    type = 'image';
+                } else if (target.tagName === 'A' && target.getAttribute('element') === 'true') {
+                   isEditable = true;
+                   type = 'link';
+                }
+
+                // If it's not an editable element, or if it's the toolbar itself, ignore.
+                if (!isEditable || target.closest('#wm-floating-toolbar')) {
+                     // Optional: Add a delay before hiding so it doesn't flicker if moving to the toolbar
+                     hoverTimeout = setTimeout(() => {
+                         if (!toolbar.matches(':hover') && !isEditingText) {
+                              hideToolbar();
+                              if(currentTarget) currentTarget.classList.remove('wm-editable-hover');
+                              currentTarget = null;
+                         }
+                     }, 200); 
+                    return;
+                }
+
+                clearTimeout(hoverTimeout); // Clear hide timeout if we found a new valid target
+
+                // Remove hover class from previous target if exists
+                if (currentTarget && currentTarget !== target) {
+                    currentTarget.classList.remove('wm-editable-hover');
+                }
+
+                currentTarget = target;
+                currentTarget.classList.add('wm-editable-hover');
+                
+                positionToolbar(target);
+                updateToolbarButtons(type);
+            }
+
+
+            // Place the toolbar above the target element
+            function positionToolbar(element) {
+                const rect = element.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+                toolbar.style.display = 'flex';
+                // Position above the element, centered horizontally
+                // Offset by toolbar height approx (45px) and a gap (10px)
+                let topPos = rect.top + scrollTop - 55; 
+                let leftPos = rect.left + scrollLeft + (rect.width / 2);
+
+                // Ensure it doesn't go off screen top
+                if (topPos < scrollTop) topPos = rect.bottom + scrollTop + 10;
+
+                toolbar.style.top = `${topPos}px`;
+                // We don't know toolbar width yet due to display:none, so we center using transform
+                toolbar.style.left = `${leftPos}px`;
+                toolbar.style.transform = "translateX(-50%)";
+            }
+
+
+            // Show/Hide appropriate buttons based on element type
+            function updateToolbarButtons(type) {
+                const btns = toolbar.querySelectorAll('.wm-toolbar-item');
+                btns.forEach(btn => btn.classList.add('wm-hidden')); // Hide all first
+
+                if (type === 'text') {
+                    toolbar.querySelector('.wm-btn-text').classList.remove('wm-hidden');
+                } else if (type === 'image') {
+                    toolbar.querySelector('.wm-btn-image').classList.remove('wm-hidden');
+                } else if (type === 'link') {
+                    toolbar.querySelector('.wm-btn-link').classList.remove('wm-hidden');
+                }
+            }
+
+            function hideToolbar() {
+                if (toolbar) toolbar.style.display = 'none';
+            }
+
+            // ================= EDITING FUNCTIONS =================
+
+            // --- Text Editing ---
+            function startTextEditing() {
+                if (!currentTarget) return;
+                isEditingText = true;
+                
+                // Swap buttons: hide edit icon, show save icon
+                toolbar.querySelector('.wm-btn-text').classList.add('wm-hidden');
+                toolbar.querySelector('.wm-btn-save').classList.remove('wm-hidden');
+
+                // Make content editable
+                currentTarget.contentEditable = "true";
+                currentTarget.focus();
+
+                // Optional: Select all text for easy replacement
+                // document.execCommand('selectAll',false,null); 
+
+                // Add listener to save on blur (clicking outside)
+                currentTarget.addEventListener('blur', handleBlurSave, { once: true });
+            }
+
+            function handleBlurSave(e) {
+                // Only save on blur if we are still in editing mode (haven't pressed save button yet)
+                 if (isEditingText) {
+                    finishTextEditing();
+                }
+            }
+
+            function finishTextEditing() {
+                if (!currentTarget) return;
+                isEditingText = false;
+
+                currentTarget.contentEditable = "false";
+                currentTarget.classList.remove('wm-editable-hover');
+
+                // Swap buttons back
+                toolbar.querySelector('.wm-btn-save').classList.add('wm-hidden');
+                toolbar.querySelector('.wm-btn-text').classList.remove('wm-hidden');
+                hideToolbar();
+
+                // Get data and send off
+                const anchorId = currentTarget.getAttribute('data-anchor-id');
+                const newContent = currentTarget.innerHTML; // or innerText depending on needs
+
+                sendDataToBackend(anchorId, 'text_content', newContent);
+            }
+
+
+            // --- Image Editing ---
+            function editImageSource() {
+                if (!currentTarget || currentTarget.tagName !== 'IMG') return;
+
+                const currentSrc = currentTarget.src;
+                // Using prompt for now as requested. Could be replaced by a sleek modal later.
+                const newSrc = prompt("Enter new image URL:", currentSrc);
+
+                if (newSrc && newSrc !== currentSrc) {
+                    currentTarget.src = newSrc;
+                    
+                    const anchorId = currentTarget.getAttribute('data-anchor-id');
+                    sendDataToBackend(anchorId, 'image_src', newSrc);
+                }
+            }
+
+             // --- Link URL Editing ---
+             function editLinkHref() {
+                if (!currentTarget || currentTarget.tagName !== 'A') return;
+
+                const currentHref = currentTarget.getAttribute('href');
+                // Using prompt for now as requested.
+                const newHref = prompt("Enter new URL for this link:", currentHref);
+
+                if (newHref && newHref !== currentHref) {
+                    currentTarget.setAttribute('href', newHref);
+
+                    const anchorId = currentTarget.getAttribute('data-anchor-id');
+                    sendDataToBackend(anchorId, 'link_href', newHref);
+                }
+            }
+
+
+            // ================= BACKEND INTEGRATION MOCKUP =================
+            /**
+             * Sends the modified data to your PHP endpoint.
+             * @param {string} anchorId - The unique data-anchor-id identifying the element.
+             * @param {string} updateType - What is being updated (e.g., 'text_content', 'image_src').
+             * @param {any} value - The new value.
+             */
+            function sendDataToBackend(anchorId, updateType, value) {
+                if(!anchorId) {
+                    console.error("Cannot save: Missing data-anchor-id");
+                    return;
+                }
+
+                const payload = {
+                    id: anchorId,
+                    field: updateType,
+                    content: value,
+                    timestamp: new Date().toISOString()
+                };
+
+                console.group("MOCK Sending Data to PHP");
+                console.log("This data would be sent via fetch() or AJAX to your save_handler.php:");
+                console.log(payload);
+                console.groupEnd();
+
+                // Example actual fetch implementation:
+                /*
+                fetch('/path-to-your-php-saver.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload),
+                })
+                .then(response => response.json())
+                .then(data => console.log('Save success:', data))
+                .catch((error) => console.error('Save error:', error));
+                */
+                
+                alert(`Saved change for ID: ${anchorId}\nCheck console for details.`);
+            }
+
+
+            // Public API
+            return {
+                init: init
+            };
+
+        })();
+
+        // Initialize the Writers Mode when DOM is ready
+        document.addEventListener('DOMContentLoaded', WritersMode.init);
+
+    </script>

@@ -1,0 +1,10 @@
+<?php 
+#   TITLE   : Engine Script Link Rescource
+#   DESC    : A simple light weight shel executable script file. This will allow admins acess to the backend of the system.  
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/10/20
+
+@include_once dirname(__FILE__).DIRECTORY_SEPARATOR."control-panel".DIRECTORY_SEPARATOR."commands".DIRECTORY_SEPARATOR."command.center.php"
+?>

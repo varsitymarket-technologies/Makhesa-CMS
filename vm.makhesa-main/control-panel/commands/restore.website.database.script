@@ -1,0 +1,176 @@
+<?php 
+#   TITLE   : Restart Website Database   
+#   DESC    : Once Database has been Destroyed or deleted, this script helps with creating a restored database structure with empty data. This does not delete existing databases. 
+#   PROPRIETOR: VARSITYMARKET_TECHNOLOGIES
+#   VERSION : 1.0.1.1
+#   AUTHOR  : HARDY HASTINGS  
+#   RELEASE : 2025/10/23
+
+@include_once dirname(dirname(__FILE__)).DIRECTORY_SEPARATOR."module.database.php"; 
+
+$database = dirname(dirname(dirname(__FILE__))).DIRECTORY_SEPARATOR."database".DIRECTORY_SEPARATOR."__WEBSITE_DATABASE__.DB"; 
+$db->override_connection($database); 
+
+# Database Startup for the E-Commerce Secton 
+
+$db->createTable('categories',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'name' => 'TEXT',
+    'image' => 'TEXT',
+]); 
+
+$db->createTable('brands',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'name' => 'TEXT',
+    'image' => 'TEXT',
+]); 
+
+$db->createTable('products', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'title' => 'TEXT',
+    'image' => 'TEXT',
+    'description' => 'TEXT',
+    'price' => 'TEXT',
+    'sku' => 'TEXT',
+    'stock' => 'TEXT',
+    'category' => 'TEXT',
+    'brand' => 'TEXT NOT NULL',
+    'sale_price' => 'TEXT NOT NULL',
+    'source' => 'TEXT NOT NULL',
+    'date' => 'DATE DEFAULT CURRENT_DATE',
+]); 
+
+
+$db->createTable('gallery', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'title' => 'TEXT',
+    'image_path' => 'TEXT',
+    'description' => 'TEXT',
+    'hash' => 'TEXT',
+    'date' => 'DATE DEFAULT CURRENT_DATE',
+]); 
+
+$db->createTable('menu',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT', 
+    'title' => 'TEXT', 
+    'data_node' => 'TEXT', 
+]); 
+
+
+$db->createTable('faq',[
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT', 
+    'question' => 'TEXT', 
+    'response' => 'TEXT', 
+    'category' => 'TEXT', 
+]); 
+
+$db->createTable('users',[
+    'user_id' =>'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'first_name' =>'TEXT NOT NULL',
+    'last_name' =>'TEXT NOT NULL',
+    'email' =>'TEXT NOT NULL UNIQUE',
+    'username' =>'TEXT UNIQUE',
+    'password_hash' =>'TEXT NOT NULL',
+    'is_active' =>'TEXT',
+    'role' =>'TEXT',
+    'created_at' =>'DATE DEFAULT CURRENT_DATE',
+    'updated_at' =>'DATE DEFAULT CURRENT_DATE',
+    'auth' => 'TEXT', 
+    'img' => 'TEXT',     
+]);
+
+$db->createTable('tblsupport', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'subject' => 'TEXT NOT NULL',
+    'description' => 'TEXT NOT NULL',
+    'user_code' => 'TEXT NOT NULL',
+    'status' => 'TEXT',
+    'created_at' => 'DATE DEFAULT CURRENT_DATE'
+]); 
+
+$db->createTable('tblsupport_chats', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'client_data' => 'TEXT',
+    'response' => 'TEXT',
+    'client_code' => 'TEXT',
+    'support_ref' => 'TEXT NOT NULL',
+    'session' => 'DATE DEFAULT CURRENT_DATE',
+    'admin_code' => 'TEXT',
+]); 
+
+$db->createTable('categories', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'name' => 'TEXT NOT NULL UNIQUE',
+    'description' => 'TEXT',
+    'image' => 'TEXT',
+]);
+
+$db->createTable('wishlist', [
+    'id' => 'INTEGER PRIMARY KEY AUTOINCREMENT',
+    'product_id' => 'TEXT',
+    'description' => 'TEXT',
+    'quantity' => 'TEXT',
+    'user_id' => 'TEXT',
+    'ghost_id'=>'TEXT',
+    'quantity'=>'INTEGER', 
+]);
+
+
+echo "\n\tDatabase Restoration Task\n\t[COMPLETED RESTORATION]\n\n"; 
+?>
+
+
+SELECT --user tracking
+    user_session,
+    COUNT(*) AS actions
+FROM tblanalytical_view
+GROUP BY user_session
+ORDER BY actions DESC
+LIMIT 10;
+
+
+--ACTIVITY PER DAY
+SELECT DATE(created_at) AS day, COUNT(*) AS total
+FROM tblanalytical_view
+GROUP BY day
+ORDER BY day DESC;
+
+--ACTIVITY PER MONTH
+SELECT 
+    YEAR(created_at) AS year,
+    MONTH(created_at) AS month,
+    COUNT(*) AS total
+FROM tblanalytical_view
+GROUP BY year, month
+ORDER BY year DESC, month DESC;
+
+--ACTIVITY PER YEAR
+SELECT YEAR(created_at) AS year, COUNT(*) AS total
+FROM tblanalytical_view
+GROUP BY year
+ORDER BY year DESC;
+
+
+--BASIC SQL NEEDS TO BE LABELED AND EDITED.
+--REPLACE AND UPDATE
+
+CREATE TABLE tblanalytical_view (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tracking_session VARCHAR(100),
+    user_session VARCHAR(100),
+    ip_address VARCHAR(255),
+    country VARCHAR(100),
+    city VARCHAR(100),
+    model VARCHAR(100),
+    make VARCHAR(100),
+    operating_system VARCHAR(100),
+    browser VARCHAR(100),
+    page_title TEXT,
+    page_link TEXT,
+    activity_type VARCHAR(50) DEFAULT 'page_view',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    INDEX (created_at),
+    INDEX (user_session)
+);
+
